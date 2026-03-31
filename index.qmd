@@ -1,0 +1,8 @@
+# Introduction
+
+Welcome to this GIS textbook. This book covers the fundamentals of Geographic Information Systems and Remote Sensing.
+
+In this project, we explore:
+* Remote Sensing Basics
+* Spatial Data Analysis
+* Cartography

@@ -1,0 +1,26 @@
+project:
+  type: book
+
+book:
+  title: "Mapping the world: an open textbook on GIS and remote sensing"
+  author: "Ran Wang"
+  date: "3/31/2026"
+  chapters:
+    - index.qmd
+    - chapters/intro.qmd
+    - chapters/remote-sensing-basics.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+  pdf:
+    documentclass: scrreprt
+
+
+

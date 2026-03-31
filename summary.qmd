@@ -1,0 +1,4 @@
+# Summary
+
+In this book, we covered the transition from paper maps to digital Remote Sensing. 
+Students should now be able to identify different bands of the electromagnetic spectrum.
