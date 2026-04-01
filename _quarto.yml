@@ -3,30 +3,36 @@ project:
 
 book:
   title: "Mapping the world: an open textbook on GIS and remote sensing"
-  author: "Ran Wang"
+  author: "Ran Wang, Xiaomeng Li, Andrew Husa"
   date: "3/31/2026"
   chapters:
     - index.qmd
-    - chapters/intro.qmd
-    - chapters/spatial-data-models.qmd
-    - chapters/coordinate-systems.qmd
-    - chapters/map-projection.qmd
-    - chapters/gnss.qmd
-    - chapters/table-operations.qmd
-    - chapters/vector-analysis.qmd
-    - chapters/raster-analysis.qmd
-    - chapters/terrain-analysis.qmd
-    - chapters/density-analysis.qmd
-    - chapters/spatial-interpolation.qmd
-    - chapters/network-analysis.qmd
-    - chapters/historical-gis.qmd
-    - chapters/remote-sensing-history.qmd
-    - chapters/remote-sensing-basics.qmd
-    - chapters/remote-sensing-platforms.qmd
-    - chapters/image-classificatiom.qmd
-    - chapters/remote-sensing-applications.qmd
-    - summary.qmd
-    - references.qmd
+    - part: "I Foundations of Geospatial Sciences"
+      chapters:
+        - chapters/intro.qmd
+        - chapters/spatial-data-models.qmd
+        - chapters/coordinate-systems.qmd
+        - chapters/map-projection.qmd
+        - chapters/gnss.qmd
+    - part: "II GIS and Spatial Analysis"
+      chapters:
+        - chapters/table-operations.qmd
+        - chapters/vector-analysis.qmd
+        - chapters/raster-analysis.qmd
+        - chapters/terrain-analysis.qmd
+        - chapters/density-analysis.qmd
+        - chapters/spatial-interpolation.qmd
+        - chapters/network-analysis.qmd
+    - part: "III Remote Sensing"
+      chapters:
+        - chapters/historical-gis.qmd
+        - chapters/remote-sensing-history.qmd
+        - chapters/remote-sensing-basics.qmd
+        - chapters/remote-sensing-platforms.qmd
+        - chapters/image-classificatiom.qmd
+        - chapters/remote-sensing-applications.qmd
+    # - summary.qmd
+    # - references.qmd
 
 bibliography: references.bib
 
