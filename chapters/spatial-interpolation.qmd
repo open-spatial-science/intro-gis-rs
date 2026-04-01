@@ -1,0 +1,63 @@
+# Spatial Interpolation
+
+::: callout-note
+## Learning Objectives
+
+Understand what spatial interpolation is  
+
+Learn about two spatial interpolation methods – IDW and spline
+:::
+
+## *Spatial Interpolation*
+
+Often, we want to know how a variable, such as air temperature or soil pollutant concentration, varies over space. Within the study area, we may take measurements at different locations. But it is often not possible or too costly to measure the actual value at all locations throughout the study area. Instead, we typically take measurements at selected locations within the study area to capture the spatial variation of the phenomenon. Beyond these sampled locations, we may also want to estimate values at locations where no measurements were taken. This is when spatial interpolation comes useful.
+
+**Spatial interpolation** is the process of using known values measured at sampled locations to estimate values at unsampled locations. In its strict sense, the term *interpolation* means that it only fills gaps by estimating values between sampled locations. Predictions made beyond the region covered by sampled locations are generally less reliable.
+
+Spatial interpolation uses known values nearby to make predictions. This approach is based on the fundamental assumption of **spatial autocorrelation** — things that are close together tend to have similar characteristics. As Waldo Tobler noted, “*Everything is related to everything else, but near things are more related to each other.*”, known as Tobler’s First Law of Geography (Tobler 1970). This means that we can use nearby values to infer the value at an unknown location.
+
+Spatial interpolation generates an output raster representing the continuous variation of the variable over space. At each cell in the raster, nearby known values — either data points within *a defined* *neighborhood* or *a fixed number of closest data points* — are used to calculate the estimated value at that cell. A user can define the criteria for sample data points to be considered nearby to be used for estimating the value at every cell location.
+
+Various methods are available for spatial interpolation. We will introduce two methods here – IDW and Spline.
+
+## *Inverse Distance Weighted (IDW)*
+
+**Inverse Distance Weighted** interpolation**,** often referred to as**IDW,**is a simple and commonly used spatial interpolation method*.* The name *Inverse Distance Weighted* describes how the method work by weighing nearby known values by the inverse of distance (or a power of distance) to make a prediction for a location. IDW interpolation generates an output raster with cells presenting locations across the region covered by the sampled data points.
+
+IDW estimates a cell value by calculating the weighted mean of the measured values at sampled locations. The weight of a known value is the inverse of a power of distance from this sampled location to the cell location we are making a prediction for. The closer a sample data point is to the center of the cell being estimated, the more influence, or weight, it has in the averaging process.
+
+To estimate the value Z~i~ at an unknown location i:
+
+\$\$\
+Z_i = \\frac{\\sum\_{j}\^{n} w\_{ij} \\cdot z_j}{\\sum\_{j}\^{n} w\_{ij}}\
+\$\$
+
+where ***Z~i~*** is the estimated value for the unknown point at location i, ***w~ij~*** is the distance from a known point j to the unknown point j, ***Z~j~*** is the known value at sampled location i, and ***n*** is the number of known values used for estimating ***Z~i~***.
+
+The weight of a known value at a sampled location j for the estimation at location i:
+
+\$\$\
+w\_{ij} = \\frac{1}{(distance\_{ij})\^p}\
+\$\$
+
+Where $distance_{ij}$is the distance between the sampled location j and the unknown location i. ***p*** is a user-defined power parameter.
+
+When ***p*** = 1, the output raster surface is smoother and shows gradual changes. When ***p*** = 2, a stronger emphasis is placed on nearby points. With increasingly higher values for ***p***, we see stronger local influence of sampled locations and sharper changes in the output surface. A common value for ***p*** is 2, which works well in many real-world phenomena.
+
+A user can also choose to define and use only **nearby** sample data points for making predictions.  There are two ways to find nearby sample data points at each cell. One way is to find all sample data points that falls within a circular neighborhood with a defined radius from the cell. Another is to find a fixed number of data points closest to the cell.
+
+IDW is a widely used spatial interpolation method due to its simplicity and the ability to weigh sampled data by distance to generate a smooth surface of the variable of interest over the entire region. However, IDW method also has some limitations. First, the weighting of the known values is arbitrarily determined. Second, it can produce unrealistic patterns around sample points. Moreover, values at sampled locations in the output raster can deviate from the actual known values used as input.
+
+## *Spline*
+
+**Spline** interpolation method estimates values by fitting a mathematical function that minimizes overall surface curvature, resulting in a smooth surface that passes exactly through all known sample points. As a result, the cell values at the sampled locations in the output raster are identical to the original measured values.
+
+Imagine bending and stretching a rubber sheet so that it passes through all the known points, adding a z dimension representing the variable over a surface defined by x and y coordinates. This is how spline interpolation generates a continuous surface from discrete observations.
+
+Different spline variants (e.g., regularized vs. tension) control how tightly the surface conforms to the sample points versus how smooth it appears.
+
+A limitation of spline is that since the surface passes exactly through input points, it can be sensitive to **noise or outliers** in the input data.
+
+## *References*
+
+Tobler, W. R. (1970). *A computer movie simulating urban growth in the Detroit region*. *Economic Geography*, 46(Supplement), 234–240.

@@ -9,8 +9,16 @@ book:
     - index.qmd
     - chapters/intro.qmd
     - chapters/spatial-data-models.qmd
+    - chapters/coordinate-systems.qmd
+    - chapters/gnss.qmd
     - chapters/table-operations.qmd
+    - chapters/vector-analysis.qmd
+    - chapters/raster-analysis.qmd
+    - chapters/terrain-analysis.qmd
+    - chapters/density-analysis.qmd
+    - chapters/spatial-interpolation.qmd
     - chapters/network-analysis.qmd
+    - chapters/historical-gis.qmd
     - chapters/remote-sensing-history.qmd
     - chapters/remote-sensing-basics.qmd
     - chapters/remote-sensing-platforms.qmd

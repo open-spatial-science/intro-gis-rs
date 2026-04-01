@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>4&nbsp; Locations in the geospatial world – Mapping the world: an open textbook on GIS and remote sensing</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/gnss.html" rel="next">
+<link href="../chapters/spatial-data-models.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/coordinate-systems.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Locations in the geospatial world</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Mapping the world: an open textbook on GIS and remote sensing</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Geospatial World</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/spatial-data-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Geospatial data models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/coordinate-systems.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Locations in the geospatial world</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/gnss.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Global Navigation Satellite Systems</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/table-operations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Table and attribute operations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/vector-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Vector</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/raster-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Raster</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/terrain-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Digital Terrain Analysis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/density-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Density analysis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/spatial-interpolation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Spatial Interpolation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/network-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Network Analysis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/historical-gis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Historical GIS</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/remote-sensing-history.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">A brief history of remote sensing</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/remote-sensing-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Remote Sensing Basics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/remote-sensing-platforms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Remote sensing sensors and platforms</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/image-classificatiom.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Remote sensing image classification</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/remote-sensing-applications.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Remote sensing applications</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#shape-of-the-earth" id="toc-shape-of-the-earth" class="nav-link active" data-scroll-target="#shape-of-the-earth"><span class="header-section-number">4.1</span> <em>Shape of the Earth</em></a></li>
+  <li><a href="#the-rise-of-the-spherical-earth" id="toc-the-rise-of-the-spherical-earth" class="nav-link" data-scroll-target="#the-rise-of-the-spherical-earth"><span class="header-section-number">4.2</span> <em>The rise of the spherical earth</em></a></li>
+  <li><a href="#the-oblate-or-prolate-spheroid" id="toc-the-oblate-or-prolate-spheroid" class="nav-link" data-scroll-target="#the-oblate-or-prolate-spheroid"><span class="header-section-number">4.3</span> <em>The oblate or prolate spheroid?</em></a></li>
+  <li><a href="#geoid" id="toc-geoid" class="nav-link" data-scroll-target="#geoid"><span class="header-section-number">4.4</span> <em>Geoid</em></a></li>
+  <li><a href="#datum" id="toc-datum" class="nav-link" data-scroll-target="#datum"><span class="header-section-number">4.5</span> <em>Datum</em></a></li>
+  <li><a href="#geographic-coordinate-system-gcs" id="toc-geographic-coordinate-system-gcs" class="nav-link" data-scroll-target="#geographic-coordinate-system-gcs"><span class="header-section-number">4.6</span> <em>Geographic Coordinate System (GCS)</em></a></li>
+  <li><a href="#map-projection" id="toc-map-projection" class="nav-link" data-scroll-target="#map-projection"><span class="header-section-number">4.7</span> <em>Map projection</em></a></li>
+  <li><a href="#map-projection-types-based-on-distortion" id="toc-map-projection-types-based-on-distortion" class="nav-link" data-scroll-target="#map-projection-types-based-on-distortion"><span class="header-section-number">4.8</span> <em>Map projection types based on distortion</em></a></li>
+  <li><a href="#projected-planar-coordinate-systems" id="toc-projected-planar-coordinate-systems" class="nav-link" data-scroll-target="#projected-planar-coordinate-systems"><span class="header-section-number">4.9</span> <em>Projected / Planar Coordinate Systems</em></a>
+  <ul class="collapse">
+  <li><a href="#projected-coordinate-system-example-1-universal-transverse-mercator-projection-utm" id="toc-projected-coordinate-system-example-1-universal-transverse-mercator-projection-utm" class="nav-link" data-scroll-target="#projected-coordinate-system-example-1-universal-transverse-mercator-projection-utm"><span class="header-section-number">4.9.1</span> <em>Projected coordinate system example 1: Universal Transverse Mercator Projection (UTM)</em></a></li>
+  <li><a href="#projected-coordinate-system-example-2-state-plane-coordinate-system-spcs" id="toc-projected-coordinate-system-example-2-state-plane-coordinate-system-spcs" class="nav-link" data-scroll-target="#projected-coordinate-system-example-2-state-plane-coordinate-system-spcs"><span class="header-section-number">4.9.2</span> <em>Projected coordinate system example 2: State Plane Coordinate System (SPCS)</em></a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">4.10</span> References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Locations in the geospatial world</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>We live in a geospatial world, where we describe places using names, landmarks, or directions in daily lives. Across fields such as science, agriculture, business, urban planning, public health, civil engineering, and navigation, it is essential to go beyond simple descriptions and use precise, standardized systems to define and record locations on Earth surface. In such cases, we use <strong><em>coordinate systems to assign</em></strong> numerical values (such as latitude and longitude) to pinpoint every location across the globe in a systematic and consistent way.</p>
+<p>A coordinate system provides a standardized framework for recording, analyzing and sharing spatial information. It enables us to accurately capture, analyze and visualize real-world processes, whether it is to examine the migration patterns of birds, map cropland performance, monitor real-time locations of airplanes, analyze the spread of an infectious disease, or identify hot spots in a city during a heat wave. Different agencies and organizations have developed various coordinate systems suitable for different tasks, such as global navigation or local mapping.</p>
+<p>All <strong>spatial data</strong>—data with location information—is based on some form of coordinate system. To effectively use existing spatial data or create new datasets, we need to understand what coordinate systems are and how they are established. The first and essential step to develop such coordinate systems is to model the shape of the Earth. So, let’s start here.</p>
+<section id="shape-of-the-earth" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="shape-of-the-earth"><span class="header-section-number">4.1</span> <em>Shape of the Earth</em></h2>
+<p>The development of modern space technologies makes it easier to study <strong><em>Geodesy</em></strong>—the fundamental properties of the Earth, including its geometric shape, its orientation in space, its gravity field, as well as the changes of these properties over time. For instance, the <em>Earthrise</em> (Figure 1) was a photo taken by NASA astronaut&nbsp;William “Bill” Anders on December 24, 1968, during the&nbsp;Apollo 8&nbsp;mission. For the first time, the photo showed the Earth—a beautiful, fragile blue sphere—rising from the barren lunar surface, revealing its shape, location and unity in the vastness of space. Fifty years to the day after taking the photo, Anders observed, “We set out to explore the moon and instead discovered the Earth.” However, people’s curiosity about the shape of the Earth goes far back in the history, long before these space technologies were available.</p>
+<div id="fig-earthrise" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-earthrise-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch3/earthrise.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-earthrise-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.1: Earthrise. Image is obtained from Apollo Image Atlas: AS08-14-2383.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="the-rise-of-the-spherical-earth" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="the-rise-of-the-spherical-earth"><span class="header-section-number">4.2</span> <em>The rise of the spherical earth</em></h2>
+<p>Based on a few empirical observations, the ancient Greeks were able to establish a spherical earth. Aristotle (384 – 322 B.C.) provided some of the earliest empirical evidence for spherical earth, including 1) Ships disappear hull-first when they sail over the horizon; 2) Earth casts a round shadow on the moon during a lunar eclipse; 3) Different constellations are visible at different latitudes. Based on these observations, Aristotle concluded that “<em>Again, our observations of the stars make it evident,&nbsp;not only that the Earth is circular, but also that it is a circle of no&nbsp;great size. For quite a small change of position to south or north causes&nbsp;a manifest alteration of the horizon</em>” &nbsp;(Aristotle).</p>
+<p>The ancient Greeks not only established the spherical earth but also calculated the earth’s circumference. In 200 BC,&nbsp;the Greek mathematician and geographer Eratosthenes noticed that objects in Syene (the city now known as Aswan located in Egypt) casted no shadows at noon in midsummer, indicating that the sun&nbsp;was directly overhead. Meanwhile, a pillar casted a shadow at the same time in Alexandria, which is located 489 miles north of Syene. The angle between the shadow and the pillar was 7.2 degrees. Based on the idea that the earth was a sphere, Eratosthenes reasoned the angle between Alexandria and Syene at the center of the Earth had to be 7.2 degrees, which is 1/50th of 360 degrees <a href="#fig-eratosthenes" class="quarto-xref">Figure&nbsp;<span>4.2</span></a>. Based on this assumption, Eratosthenes calculated&nbsp;the circumference of the entire planet as</p>
+<p>$$\text{Circumference} = 50 \times 489 \text{ miles} = 24{,}450 \text{ miles}$$</p>
+<p>This was very close to being right (the equatorial circumference is ~24,901 miles and the polar circumference is ~24,860 miles).</p>
+<div id="fig-eratosthenes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-eratosthenes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch3/eratosthene.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eratosthenes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.2: Eratosthenes’ calculation of earth’s circumference. Source: Jan Van Sickle
+</figcaption>
+</figure>
+</div>
+<p>With the fall of Roman empire, knowledge about the shape and size of the Earth in Europe became fragmented. While Europe went through intellectual decline, the Islamic world was preserving and expanding upon Greek and Roman knowledge by translating and studying texts from these previous times (the Islamic Golden Age). Unlike figures such as Aristotle, who heavily relied on deductive logic, the Islamic scholars emphasized on empirical verification, believing that theories should match observations but not the other way around. They confirmed the spherical nature of the Earth and refined earlier calculations of Earth’s circumference. For instance, Persian scholar Al-Biruni made highly accurate calculations of Earth’s radius using trigonometry and the height of a mountain. His value of the Earth’s radius (~6340 km) was within 1% of the modern accepted mean radius of 6,371 km, or different of only 2% from the mean radius of curvature of the reference ellipsoid at the latitude of measurements (Sparavigna 2014).</p>
+</section>
+<section id="the-oblate-or-prolate-spheroid" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="the-oblate-or-prolate-spheroid"><span class="header-section-number">4.3</span> <em>The oblate or prolate spheroid?</em></h2>
+<p>It is not until the 17<sup>th</sup> century that development of physics, especially the understanding of motion and forces, drove new ideas about the shape of the Earth. René&nbsp;Descartes, the French mathematician and philosopher, proposed a prolate earth model, which is elongated at the poles and flattened at the equator (Figure 3b). Based on different underlying physics theories, Isaac Newton and Christiaan Huygens argued for the oblate Earth model—a sphere flattened at the poles and bulging at the equator (Figure 3a). In his 1687 masterpiece, <em>Philosophiae Naturalis Principia Mathematica (Mathematical Principles of Natural Philosophy)</em>, Newton calculated the radii of earth and reported that the earth is higher under the equator than at the poles, and that by an excess of about 17 miles. This value is close to the right number, which is 13 miles (Radius at the equator = 3963 miles or 6378 km; and Polar radius = 3950 miles or 6356 km). The debate between the two earth models was settled in the 18th century, when two competing French expeditions, one to the equator in Peru and another to the Arctic Circle in Lapland, were sent out to measure the length of a degree of latitude at different locations, which conclusively proved Newton’s oblate Earth model.</p>
+</section>
+<section id="geoid" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="geoid"><span class="header-section-number">4.4</span> <em>Geoid</em></h2>
+<p>The real resolution of the shape of the earth happened with the Space Age the 20<sup>th</sup> century. Satellite based earth observations provide a consistent method to measure the Earth’s shape and its subtle changes. Morden gravity missions such as the NASA&nbsp;Gravity Recovery and Climate Experiment (GRACE) mission can measure changes in the Earth’s&nbsp;gravity field, which is directly related to the distribution of mass on and within the planet, offering an invaluable method to measure the Earth’s shape. Using the Earth’s gravity field, we are now able to create a <em>Geoid</em> that is the constant gravity surface of the earth <a href="#fig-geoid" class="quarto-xref">Figure&nbsp;<span>4.3</span></a>.</p>
+<div id="fig-geoid" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-geoid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch3/geoid.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-geoid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.3: Earth’s gravity field anomalies illustrate Earth’s actual gravity field differs from the gravity field of a uniform, featureless Earth surface, highlighting variations in the strength of the gravitational force over the surface of the Earth (e.g., mountains versus ocean trenches). Image credit: NASA.
+</figcaption>
+</figure>
+</div>
+<p>The geoid is not a perfect, smooth sphere. Instead, it is a bumpy, irregular surface because the Earth’s mass is not distributed perfectly evenly. For example, areas with more mass (like large mountain ranges or denser rock underground) have a stronger gravitational pull, which causes the geoid to bulge outward. Conversely, areas with less mass (like deep ocean trenches or less dense rock) have a weaker pull, and the geoid dips inward.</p>
+<p>The most fundamental property of the <strong>geoid</strong> is that it is <strong>an&nbsp;equipotential surface</strong>, meaning that at every point on the geoid, the force of gravity is the same, and it acts perpendicular to the surface. For a surveyor, this means a plumb line (a string with a weight at one end) will always be perfectly perpendicular to the geoid at any location, and a level surface (like a calm body of water) will always be perfectly parallel to the geoid. Thus, Geoid is often defined as a <strong>hypothetical Earth surface that represents the mean sea level in the absence of winds, currents, and most tides.</strong> It is what the ocean surface would take under the influence of gravity of earth only (not affected by any force other than Earth’s gravity, e.g., wind, waves, the Moon…). The geoid is the name given to the shape that the Earth would assume if it were all measured at mean sea level - close to but NOT equivalent to actual mean sea level.</p>
+</section>
+<section id="datum" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="datum"><span class="header-section-number">4.5</span> <em>Datum</em></h2>
+<p>While the geoid is able to capture the Earth’s shape in detail, it is too complex and irregular to model or use as the reference surface for locations on the Earth surface. Thus, an ellipsoid (aka <em>spheroid</em>)–a simplified smooth surface–is used instead (Figure 5). However, the discrepancy between the geoid and ellipsoid produces a source of error to locations (Figure 5b).</p>
+<p>Here, we define the term <strong><em>datum</em></strong> as a reference surface of the earth that is used for plotting locations across the globe. In this case, an <strong><em>ellipsoid</em></strong> with the <em>origin</em> in latitude and longitude and <em>orientation</em> is used to represent datum. The&nbsp;origin&nbsp;illustrates at which the ellipsoid is tied to a known (often monumented) location on or inside Earth (not necessarily at 0 latitude 0 longitude), indicating how to fit the ellipsoid to geoid. Orientation is how we position the ellipsoid, after we tied it to a known location – we still have some limited capacity to move it around relative to geoid.</p>
+<p>Essentially, datum is a mathematical model to reference a coordinate system against (Figure 6). In reality, people use different datums for different geographical areas, because the Earth has an imperfect, lumpy shape, and no single simple mathematical model can perfectly represent it everywhere. Thus, datums are designed to be the best possible fit for a specific region or for the entire globe. For instance, surveyors and cartographers would create a datum that provided the best fit for their particular country or continent to allow them to choose a reference ellipsoid&nbsp;that most closely matched the curvature of the Earth in that specific region. This approach made mapping and surveying highly accurate within that region, but it created significant problems when trying to connect different regional systems. For example, the&nbsp;North American Datum of 1927 (NAD 27)&nbsp;was a local datum that was extremely accurate for North America but would be offset by hundreds of meters or more if used in Europe or Asia (Figure 6b).</p>
+<p>The common <strong><em>horizontal</em></strong> <strong>datums</strong> used in North America including the North American Datum of 1927 (NAD27), the North American Datum of 1983 (NAD83) and the World Geodetic System of 1984 (WGS84).</p>
+<p>The NAD27 datum was developed for measurements of the United States and North America. It has its center positioned at Meades Ranch in Kansas. The NAD83 datum was developed by the National Geodetic Survey and Canadian agencies in 1986. It is used as the datum for much data for the United States and the North American continent as a whole. In the 1990s, the&nbsp;National Geodetic Survey (NGS), in collaboration with individual states, undertook a major project to update the NAD83 datum by establishing a new, more precise network of reference points across the United States (High Accuracy Regional Network of fitted points; HARN).</p>
+<p>The WGS84 datum was developed by the U.S. Department of Defense and is used by the Global Positioning System (GPS) for locating points worldwide on Earth’s surface (a global datum). WGS84 has been revised six times since its original realization in 1987. The most recent version is&nbsp;WGS84 (G2139) implemented on 3 January 2021. Originally, the difference between WGS84 (as rolled out in 1987) and NAD83 (as first introduced in 1986) coordinates was so small that transformation was unnecessary. That is no longer the case when it comes to NAD83 2011 (2010.0) and WGS84 (G1762).</p>
+<p>In order to minimize coordinate changes over time, NAD 1983 is tied to the North American, Pacific (for Hawaii, Guam, etc.), and Marianas tectonic plates, while WGS 1984 is tied to the International Terrestrial Reference System (ITRF) which is independent of the tectonic plates. Over time, the two coordinate systems have become increasingly different and the difference can be ~1 to 2 meters within the continental United States.</p>
+<p>Similar to the horizontal datum, a <strong><em>vertical</em></strong> <strong>datum</strong> refers to a surface of zero elevation to which heights (elevations) of various points are referenced using either an ellipsoid (<strong>ellipsoidal datum</strong>) or a specific geoid (<strong>orthometric datum</strong>) as a reference surface for height. Unlike a horizontal datum, a three-dimensional ellipsoidal datum provides the foundation for accurate determination of <strong>ellipsoidal height</strong>, which is the height&nbsp;of that same point of the Earth surface is the vertical distance from that point to the&nbsp;ellipsoid. On the contrary, <strong>orthometric height</strong> in North America is defined as the vertical distance measured from adopted geoid to the ground surface height, along a line that is always a right angle to all intervening equipotential surfaces. Considering the fact that the <strong>geoid</strong> is a surface of constant gravitational potential that closely approximates the mean sea level, whenever you see elevation data described as “X” feet/m above or below sea level, it is referring to the orthometric height. A related definition is the geoid height, which is defined as the difference between the geoid and ellipsoid, describing the height of the Earth’s geoid surface above or below an idealized reference ellipsoid <a href="#fig-height" class="quarto-xref">Figure&nbsp;<span>4.4</span></a>.</p>
+<div id="fig-height" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-height-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch3/height.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-height-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.4: Definitions of elevation
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="geographic-coordinate-system-gcs" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="geographic-coordinate-system-gcs"><span class="header-section-number">4.6</span> <em>Geographic Coordinate System (GCS)</em></h2>
+<p>Once the datum is fixed, we can use the datum to define a geographic coordinate system, which is a global reference system for determining the exact position of a point on Earth. In addition to a datum, a GCS includes a prime meridian that specifies the location of 0° longitude, and an angular unit often in degrees <a href="#fig-gcs" class="quarto-xref">Figure&nbsp;<span>4.5</span></a>. <strong>Latitude</strong> (a.k.a. parallels) is used to represent the east-to-west direction and equator is defined as the starting point of 0 degree latitude. <strong>Longitude</strong> (a.k.a. meridians) is used to represent the north-to-south direction (the North Pole to the South Pole). The International Meridian Conference (1884, US) defined the use of the meridian at the Royal Observatory in Greenwich, England as the zero reference line (prime median).</p>
+<div id="fig-gcs" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gcs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch3/geographicalcoordinatesystem.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gcs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.5: Geographical coordinate system. Graticule: the spherical coordinate system as a grid of lines showing latitude and longitude. Source: wikipedia.
+</figcaption>
+</figure>
+</div>
+<p>Since each datum defines a slightly different size, shape, and position of the Earth’s reference ellipsoid, a location’s coordinates (latitude and longitude) will also change when you switch datums. A&nbsp;<strong><em>datum shift</em></strong>&nbsp;describes the difference in coordinate values for the same point on Earth when measured against two different datums. This difference can range from a few centimeters to hundreds of meters, depending on the datums involved and the location of the point <a href="#fig-datumshift" class="quarto-xref">Figure&nbsp;<span>4.6</span></a>. A <strong><em>datum transformation</em></strong>—a set of math formulas— can be used to convert point coordinates from one datum to another. However, errors up to several meters may occur during the transformation and errors accumulate with repeated transformations, because datum transformation is not an exact, one-to-one conversion but a mathematical process that uses a set of parameters (translations, rotations, and scale factors) to convert coordinates from one datum to another. These parameters are themselves estimates based on a best-fit model between the two datums, and they contain their own uncertainties. Thus, converting datums should be done only when necessary (use the fewest transformations possible), and care should be taken in choosing the best method. It is also suggested that using the same transformation each time to transform between these two datums. It is worth noting that dealing with some of the old datums may be problematic because their datum may not be well defined using the modern mathematical parameters.</p>
+<div id="fig-datumshift" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-datumshift-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch3/datumshift.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-datumshift-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.6: Datum shift between NAD27 and NAD83. Source: Wikipedia
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="map-projection" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="map-projection"><span class="header-section-number">4.7</span> <em>Map projection</em></h2>
+<p>While a geographical coordinate system (GCS) provides an accurate way to locate any point on the globe, it’s not practical for many tasks. For example, it is impossible to accurately measure distances and areas directly from a sphere or ellipsoid. To perform tasks like land surveying, field work, navigation, and urban planning, we need a flat, two-dimensional map with linear units of measure (e.g., meters or feet). This is where&nbsp;map projections&nbsp;come in. A <strong>map projection</strong> is a mathematical transformation used to convert the three-dimensional, curved surface of a GCS into a two-dimensional, flat plane <a href="#fig-erdapfel" class="quarto-xref">Figure&nbsp;<span>4.7</span></a>. This process is necessary to create a usable map, but it’s also the source of all map distortion, because it is impossible to flatten a sphere without stretching or compressing some of its features. Every map projection introduces some type of distortion—whether in shape, area, distance, or direction. Different projections are designed to preserve one or more of these properties at the expense of others, which is why cartographers choose a specific projection based on the purpose of the map.</p>
+<div id="fig-erdapfel" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-erdapfel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch3/erdapfel.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-erdapfel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.7: The Erdapfel: the oldest surviving terrestrial globe (1492) and the global map derived from Erdapfel.
+</figcaption>
+</figure>
+</div>
+<p>To make a map projection, cartographers need three foundational components: a developable surface, the aspect and points of tangency or secancy. These components define the geometric structure of the map projection. The&nbsp;<strong>developable surface</strong>&nbsp;is a geometric shape that can be flattened into a two-dimensional plane without any stretching or tearing. The most commonly used developable surfaces are the <em>cylinder, plane</em> (aka an azimuthal surface), and <em>cone</em> (Figure 11). Each of these interacts with the globe in a unique way and is better suited to particular regions or mapping purposes. This initial step is what allows a curved surface to be represented on a flat map.</p>
+<p>The&nbsp;<strong>aspect</strong>&nbsp;refers to the orientation of this developable surface in relation to the Earth’s axis of rotation. It determines how the surface is positioned (Figure 12). The three main aspects are&nbsp;<em>normal</em>&nbsp;(aligned with the axis, such as a cylinder wrapped around the equator),&nbsp;<em>transverse</em>&nbsp;(perpendicular to the axis), and&nbsp;<em>oblique</em>&nbsp;(at an angle). The choice of aspect greatly influences the pattern of distortion and determines where the areas of least distortion will be on the final map. For instance, a normal cylindrical projection is most accurate near the equator, while a transverse one is better for a north-south region.</p>
+<p>Finally, the&nbsp;points of tangency or secancy&nbsp;describe how the developable surface is positioned in relation to the globe (Figure 13). A&nbsp;tangent&nbsp;projection touches the globe at a single point (for a plane) or a single line (for a cylinder or cone). A&nbsp;secant projection intersects the globe at two lines or circles. At these specific points or lines, the map scale is true, and there is no distortion, while distortion increases as one moves away from them. Secant projections tend to distribute distortion more evenly than tangent ones by spreading out the distortion across a larger area, as the scale is true at two separate lines. This makes them useful for regional maps where balance is important.</p>
+<p>Together, these three components—developable surface, aspect, and contact points—define the structure of a projection and determine how faithfully the map represents the curved surface of the Earth. Understanding how they interact allows cartographers to choose the projection that best suits the purpose and geographic focus of the map.</p>
+</section>
+<section id="map-projection-types-based-on-distortion" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="map-projection-types-based-on-distortion"><span class="header-section-number">4.8</span> <em>Map projection types based on distortion</em></h2>
+<p>Map projections can be categorized based on the type of distortion they minimize or preserve. Since it is impossible to represent the curved surface of the Earth on a flat map without some distortion, cartographers choose projections depending on which geographic property—area, shape, distance, or direction—is most important to preserve for the map’s purpose. Based on the type of distortion they minimize, map projections are categorized into four main types:&nbsp;<em>conformal</em>,&nbsp;<em>equal-area</em>, <em>equidistant</em>, and <em>azimuthal</em> (aka true direction) projections (Figure 14).</p>
+<p>Conformal projection preserves angles and shapes locally. In these projections, the shape of small areas is maintained, but area and distance may be distorted. This means that at any point on the map, the angles are true, and the shapes of small features like coastlines and rivers are accurately represented. Thus, conformal projections are commonly used for navigational purposes because they represent compass directions accurately. However, this preservation of shape comes at the expense of area; landmasses may appear larger or smaller than they really are.&nbsp;The Mercator projection is the most famous conformal projection, widely used for marine navigation because it preserves compass directions. However, it greatly exaggerates the size of areas near the poles—for example, Greenland appears almost the same size as Africa, though it is much smaller in reality.</p>
+<p>Equal-area projection preserves the relative sizes of landmasses and other features. These projections ensure that areas are represented in correct proportion, meaning that the proportions between countries, continents, or other regions are accurate in terms of area. This makes them useful for thematic or statistical maps where comparing sizes is important (e.g., population density or forest cover). To achieve this (preserve area), these projections must distort shapes, angles, and scale and the distortion of shape is generally more pronounced the farther a location is from the center of the projection.&nbsp;</p>
+<p>Equidistant projectionpreserves distances from one or more specified points to all other points on the map. While they cannot preserve distances across the entire map, they are valuable when the focus is on a central location and its relationship to other places.&nbsp;As a result, equidistant projections are useful for applications like radio and seismic mapping where accurate distances from a central location are critical.</p>
+<p>Azimuthal or true-direction projections&nbsp;preserve accurate directions from a central point to all other locations on the map. These are often used for air route maps or polar charts, where direction from the center is more important than shape or area accuracy. A common example is the azimuthal equidistant projection centered on the North Pole, which shows all meridians as straight lines radiating from the center, making it easier to plot great circle routes—shortest paths between two points on a sphere.</p>
+<p>In addition to these projection categories, compromise projection aims to balance distortion rather than preserving any single properties (area, shape, distance or direction) perfectly. Instead, compromise projection attempts to minimize overall distortion in all properties to produce a map that is visually pleasing and balanced in accuracy across the map. These projections are especially useful when the goal is to create general reference maps, such as world maps used in textbooks, atlases, or classrooms. For example, the&nbsp;Robinson projection, developed by Arthur H. Robinson in 1963, is one of the most widely used compromise projections. It was specifically designed to create a visually balanced representation of the entire world. On the Robinson map, the shapes and sizes of continents are moderately distorted, but the distortion is distributed more evenly across the map than in more specialized projections like Mercator. It avoids the extreme stretching of landmasses near the poles that occurs in conformal projections, and it presents continents like Africa and South America in proportions that are closer to reality. While the Robinson projection doesn’t preserve true scale, shape, area, or direction, its smooth, oval appearance and balanced distortions make it highly effective for thematic and general-purpose maps where no single property needs to be perfectly accurate. In fact, it was used by the&nbsp;National Geographic <strong>Society</strong>&nbsp;for nearly three decades as their standard world map projection.</p>
+<p>It is important to remember that projection <strong><em>always</em></strong> introduce distortion. Each type of projection serves a different purpose and involves trade-offs between the various geographic properties. Choosing the right one depends on which characteristics are most essential for the map’s intended use.</p>
+</section>
+<section id="projected-planar-coordinate-systems" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="projected-planar-coordinate-systems"><span class="header-section-number">4.9</span> <em>Projected / Planar Coordinate Systems</em></h2>
+<p>Based on specific geographic coordinate system and map projection, a projected or planar coordinate system identifies locations by (x, y) coordinates (often in meters or feet) on a grid with equally spaced horizontal and vertical lines (Cartesian coordinates). Because mathematical calculations relating latitude and longitude to positions of points on a given map can become quite complicated, rectangular grids have been developed for the use of surveyors. In this way, each point may be designated merely by its distance from two perpendicular axes on the flat map (Figure 15). The Y axis normally coincides with a chosen central meridian, with y increasing north. The X axis is perpendicular to the Y axis at a latitude of origin on the central meridian, with x increasing east. X and Y coordinates are called “eastings” and “northings,” respectively. To avoid negative coordinates, we may have “false eastings” and “false northings” by adding constant values to all X and Y coordinates.</p>
+<section id="projected-coordinate-system-example-1-universal-transverse-mercator-projection-utm" class="level3" data-number="4.9.1">
+<h3 data-number="4.9.1" class="anchored" data-anchor-id="projected-coordinate-system-example-1-universal-transverse-mercator-projection-utm"><span class="header-section-number">4.9.1</span> <em>Projected coordinate system example 1: Universal Transverse Mercator Projection (UTM)</em></h3>
+<p>The&nbsp;<strong>Universal Transverse Mercator (UTM)</strong> projection&nbsp;is a widely used map projection system that applies a specific version of the&nbsp;Transverse Mercator projection&nbsp;on a global scale (Figure 16). It is designed to provide a consistent and accurate way of mapping locations anywhere on Earth by dividing the planet into a series of zones, each with its own projection. The UTM system divides the Earth between&nbsp;84°N and 80°S latitude&nbsp;into&nbsp;60 vertical zones, each&nbsp;6 degrees of longitude wide. Each zone is projected individually using a&nbsp;<em>Transverse Mercator projection</em>, which means that the cylinder used for the projection is oriented&nbsp;longitudinally (north-south), rather than wrapping around the equator like in the regular Mercator projection. This “transverse” orientation minimizes distortion along a central meridian within each zone, making it suitable for mapping narrow north–south regions. To further reduce distortion, the UTM system uses a&nbsp;<em>secant</em> version&nbsp;of the Transverse Mercator projection, meaning the projection surface intersects the globe along two standard lines. This helps keep the scale distortion to a minimum within each zone—usually less than 1 part in 1,000. Each zone in the UTM system is assigned a unique number from 1 to 60, starting at 180° longitude and moving eastward. Additionally, the system uses&nbsp;Northing and Easting&nbsp;coordinates (measured in meters) rather than latitude and longitude. To avoid negative numbers, the equator is assigned a&nbsp;false northing of 10,000,000 meters in the southern hemisphere, and the central meridian in each zone is assigned a&nbsp;false easting of 500,000 meters. The UTM system is particularly useful for&nbsp;large-scale mapping&nbsp;(e.g.&nbsp;topographic maps, engineering surveys, and military applications) because of its high positional accuracy over relatively small areas — typically within one UTM zone. However, because each zone is designed independently, maps that span multiple zones may require conversion or special handling to align correctly.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>How to calculate the UTM coordinates
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>1)&nbsp;&nbsp;&nbsp;&nbsp; Determine the UTM zone</p>
+<p>Zone = floor((Longitude + 180)/6) + 1</p>
+<p>Central Median = Zone × 6 - 183;</p>
+<p>2)&nbsp;&nbsp;&nbsp;&nbsp; Determine the (x, y) within the zone – Easting and Northing</p>
+<p>Northing – number of meters north of Equator</p>
+<p>Easting – number of meters east of central median of each zone</p>
+<p>To avoid negative numbers –</p>
+<p>False Easting: 500,000 m + Easting</p>
+<p>False Northing (for southern hemisphere): 10,000,000 m + Northing</p>
+</div>
+</div>
+</section>
+<section id="projected-coordinate-system-example-2-state-plane-coordinate-system-spcs" class="level3" data-number="4.9.2">
+<h3 data-number="4.9.2" class="anchored" data-anchor-id="projected-coordinate-system-example-2-state-plane-coordinate-system-spcs"><span class="header-section-number">4.9.2</span> <em>Projected coordinate system example 2: State Plane Coordinate System (SPCS)</em></h3>
+<p>State Plane Coordinate System (SPCS) is a grid-based system for determining coordinates of locations within the United States, designed in 1930s for large scale mapping of the US. It divides the US into over 120 zones, generally follow county boundaries, except in Alaska (Figure 17). Most states are divided into&nbsp;multiple zones—for example,&nbsp;Alaska has 10,&nbsp;Texas has 5, while&nbsp;Nebraska has only 1—to maintain high positional accuracy by limiting each zone’s geographic extent.</p>
+<p>A baseline is set south of the zone and an origin meridian to the west of the zone and coordinates are eastings and northings in feet. Each zone has its own&nbsp;<strong>projection parameters</strong>, and the choice of projection depends on the general orientation of the zone. They can use different projections depending on the orientation of the state being projected and where it is located within the US. The Lambert Conformal Conic projection is usually used for east-west oriented zones (e.g., Tennessee) while Mercator projection is generally used for north-south oriented zones (e.g., Illinois). In some cases, the&nbsp;Oblique Mercator&nbsp;projection is used, particularly for certain zones in&nbsp;Alaska&nbsp;that do not align well with standard orientations.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>The “Projection for a Purpose” Challenge
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Maps are tools, and like any tool, the best one for the job depends on the task. This is NOT just a theoretical problem. Every map, from a web map to a printed atlas, is a conscious choice to use a particular projection to serve a specific purpose. &nbsp;For the scenarios below: which properties of a map projection would be most critical for you to preserve, and why?</p>
+<p>Scenario 1 The Global Shipping Company.&nbsp;“You need to plan the most efficient routes for cargo ships traveling from Asia to the Americas.”</p>
+<p>Scenario 2 The UN Climate Change Committee.&nbsp;“You are creating a map to show the global impact of rising sea levels.”</p>
+<p>Scenario 3 The National Geographic Magazine Cartographers.&nbsp;“You are creating a detailed map of the continent of Africa for an educational atlas.”</p>
+</div>
+</div>
+</section>
+</section>
+<section id="references" class="level2" data-number="4.10">
+<h2 data-number="4.10" class="anchored" data-anchor-id="references"><span class="header-section-number">4.10</span> References</h2>
+<p>Aristotle On the Heavens. The Works of Aristotle: Oxford University Press, 297-298.</p>
+<p>Sparavigna AC. 2014. Al-Biruni and the Mathematical Geography. PHILICA.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/spatial-data-models.html" class="pagination-link" aria-label="Geospatial data models">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Geospatial data models</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/gnss.html" class="pagination-link" aria-label="Global Navigation Satellite Systems">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Global Navigation Satellite Systems</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
