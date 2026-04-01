@@ -85,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/intro.html">I Foundations of Geospatial Sciences</a></li><li class="breadcrumb-item"><a href="../chapters/map-projection.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><em>Map projection</em></span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/intro.html">I Foundations of Geospatial Sciences</a></li><li class="breadcrumb-item"><a href="../chapters/map-projection.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Map projection</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -146,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/map-projection.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><em>Map projection</em></span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Map projection</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -208,6 +208,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Network Analysis</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/historical-gis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Historical GIS</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -219,12 +225,6 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/historical-gis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Historical GIS</span></span></a>
-  </div>
-</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/remote-sensing-history.html" class="sidebar-item-text sidebar-link">
@@ -280,9 +280,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/intro.html">I Foundations of Geospatial Sciences</a></li><li class="breadcrumb-item"><a href="../chapters/map-projection.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><em>Map projection</em></span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/intro.html">I Foundations of Geospatial Sciences</a></li><li class="breadcrumb-item"><a href="../chapters/map-projection.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Map projection</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><em>Map projection</em></span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Map projection</span></h1>
 </div>
 
 
@@ -299,6 +299,22 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Learning Objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Define map projection</p>
+<p>Identify different types of map projections</p>
+<p>Describe common distortions in map projections</p>
+<p>Select appropriate map projections for given tasks or applications</p>
+</div>
+</div>
 <p>While a geographical coordinate system (GCS) provides an accurate way to locate any point on the globe, it’s not practical for many tasks. For example, it is impossible to accurately measure distances and areas directly from a sphere or ellipsoid. To perform tasks like land surveying, field work, navigation, and urban planning, we need a flat, two-dimensional map with linear units of measure (e.g., meters or feet). This is where&nbsp;map projections&nbsp;come in. A <strong>map projection</strong> is a mathematical transformation used to convert the three-dimensional, curved surface of a GCS into a two-dimensional, flat plane <a href="#fig-erdapfel" class="quarto-xref">Figure&nbsp;<span>5.1</span></a>. This process is necessary to create a usable map, but it’s also the source of all map distortion, because it is impossible to flatten a sphere without stretching or compressing some of its features. Every map projection introduces some type of distortion—whether in shape, area, distance, or direction. Different projections are designed to preserve one or more of these properties at the expense of others, which is why cartographers choose a specific projection based on the purpose of the map.</p>
 <div id="fig-erdapfel" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">

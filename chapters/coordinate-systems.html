@@ -146,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/map-projection.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><em>Map projection</em></span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Map projection</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -208,6 +208,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Network Analysis</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/historical-gis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Historical GIS</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -219,12 +225,6 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/historical-gis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Historical GIS</span></span></a>
-  </div>
-</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/remote-sensing-history.html" class="sidebar-item-text sidebar-link">
@@ -300,6 +300,22 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Learning Objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Explain the concept of a geodetic datum</p>
+<p>Describe the shape of the Earth and how it affects spatial measurements</p>
+<p>Identify common global and local datums</p>
+<p>Recognize how differences in datums can lead to positional errors in GIS data</p>
+</div>
+</div>
 <p>We live in a geospatial world, where we describe places using names, landmarks, or directions in daily lives. Across fields such as science, agriculture, business, urban planning, public health, civil engineering, and navigation, it is essential to go beyond simple descriptions and use precise, standardized systems to define and record locations on Earth surface. In such cases, we use <strong><em>coordinate systems to assign</em></strong> numerical values (such as latitude and longitude) to pinpoint every location across the globe in a systematic and consistent way.</p>
 <p>A coordinate system provides a standardized framework for recording, analyzing and sharing spatial information. It enables us to accurately capture, analyze and visualize real-world processes, whether it is to examine the migration patterns of birds, map cropland performance, monitor real-time locations of airplanes, analyze the spread of an infectious disease, or identify hot spots in a city during a heat wave. Different agencies and organizations have developed various coordinate systems suitable for different tasks, such as global navigation or local mapping.</p>
 <p>All <strong>spatial data</strong>—data with location information—is based on some form of coordinate system. To effectively use existing spatial data or create new datasets, we need to understand what coordinate systems are and how they are established. The first and essential step to develop such coordinate systems is to model the shape of the Earth. So, let’s start here.</p>
@@ -366,7 +382,7 @@ Figure&nbsp;4.3: Earth’s gravity field anomalies illustrate Earth’s actual g
 <img src="../figures/ch3/datum.gif" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-datum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.4: Datum is the ellipsoid to reference a coordinate system against. Relationship between Clarke 1866, WGS 84, GRS 80 and Geoid. Source: vertical datum transformation, National Oceanic and Atmospheric Administration
+Figure&nbsp;4.4: Datum is the ellipsoid to reference a coordinate system against. Relationship between Clarke 1866, WGS 84, GRS 80 and Geoid. Source: vertical datum transformation, National Oceanic and Atmospheric Administration.
 </figcaption>
 </figure>
 </div>
@@ -841,8 +857,8 @@ Figure&nbsp;4.8: Datum shift between NAD27 and NAD83. Source: Wikipedia
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/map-projection.html" class="pagination-link" aria-label="*Map projection*">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><em>Map projection</em></span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/map-projection.html" class="pagination-link" aria-label="Map projection">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Map projection</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
