@@ -18,7 +18,7 @@ The two essential components of geospatial data include (1) coordinates to repre
 
 Vector data organize non-spatial information in tables similar to a relational database, where each row represents one feature (point or line or polygon) and each column represents an attribute. Similar to operations within a relational database, tables can be linked through common fields ([*keys*]{.underline}), enabling the connection of multiple datasets (tables) and supporting efficient data storage and management. This linkage between spatial features and tabular records ensures that descriptive information can be systematically organized and queried using standard database operations such as selection, projection, and joins. What truly separates GIS and a conventional relational database is the incorporation of spatial data and [*spatial relationship*]{.underline}, allowing analyses based on geographic location, including proximity, adjacency, containment, and intersection, which are not possible in traditional database systems.
 
-::: callout-important
+::: callout-tip
 **Definitions**
 
 **Records**: rows in a table. Each row is associated with one feature.

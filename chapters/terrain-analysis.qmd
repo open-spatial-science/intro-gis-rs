@@ -12,7 +12,7 @@ Perform basic hydrological analysis
 
 Digital terrain analysis (DTA) refers to spatial analysis methods and techniques applied to extract information about Earth’s surface from digital elevation data. By representing the landscape in a digital format @fig-surfacemodels, GIS enables the quantitative analysis of topography, allowing researchers and practitioners to model surface processes and support decision-making. Typical applications of DTA span hydrological modeling, hazard (e.g., flood) assessment, ecological analysis, and urban planning. As such, terrain analysis forms a critical component of modern geospatial analysis and environmental science.
 
-::: callout-important
+::: callout-tip
 ## Definitions of elevation models (U.S. Geological Survey, USGS)
 
 ***Digital Elevation Model (DEM):*** refers to digital cartographic representation of the elevation of the land at regularly spaced intervals in x and y directions, using z-values referenced to a common vertical datum. DEM usually refers to the bare-earth z-values.
@@ -62,7 +62,7 @@ Hydrological analysis in GIS can be divided into two broad categories, including
 
 Hydrological analysis focusing on surface flow aims to model the flow of water across a surface to understand where the (surface) water comes from and where it is flowing to. The primary objective is to extract hydrologic information and drainage system characteristics from a DEM.
 
-::: callout-important
+::: callout-tip
 ## Drainage system
 
 ***Drainage system:*** is the area upon which water falls and the network through which it travels to ana outlet.
