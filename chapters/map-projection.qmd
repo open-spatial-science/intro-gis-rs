@@ -1,4 +1,16 @@
-# *Map projection*
+# Map projection
+
+::: callout-note
+## Learning Objectives
+
+Define map projection
+
+Identify different types of map projections
+
+Describe common distortions in map projections
+
+Select appropriate map projections for given tasks or applications
+:::
 
 While a geographical coordinate system (GCS) provides an accurate way to locate any point on the globe, it's not practical for many tasks. For example, it is impossible to accurately measure distances and areas directly from a sphere or ellipsoid. To perform tasks like land surveying, field work, navigation, and urban planning, we need a flat, two-dimensional map with linear units of measure (e.g., meters or feet). This is where map projections come in. A **map projection** is a mathematical transformation used to convert the three-dimensional, curved surface of a GCS into a two-dimensional, flat plane @fig-erdapfel. This process is necessary to create a usable map, but it's also the source of all map distortion, because it is impossible to flatten a sphere without stretching or compressing some of its features. Every map projection introduces some type of distortion—whether in shape, area, distance, or direction. Different projections are designed to preserve one or more of these properties at the expense of others, which is why cartographers choose a specific projection based on the purpose of the map.
 

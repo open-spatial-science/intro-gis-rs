@@ -23,9 +23,9 @@ book:
         - chapters/density-analysis.qmd
         - chapters/spatial-interpolation.qmd
         - chapters/network-analysis.qmd
+        - chapters/historical-gis.qmd
     - part: "III Remote Sensing"
       chapters:
-        - chapters/historical-gis.qmd
         - chapters/remote-sensing-history.qmd
         - chapters/remote-sensing-basics.qmd
         - chapters/remote-sensing-platforms.qmd

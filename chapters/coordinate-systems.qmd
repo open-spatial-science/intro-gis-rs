@@ -1,5 +1,17 @@
 # Locations in the geospatial world
 
+::: callout-note
+## Learning Objectives
+
+Explain the concept of a geodetic datum
+
+Describe the shape of the Earth and how it affects spatial measurements
+
+Identify common global and local datums
+
+Recognize how differences in datums can lead to positional errors in GIS data
+:::
+
 We live in a geospatial world, where we describe places using names, landmarks, or directions in daily lives. Across fields such as science, agriculture, business, urban planning, public health, civil engineering, and navigation, it is essential to go beyond simple descriptions and use precise, standardized systems to define and record locations on Earth surface. In such cases, we use ***coordinate systems to assign*** numerical values (such as latitude and longitude) to pinpoint every location across the globe in a systematic and consistent way.
 
 A coordinate system provides a standardized framework for recording, analyzing and sharing spatial information. It enables us to accurately capture, analyze and visualize real-world processes, whether it is to examine the migration patterns of birds, map cropland performance, monitor real-time locations of airplanes, analyze the spread of an infectious disease, or identify hot spots in a city during a heat wave. Different agencies and organizations have developed various coordinate systems suitable for different tasks, such as global navigation or local mapping.
@@ -48,7 +60,7 @@ Here, we define the term ***datum*** as a reference surface of the earth that is
 
 Essentially, datum is a mathematical model to reference a coordinate system against @fig-datum. In reality, people use different datums for different geographical areas, because the Earth has an imperfect, lumpy shape, and no single simple mathematical model can perfectly represent it everywhere. Thus, datums are designed to be the best possible fit for a specific region or for the entire globe. For instance, surveyors and cartographers would create a datum that provided the best fit for their particular country or continent to allow them to choose a reference ellipsoid that most closely matched the curvature of the Earth in that specific region. This approach made mapping and surveying highly accurate within that region, but it created significant problems when trying to connect different regional systems. For example, the North American Datum of 1927 (NAD 27) was a local datum that was extremely accurate for North America but would be offset by hundreds of meters or more if used in Europe or Asia.
 
-![Datum is the ellipsoid to reference a coordinate system against. Relationship between Clarke 1866, WGS 84, GRS 80 and Geoid. Source: vertical datum transformation, National Oceanic and Atmospheric Administration](/figures/ch3/datum.gif){#fig-datum}
+![Datum is the ellipsoid to reference a coordinate system against. Relationship between Clarke 1866, WGS 84, GRS 80 and Geoid. Source: vertical datum transformation, National Oceanic and Atmospheric Administration.](/figures/ch3/datum.gif){#fig-datum}
 
 The common ***horizontal*** **datums** used in North America including the North American Datum of 1927 (NAD27), the North American Datum of 1983 (NAD83) and the World Geodetic System of 1984 (WGS84).
 
