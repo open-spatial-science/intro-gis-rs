@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Spatial Analysis Basics: Vector – Mapping the world: an open textbook on GIS and remote sensing</title>
+<title>8&nbsp; Spatial Analysis Basics: Vector – Mapping the world: an open textbook on GIS and remote sensing</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -34,7 +34,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../chapters/raster-analysis.html" rel="next">
-<link href="../chapters/gnss.html" rel="prev">
+<link href="../chapters/table-operations.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -85,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/vector-analysis.html">II GIS and Spatial Analysis</a></li><li class="breadcrumb-item"><a href="../chapters/vector-analysis.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Vector</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/table-operations.html">II GIS and Spatial Analysis</a></li><li class="breadcrumb-item"><a href="../chapters/vector-analysis.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Vector</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -168,38 +168,44 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../chapters/table-operations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Table and attribute operations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../chapters/vector-analysis.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Vector</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Vector</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/raster-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Raster</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Raster</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/terrain-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Digital Terrain Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Digital Terrain Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/density-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Density analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Density analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/spatial-interpolation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Spatial Interpolation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Spatial Interpolation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/network-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Network Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Network Analysis</span></span></a>
   </div>
 </li>
       </ul>
@@ -216,37 +222,37 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/historical-gis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Historical GIS</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Historical GIS</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/remote-sensing-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">A brief history of remote sensing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">A brief history of remote sensing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/remote-sensing-basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Remote Sensing Basics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Remote Sensing Basics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/remote-sensing-platforms.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Remote sensing sensors and platforms</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Remote sensing sensors and platforms</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/image-classificatiom.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Remote sensing image classification</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Remote sensing image classification</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/remote-sensing-applications.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Remote sensing applications</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Remote sensing applications</span></span></a>
   </div>
 </li>
       </ul>
@@ -261,21 +267,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#spatial-relationship" id="toc-spatial-relationship" class="nav-link active" data-scroll-target="#spatial-relationship"><span class="header-section-number">7.1</span> <em>Spatial relationship</em></a></li>
-  <li><a href="#attribute-queries" id="toc-attribute-queries" class="nav-link" data-scroll-target="#attribute-queries"><span class="header-section-number">7.2</span> <em>Attribute queries</em></a></li>
-  <li><a href="#spatial-queries" id="toc-spatial-queries" class="nav-link" data-scroll-target="#spatial-queries"><span class="header-section-number">7.3</span> <em>Spatial queries</em></a></li>
-  <li><a href="#proximity-analysis" id="toc-proximity-analysis" class="nav-link" data-scroll-target="#proximity-analysis"><span class="header-section-number">7.4</span> <em>Proximity analysis</em></a></li>
-  <li><a href="#vector-overlay-operations" id="toc-vector-overlay-operations" class="nav-link" data-scroll-target="#vector-overlay-operations"><span class="header-section-number">7.5</span> <em>Vector overlay operations</em></a></li>
-  <li><a href="#spatial-join" id="toc-spatial-join" class="nav-link" data-scroll-target="#spatial-join"><span class="header-section-number">7.6</span> <em>Spatial Join</em></a></li>
+  <li><a href="#spatial-relationship" id="toc-spatial-relationship" class="nav-link active" data-scroll-target="#spatial-relationship"><span class="header-section-number">8.1</span> <em>Spatial relationship</em></a></li>
+  <li><a href="#attribute-queries" id="toc-attribute-queries" class="nav-link" data-scroll-target="#attribute-queries"><span class="header-section-number">8.2</span> <em>Attribute queries</em></a></li>
+  <li><a href="#spatial-queries" id="toc-spatial-queries" class="nav-link" data-scroll-target="#spatial-queries"><span class="header-section-number">8.3</span> <em>Spatial queries</em></a></li>
+  <li><a href="#proximity-analysis" id="toc-proximity-analysis" class="nav-link" data-scroll-target="#proximity-analysis"><span class="header-section-number">8.4</span> <em>Proximity analysis</em></a></li>
+  <li><a href="#vector-overlay-operations" id="toc-vector-overlay-operations" class="nav-link" data-scroll-target="#vector-overlay-operations"><span class="header-section-number">8.5</span> <em>Vector overlay operations</em></a></li>
+  <li><a href="#spatial-join" id="toc-spatial-join" class="nav-link" data-scroll-target="#spatial-join"><span class="header-section-number">8.6</span> <em>Spatial Join</em></a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/vector-analysis.html">II GIS and Spatial Analysis</a></li><li class="breadcrumb-item"><a href="../chapters/vector-analysis.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Vector</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/table-operations.html">II GIS and Spatial Analysis</a></li><li class="breadcrumb-item"><a href="../chapters/vector-analysis.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Vector</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Vector</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Vector</span></h1>
 </div>
 
 
@@ -311,123 +317,123 @@ ul.task-list li input[type="checkbox"] {
 <p>Understand and apply spatial join</p>
 </div>
 </div>
-<p>Spatial analysis combines information from many independent sources (layers) and derive new sets of information (results) by applying a sophisticated set of spatial operators <a href="#fig-multilayer" class="quarto-xref">Figure&nbsp;<span>7.1</span></a>.&nbsp;Spatial analysis is often considered as the most intriguing and remarkable aspect of modern GIS. Relying on spatial relationship among features, spatial analysis methods applied to vector data allow researchers and practitioners to extract meaningful patterns from geographic features, playing a crucial role in urban planning, environmental modeling, transportation networks, epidemiology, and many other fields. This chapter explores the basic spatial analysis techniques applied to vector data, detailing how <em>location</em> information is used to derive insights into spatial patterns.</p>
+<p>Spatial analysis combines information from many independent sources (layers) and derive new sets of information (results) by applying a sophisticated set of spatial operators <a href="#fig-multilayer" class="quarto-xref">Figure&nbsp;<span>8.1</span></a>.&nbsp;Spatial analysis is often considered as the most intriguing and remarkable aspect of modern GIS. Relying on spatial relationship among features, spatial analysis methods applied to vector data allow researchers and practitioners to extract meaningful patterns from geographic features, playing a crucial role in urban planning, environmental modeling, transportation networks, epidemiology, and many other fields. This chapter explores the basic spatial analysis techniques applied to vector data, detailing how <em>location</em> information is used to derive insights into spatial patterns.</p>
 <div id="fig-multilayer" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-multilayer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch6/multilayer.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multilayer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.1: Spatial analysis combines information from multiple layers to generate new information. Image credit: University of Washington Libraries.
+Figure&nbsp;8.1: Spatial analysis combines information from multiple layers to generate new information. Image credit: University of Washington Libraries.
 </figcaption>
 </figure>
 </div>
-<section id="spatial-relationship" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="spatial-relationship"><span class="header-section-number">7.1</span> <em>Spatial relationship</em></h2>
+<section id="spatial-relationship" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="spatial-relationship"><span class="header-section-number">8.1</span> <em>Spatial relationship</em></h2>
 <p>Spatial relationship describes how geographic features related to each other in space. There are several common spatial relationships, including the topological relationship (describes how features are connected regardless of their exact coordinates; see Chapter Vector data model), directional relationships (describe the relative direction of one feature to another), and distance relationships (describe how far features are from one another). Understanding spatial relationships is fundamental for many spatial analyses, including spatial queries, overlay operations and proximity analyses (discussed below).</p>
-<p>One way to examine spatial relationships between features is using the Dimensionally Extended 9-Intersection Model (DE-9IM). In this model, it defines every spatial object (or feature) has an <u><em>interior</em></u>, a <u><em>boundary</em></u>, and an <u><em>exterior</em></u> <a href="#fig-interiorexterior" class="quarto-xref">Figure&nbsp;<span>7.2</span></a>.</p>
+<p>One way to examine spatial relationships between features is using the Dimensionally Extended 9-Intersection Model (DE-9IM). In this model, it defines every spatial object (or feature) has an <u><em>interior</em></u>, a <u><em>boundary</em></u>, and an <u><em>exterior</em></u> <a href="#fig-interiorexterior" class="quarto-xref">Figure&nbsp;<span>8.2</span></a>.</p>
 <div id="fig-interiorexterior" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-interiorexterior-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch6/interiorexterior.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-interiorexterior-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.2: Interior, boundary, and exterior for different spatial objects. For points, things are even stranger: the interior is the point; the boundary is the empty set and the exterior is everything else in the plane. Image credit: postgis.net.
+Figure&nbsp;8.2: Interior, boundary, and exterior for different spatial objects. For points, things are even stranger: the interior is the point; the boundary is the empty set and the exterior is everything else in the plane. Image credit: postgis.net.
 </figcaption>
 </figure>
 </div>
-<p>Depending on this definition, the spatial relationship between spatial objects can be derived by comparing the relationship between their interiors, boundaries, and exteriors. This systematic comparison produces an intersection matrix, commonly referred to as the Clementini Matrix, which can also be represented using a text string <a href="#fig-de9im" class="quarto-xref">Figure&nbsp;<span>7.3</span></a>. The matrix provides a precise way to describe spatial relationships such as overlap, containment, adjacency, or disjointedness, and it forms the basis for many topological analyses in GIS. Then, spatial query can be accomplished based on spatial relationship described by the DE-9IM pattern derived text string.</p>
+<p>Depending on this definition, the spatial relationship between spatial objects can be derived by comparing the relationship between their interiors, boundaries, and exteriors. This systematic comparison produces an intersection matrix, commonly referred to as the Clementini Matrix, which can also be represented using a text string <a href="#fig-de9im" class="quarto-xref">Figure&nbsp;<span>8.3</span></a>. The matrix provides a precise way to describe spatial relationships such as overlap, containment, adjacency, or disjointedness, and it forms the basis for many topological analyses in GIS. Then, spatial query can be accomplished based on spatial relationship described by the DE-9IM pattern derived text string.</p>
 <div id="fig-de9im" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-de9im-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch6/DE9IM.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-de9im-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.3: Clementini matrix describes spatial relationship between two polygons. Image modified from postgis.net.
+Figure&nbsp;8.3: Clementini matrix describes spatial relationship between two polygons. Image modified from postgis.net.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="attribute-queries" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="attribute-queries"><span class="header-section-number">7.2</span> <em>Attribute queries</em></h2>
-<p>Attribute queries utilize information saved in the attribute table associated with vector data layer, rather than the spatial location of each feature. Queries are built upon Structured Query Language (SQL) principles, because the attribute tables are essentially databases. Attribute queries allow select, filter or modify features based on their attributes <a href="#fig-selection" class="quarto-xref">Figure&nbsp;<span>7.4</span></a>.</p>
+<section id="attribute-queries" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="attribute-queries"><span class="header-section-number">8.2</span> <em>Attribute queries</em></h2>
+<p>Attribute queries utilize information saved in the attribute table associated with vector data layer, rather than the spatial location of each feature. Queries are built upon Structured Query Language (SQL) principles, because the attribute tables are essentially databases. Attribute queries allow select, filter or modify features based on their attributes <a href="#fig-selection" class="quarto-xref">Figure&nbsp;<span>8.4</span></a>.</p>
 <div id="fig-selection" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-selection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch6/selection.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-selection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.4: Select counties whose area is larger than 5,000 km2 and population is larger than 100,000 in the 2010 survey.
+Figure&nbsp;8.4: Select counties whose area is larger than 5,000 km2 and population is larger than 100,000 in the 2010 survey.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="spatial-queries" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="spatial-queries"><span class="header-section-number">7.3</span> <em>Spatial queries</em></h2>
-<p>Unlike attribute queries that work on attribute table, spatial queries utilize their location or spatial relationships between features or objects <a href="#fig-spatialquery" class="quarto-xref">Figure&nbsp;<span>7.5</span></a>. Note spatial queries can be combined with attribute queries (e.g., select all parks with area &gt; 10 ha within 1 km of a river).</p>
+<section id="spatial-queries" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="spatial-queries"><span class="header-section-number">8.3</span> <em>Spatial queries</em></h2>
+<p>Unlike attribute queries that work on attribute table, spatial queries utilize their location or spatial relationships between features or objects <a href="#fig-spatialquery" class="quarto-xref">Figure&nbsp;<span>8.5</span></a>. Note spatial queries can be combined with attribute queries (e.g., select all parks with area &gt; 10 ha within 1 km of a river).</p>
 <div id="fig-spatialquery" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-spatialquery-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch6/spatialquery.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spatialquery-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.5: Select all the fire stations (blue) that are within 1 mile of hospitals (red).
+Figure&nbsp;8.5: Select all the fire stations (blue) that are within 1 mile of hospitals (red).
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="proximity-analysis" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="proximity-analysis"><span class="header-section-number">7.4</span> <em>Proximity analysis</em></h2>
-<p>Proximity analysis explores <em>what is near what.</em> It is a form of spatial query in which geographic features within a specified distance of a particular feature are selected. One method used to conduct the proximity analysis is called <u><em>Buffer</em></u>, which defines a region that is less than or equal to a distance from a feature. It creates polygons around input features by a specified distance <a href="#fig-buffer" class="quarto-xref">Figure&nbsp;<span>7.6</span></a>. Buffer analysis can be applied to point, line and polygon layers.</p>
+<section id="proximity-analysis" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="proximity-analysis"><span class="header-section-number">8.4</span> <em>Proximity analysis</em></h2>
+<p>Proximity analysis explores <em>what is near what.</em> It is a form of spatial query in which geographic features within a specified distance of a particular feature are selected. One method used to conduct the proximity analysis is called <u><em>Buffer</em></u>, which defines a region that is less than or equal to a distance from a feature. It creates polygons around input features by a specified distance <a href="#fig-buffer" class="quarto-xref">Figure&nbsp;<span>8.6</span></a>. Buffer analysis can be applied to point, line and polygon layers.</p>
 <div id="fig-buffer" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-buffer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch6/buffer.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-buffer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.6: Buffers around points, lines, and polygons. Image credit: Saylor Academy.
+Figure&nbsp;8.6: Buffers around points, lines, and polygons. Image credit: Saylor Academy.
 </figcaption>
 </figure>
 </div>
-<p>Another function that is often used with buffer analysis is called <u><em>Dissolve</em></u>. Dissolve merges overlapping or adjacent buffers into a single region <a href="#fig-dissolve" class="quarto-xref">Figure&nbsp;<span>7.7</span></a>. Note that, by definition, <u><em>Dissolve</em></u> is a vector operation that merges features based on shared attribute values or removes internal boundaries. Although it is often used with <u><em>Buffer</em></u>, it is not only associated with <u><em>Buffer</em></u>. <u><em>Dissolve</em></u> is fundamentally an attribute driven aggregation operation.</p>
+<p>Another function that is often used with buffer analysis is called <u><em>Dissolve</em></u>. Dissolve merges overlapping or adjacent buffers into a single region <a href="#fig-dissolve" class="quarto-xref">Figure&nbsp;<span>8.7</span></a>. Note that, by definition, <u><em>Dissolve</em></u> is a vector operation that merges features based on shared attribute values or removes internal boundaries. Although it is often used with <u><em>Buffer</em></u>, it is not only associated with <u><em>Buffer</em></u>. <u><em>Dissolve</em></u> is fundamentally an attribute driven aggregation operation.</p>
 <div id="fig-dissolve" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dissolve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch6/dissolve.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dissolve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.7: Buffer zones with dissolved (left) and with intact boundaries (right) showing overlapping areas. Image source: QGIS Documentation.
+Figure&nbsp;8.7: Buffer zones with dissolved (left) and with intact boundaries (right) showing overlapping areas. Image source: QGIS Documentation.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="vector-overlay-operations" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="vector-overlay-operations"><span class="header-section-number">7.5</span> <em>Vector overlay operations</em></h2>
-<p>Overlay operations superimpose multiple datasets (representing different themes) together to create new information by examining features overlap, combine, or differ <a href="#fig-overlay" class="quarto-xref">Figure&nbsp;<span>7.8</span></a>. Note that <u><em>Clip</em></u>, which cuts out feature in the input layer (or function <u><em>Clip Raster</em></u> works on raster data), works different from <u><em>Intersect</em></u>. Using <u><em>Clip</em></u>, the output layer from clip only has attribute from the input layer, while with <u><em>intersect</em></u>, attributes from both layers are inherited to the output layer.&nbsp;</p>
+<section id="vector-overlay-operations" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="vector-overlay-operations"><span class="header-section-number">8.5</span> <em>Vector overlay operations</em></h2>
+<p>Overlay operations superimpose multiple datasets (representing different themes) together to create new information by examining features overlap, combine, or differ <a href="#fig-overlay" class="quarto-xref">Figure&nbsp;<span>8.8</span></a>. Note that <u><em>Clip</em></u>, which cuts out feature in the input layer (or function <u><em>Clip Raster</em></u> works on raster data), works different from <u><em>Intersect</em></u>. Using <u><em>Clip</em></u>, the output layer from clip only has attribute from the input layer, while with <u><em>intersect</em></u>, attributes from both layers are inherited to the output layer.&nbsp;</p>
 <div id="fig-overlay" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-overlay-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch6/overlay.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-overlay-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.8: Overlay operations apply to two or multiple layers to combine, erase, modify or update features and generate a new layer. Image source: Saylor Academy.
+Figure&nbsp;8.8: Overlay operations apply to two or multiple layers to combine, erase, modify or update features and generate a new layer. Image source: Saylor Academy.
 </figcaption>
 </figure>
 </div>
-<p>Function <u><em>Merge</em></u> combines multiple input layers into one new single output without changing the features from the input datasets <a href="#fig-merge" class="quarto-xref">Figure&nbsp;<span>7.9</span></a>. All features from the input datasets will remain intact in the output data, even the features overlap.</p>
+<p>Function <u><em>Merge</em></u> combines multiple input layers into one new single output without changing the features from the input datasets <a href="#fig-merge" class="quarto-xref">Figure&nbsp;<span>8.9</span></a>. All features from the input datasets will remain intact in the output data, even the features overlap.</p>
 <div id="fig-merge" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-merge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch6/merge.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-merge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.9: Spatial analysis methods (Dissolve, Merge, and Union) that combine features.
+Figure&nbsp;8.9: Spatial analysis methods (Dissolve, Merge, and Union) that combine features.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="spatial-join" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="spatial-join"><span class="header-section-number">7.6</span> <em>Spatial Join</em></h2>
+<section id="spatial-join" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="spatial-join"><span class="header-section-number">8.6</span> <em>Spatial Join</em></h2>
 <p>Unlike the <em>Join</em> function (discussed in Chapter table and attribute operations) works on attribute tables, <u><em>spatial join</em></u> uses <strong><em>spatial relationships</em></strong> to join <strong><em>attributes</em></strong> of features from one layer to another layer. For example, you have a polygon layer of school districts and a second layer of points, representing the location of schools. By running a spatial join, you can transfer the fields in the point attribute table on school information into the school district polygon layer.</p>
 <p>Similar to the <u><em>join</em></u> function, if multiple join features are found that fulfill the spatial relationship with a single target feature, instead of containing multiple copies of the same target feature, the attributes from the multiple join features will be aggregated using a field map merge rule (a summarized spatial join). For example, when multiple schools are found within a school district (which is often the case), the total number of students in the school district will be calculated by summing each school’s number of student.</p>
 
@@ -837,13 +843,13 @@ Figure&nbsp;7.9: Spatial analysis methods (Dissolve, Merge, and Union) that comb
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/gnss.html" class="pagination-link" aria-label="Global Navigation Satellite Systems">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Global Navigation Satellite Systems</span></span>
+      <a href="../chapters/table-operations.html" class="pagination-link" aria-label="Table and attribute operations">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Table and attribute operations</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../chapters/raster-analysis.html" class="pagination-link" aria-label="Spatial Analysis Basics: Raster">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Raster</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Raster</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
