@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>3&nbsp; Geospatial data models – Mapping the world: an open textbook on GIS and remote sensing</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/coordinate-systems.html" rel="next">
+<link href="../chapters/intro.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-66c9649715f74f1e4324758aa2390964.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/intro.html">I Foundations of Geospatial Sciences</a></li><li class="breadcrumb-item"><a href="../chapters/spatial-data-models.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Geospatial data models</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Mapping the world: an open textbook on GIS and remote sensing</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">I Foundations of Geospatial Sciences</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Geospatial World</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/spatial-data-models.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Geospatial data models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/coordinate-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Locations in the geospatial world</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/map-projection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><em>Map projection</em></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/gnss.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Global Navigation Satellite Systems</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">II GIS and Spatial Analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/vector-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Vector</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/raster-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Raster</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/terrain-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Digital Terrain Analysis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/density-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Density analysis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/spatial-interpolation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Spatial Interpolation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/network-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Network Analysis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">III Remote Sensing</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/historical-gis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Historical GIS</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/remote-sensing-history.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">A brief history of remote sensing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/remote-sensing-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Remote Sensing Basics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/remote-sensing-platforms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Remote sensing sensors and platforms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/image-classificatiom.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Remote sensing image classification</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/remote-sensing-applications.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Remote sensing applications</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#geospatial-data-and-spatial-data-model" id="toc-geospatial-data-and-spatial-data-model" class="nav-link active" data-scroll-target="#geospatial-data-and-spatial-data-model"><span class="header-section-number">3.1</span> <em>Geospatial data and spatial data model</em></a></li>
+  <li><a href="#raster-data-model-the-continuous-field-view" id="toc-raster-data-model-the-continuous-field-view" class="nav-link" data-scroll-target="#raster-data-model-the-continuous-field-view"><span class="header-section-number">3.2</span> <em>Raster data model – the continuous field view</em></a>
+  <ul class="collapse">
+  <li><a href="#spatial-resolution" id="toc-spatial-resolution" class="nav-link" data-scroll-target="#spatial-resolution"><span class="header-section-number">3.2.1</span> <em>Spatial resolution</em></a></li>
+  </ul></li>
+  <li><a href="#vector-data-model-the-discrete-object-view" id="toc-vector-data-model-the-discrete-object-view" class="nav-link" data-scroll-target="#vector-data-model-the-discrete-object-view"><span class="header-section-number">3.3</span> <em>Vector data model – the discrete object view</em></a>
+  <ul class="collapse">
+  <li><a href="#limitations-of-vector-data-as-a-representation-of-real-world" id="toc-limitations-of-vector-data-as-a-representation-of-real-world" class="nav-link" data-scroll-target="#limitations-of-vector-data-as-a-representation-of-real-world"><span class="header-section-number">3.3.1</span> <em>Limitations of vector data as a representation of real world</em></a></li>
+  </ul></li>
+  <li><a href="#combining-and-complementing-raster-and-vector" id="toc-combining-and-complementing-raster-and-vector" class="nav-link" data-scroll-target="#combining-and-complementing-raster-and-vector"><span class="header-section-number">3.4</span> <em>Combining and complementing Raster and Vector</em></a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/intro.html">I Foundations of Geospatial Sciences</a></li><li class="breadcrumb-item"><a href="../chapters/spatial-data-models.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Geospatial data models</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Geospatial data models</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<blockquote class="blockquote">
+<p><em>Raster thinks in pixels, vector thinks in points. -</em> Anonymous</p>
+</blockquote>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Learning Objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Understand how geospatial data is stored in digital format</p>
+<p>Describe the pros and cons of different data models (vector vs.&nbsp;raster)</p>
+<p>Select the proper data model for specific applications</p>
+</div>
+</div>
+<section id="geospatial-data-and-spatial-data-model" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="geospatial-data-and-spatial-data-model"><span class="header-section-number">3.1</span> <em>Geospatial data and spatial data model</em></h2>
+<p>In modern society, data has become the driving force behind decision-making and innovation across nearly every sector. To effectively organize and interpret data, we employ a data model that is a conceptual framework that defines how data is represented, organized, and manipulated within a system. It dictates how information is stored, accessed, and related to other data. Essentially, data models are used to represent the reality, capturing key information about the real world, in a digital computer system.</p>
+<p>In the context of spatial science, geospatial data (aka spatial data) describe entities along with their locations on the Earth’s surface. By including the location information, spatial data not only tells <em>what</em> happens but also <em>where</em> it happens. In another word, spatial data allows us to describe and analyze patterns, relationships, and trends across space. Geospatial data model is the abstraction of real world regarding geospatial data. They define how to use geospatial data to represent the real world in a digital computer system. There are two types of geospatial data models: <strong><em>raster</em></strong> and <strong><em>vector</em></strong> <a href="#fig-datamodel" class="quarto-xref">Figure&nbsp;<span>3.1</span></a>. These two data models represent different views of the natural world: the discrete object view (vector) and the continuous field view (raster). Note that although raster and vector data models are used to represent geospatial data, they are not limited to storing spatial data. For example, graphic formats are either raster (jpeg, bitmap) or vector (pdf, eps).</p>
+<div id="fig-datamodel" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-datamodel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch2/datamodel.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-datamodel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.1: The two geospatial data models represent two views of the real world: the discrete object (vector) view and the continuous field (raster) view
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="raster-data-model-the-continuous-field-view" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="raster-data-model-the-continuous-field-view"><span class="header-section-number">3.2</span> <em>Raster data model – the continuous field view</em></h2>
+<p>Raster data model adopts the continuous field view. It uses a matrix of equally spaced (often square) cells (aka pixels) organized into rows and columns <a href="#fig-rastermodel" class="quarto-xref">Figure&nbsp;<span>3.2</span></a>. In a raster, the spatial information is stored as the location of each cell in the grid, while the phenomena or entities of interest are represented by values associated with each cell location.</p>
+<div id="fig-rastermodel" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rastermodel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch2/raster.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rastermodel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.2: Raster data model organizes data in a grid or matrix format.
+</figcaption>
+</figure>
+</div>
+<p>In raster data model, cell or pixel values represent the phenomenon portrayed by the dataset. The value for each cell can be a single number, or a list of numbers to represent different dimensions for the phenomenon at the particular location <a href="#fig-rastertype" class="quarto-xref">Figure&nbsp;<span>3.3</span></a>. Cell values can be both <strong><em>discrete</em></strong> data (aka thematic or categorical data) representing discrete phenomenon, such as landcover land use types, or <strong><em>continuous</em></strong> data representing phenomenon that progressively vary as they move across a surface, such as temperature, elevation, pollutant concentration, and population density. It is worth noting that for each cell, the associated value is considered to apply to the entire cell, ignoring within-cell variation. This may also create abrupt changes from pixel to pixel.</p>
+<div id="fig-rastertype" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rastertype-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch2/rastertype.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rastertype-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.3: Raster data can be used to represent discrete (a) and continuous (b &amp; c) phenomenon. a: land cover type in Nebraska. b: Digital elevation model (DEM) for Indian Cave State Park. c: map of air temperature. DEM data was obtained from the USGS 3D Elevation Program.
+</figcaption>
+</figure>
+</div>
+<section id="spatial-resolution" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="spatial-resolution"><span class="header-section-number">3.2.1</span> <em>Spatial resolution</em></h3>
+<p>In raster data, cell dimension defines the edge length for each square cell. The size of the cell is also called the spatial resolution of the rater data. When the cells are square and aligned with the coordinate axes, the calculation of a cell location is a simple process of counting and multiplication <a href="#fig-cellloc" class="quarto-xref">Figure&nbsp;<span>3.4</span></a>. A cell location may be calculated from the cell size, known corner coordinates, and cell row and column number.</p>
+<div id="fig-cellloc" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cellloc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch2/spatialresolution.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cellloc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.4: Cell location can be calculated using the cell size, known corner coordinates, and cell row and column number.
+</figcaption>
+</figure>
+</div>
+<p>The spatial resolution of raster data (pixel size) reflects the level of detail represented by a raster <a href="#fig-pixelsize" class="quarto-xref">Figure&nbsp;<span>3.5</span></a> <a href="remote-sensing-platforms.html#fig-niobrara" class="quarto-xref">Figure&nbsp;<span>16.6</span></a>. A raster dataset with a smaller cell size would have higher spatial resolution, thus higher spatial accuracy. However, a smaller cell size will also lead to larger file size and slower display and processing, especially for large areas. In practice, choosing the proper spatial resolution is critical and should be based on the needs of the specific application. Generally speaking, the cell must be small enough to capture the required detail, yet large enough so computer storage is manageable, and analysis can be performed efficiently. One thing to consider is that a raster dataset can always be resampled to have a larger cell size (lower spatial resolution); however, you will not obtain any greater detail by resampling your raster to have a smaller cell size. Thus, depending on your future plans for your data, it may be worthwhile to obtain and store a copy of your data at its smallest and most accurate cell size (to the extent you can manage with your resources). You can always resample it to a larger cell size to meet your project needs.</p>
+<div id="fig-pixelsize" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pixelsize-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch2/pixelsizeconcept.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pixelsize-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.5: Spatial resolution (pixel size) influences spatial accuracy, file size, and display and processing time. Source: Moore 2025.
+</figcaption>
+</figure>
+</div>
+<div id="fig-niobrara" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-niobrara-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch15/niobraraimg.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-niobrara-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.6: Airborne and satellite imagery covering the same area illustrating the difference between two spatial resolutions. Airborne data (0.6 m resolution) was obtained from the USDA NAIP program, and the satellite imagery (30 m resolution) was obtained from the Italian Space Agency PRISMA mission.
+</figcaption>
+</figure>
+</div>
+<p>Displaying large raster datasets can be slow, especially when zooming out, because the software must load the entire high-resolution dataset from disk. To improve performance,&nbsp;<strong><em>raster pyramids</em></strong>&nbsp;are used. These are precomputed, downsampled versions of the original raster at multiple levels of resolution, allowing GIS software to dynamically load only the appropriate level of detail based on the current map scale. This significantly reduces load times and enhances user interaction in map navigation. Note that building pyramids results in a small increase in the data size, because it adds the precomputed resampled versions of the raster to the data.</p>
+<p>In summary, raster data model uses continuous cells arranged into a matrix to represent the world. Using the matrix allows raster to uniformly store points, lines, polygons, and surfaces and to efficiently perform specific spatial analysis methods, such as overlay, surface analysis and statistical analysis. However, there can be spatial inaccuracies due to the limits imposed by the cell dimension and the nature of regularly spaced cell. Meanwhile, the volume of raster dataset can potentially be very large, especially when the data covers a large area or has high spatial resolution (small pixels). Overall, the world is not made of pixels, but sometimes pixels are the best way to understand and represent it.</p>
+</section>
+</section>
+<section id="vector-data-model-the-discrete-object-view" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="vector-data-model-the-discrete-object-view"><span class="header-section-number">3.3</span> <em>Vector data model – the discrete object view</em></h2>
+<p>Unlike the raster data model, vector data model utilizes the discrete object view to represent the world by treating each item as an individual object <a href="#fig-vectormodel" class="quarto-xref">Figure&nbsp;<span>3.7</span></a>. To do this, it uses three types of objects, including <em>points</em>, <em>lines</em> and <em>polygons</em>. Specifically, points are zero-dimensional geographical objects, meaning that points only represent locations in space without any length, width or area. Lines are one-dimensional geographical objects formed by connecting points, representing features with length but no width. Polygons are two-dimensional geographical objects that represent areas enclosed by a set of connected lines. Polygons can also be treated as a closed chain of points where the starting and ending points coincide, defining a boundary that encloses space.</p>
+<div id="fig-vectormodel" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-vectormodel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch2/vectormodel.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vectormodel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.7: Vector data model represents the world using points, lines and polygons. Source: GISGeography.com
+</figcaption>
+</figure>
+</div>
+<p>Vector data model uses an attribute table to store non-spatial information about objects. In an attribute table, each row represents a feature (i.e., an individual object) while each column represents one attribute associated with all the features. This attribute table provides additional information about the features that can be used for data query, analysis and visualization.</p>
+<p>Features of points, lines and polygons need to be stored separately in different layers (files), meaning that each layer can only store one type of feature but not two or more types simultaneously. All the features in one layer will share the same attributes or fields in an attribute table, and coordinate system (see details in Chapter 3).</p>
+<section id="limitations-of-vector-data-as-a-representation-of-real-world" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="limitations-of-vector-data-as-a-representation-of-real-world"><span class="header-section-number">3.3.1</span> <em>Limitations of vector data as a representation of real world</em></h3>
+<p>While vector is widely used in GIS for representing discrete features using points, lines, and polygons, vector remains an imperfect abstraction of the complex and continuous nature of the real world. One major limitation is the&nbsp;simplification of reality: real-world features often have irregular, nuanced shapes and behaviors that are reduced to mathematically idealized geometries. For instance,&nbsp;boundary generalization&nbsp;occurs when complex natural boundaries—like winding coastlines or forest edges—are simplified into straight or smoothed lines to reduce data complexity. Additionally, vector data assumes&nbsp;clearly defined boundaries, which do not always exist in nature. Transitional zones, such as the gradual shift from wetland to upland, cannot be easily captured using discrete polygon boundaries. Another issue is&nbsp;polygon inclusions, where smaller areas of different land cover types (e.g., a pond within a forest) may be omitted or improperly represented if not explicitly digitized as separate features. These limitations underscore the need to interpret vector data critically and, where appropriate, complement it with other data models for more accurate spatial analysis.</p>
+<p>One important property of vector data model is the ability to describe topology. Topology is a mathematics field that studies properties of spaces that are invariant under any continuous deformation. In geospatial science, topology studies the spatial relationship between adjacent or neighboring features, describing how features share geometry. In GIS, topology is used to (1) constrain how features share geometry. For example, adjacent polygons such as parcels have shared edges, street centerlines and census blocks share geometry, and adjacent soil polygons share edges. (2) Define and enforce data integrity rules: no gaps should exist between polygons, or there should be no overlapping features, and so on <a href="#fig-topologyerror" class="quarto-xref">Figure&nbsp;<span>3.8</span></a>. (3) Support topological relationship queries and navigation, such as to identify feature adjacency and connectivity.</p>
+<div id="fig-topologyerror" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-topologyerror-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch2/topologyerror.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-topologyerror-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.8: Topology: A key requirement for data management and integrity.
+</figcaption>
+</figure>
+</div>
+<p>In summary, vector data model is a compact data structure using points, lines and polygons to represent the real world. It can encode topology in an efficient manner and represent shape in a relatively precise way, so data can be represented at original resolution and form (no blurring with zooming in). However, compared to raster data model, vector data model utilizes a more complex data structure that location of each vertex and attributes of each feature need to be stored explicitly, and certain spatial analysis operations (e.g., overlay) are more difficult to conduct on vector data. Also, it may be less efficient to represent continuous phenomenon on a surface, such as elevation variation or temperature or pollution distribution. Note that people can and do use vector to represent continuous data, such as contour lines (it may just be less convenient and efficient than raster data model in many cases).&nbsp;</p>
+</section>
+</section>
+<section id="combining-and-complementing-raster-and-vector" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="combining-and-complementing-raster-and-vector"><span class="header-section-number">3.4</span> <em>Combining and complementing Raster and Vector</em></h2>
+<p>Raster and vector are two data models that can be used to abstract the real world in geospatial sciences. They utilize different perspectives (continuous field view vs.&nbsp;discrete object view) for abstraction. The same phenomenon can be represented and stored using either raster or vector, depending on the purpose of the project or specific application. In practice, it is common that both raster and vector data models are used in one project representing different types of data. For instance, in a smart city application, information such as land use/land cover type and elevation can be stored using raster data model while data such as road network, ownership and tax parcel framework can be managed using vector data model. Meanwhile, data can be converted between raster and vector when needed.&nbsp; &nbsp;</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Tips for working with spatial data
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>Tip 1 Organize spatial data</em> (e.g., in ArcGIS)</p>
+<p>Use organized folder</p>
+<p>Be aware of where you are saving your files – the default location is NOT a good place.</p>
+<p>Always mange geospatial datasets like geodatabase and shapefiles in GIS software, e.g., ArcCatalog or ArcGIS pro Catalog tool. Do not use Windows explorer to manipulate the files.</p>
+<p>Name files with descriptive names.</p>
+<p><em>Tip 2 Name your file</em></p>
+<p>Although Windows permits spaces in file and folder names, in GIS they are a BAD IDEA. They often work, but sometimes a certain program or function will fail if it encounters a space in a folder name. – Avoid spaces anywhere in folder/file names even when they’re allowed!</p>
+<p>Use letters, numbers, or underscore only (no dash)</p>
+<p>Always start the name with letters</p>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/intro.html" class="pagination-link" aria-label="The Geospatial World">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Geospatial World</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/coordinate-systems.html" class="pagination-link" aria-label="Locations in the geospatial world">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Locations in the geospatial world</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
