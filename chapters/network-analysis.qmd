@@ -1,0 +1,32 @@
+# Network Analysis
+
+::: callout-note
+## Learning Objectives
+
+Describe the basic components of a network
+
+Perform basic network analysis tasks
+
+Interpret the results of network analyses in practical context
+:::
+
+Network analysis in GIS is conceptually built upon graph theory, a branch of mathematics that studies relationships between connected elements @fig-sevenbridges. In graph theory, network is defined as a system of interconnected elements, such as edges (lines) and junctions (points), that represent possible routs from one location to another. Unlike other spatial analysis methods that mostly rely on Euclidean distance in two- or three-dimensional space, network analysis operates on connected paths to analyze movement and connectivity along linear features such as roads, rivers, or utility lines.
+
+Note that GIS software typically handles the “heavy-lifting” part (the graph theory algorithms) automatically, understanding the underlying graph structure may further help explain how network analysis works. In this chapter, we will skip the mathematics behind the scene by focusing on understanding the basic concepts and their applications in a GIS setting. This topic (graph theory) is studied in discrete mathematics or computer science (e.g., the Dijkstra algorithm used to find the shortest distance) if you are interested in learning more.
+
+![Euler and the seven bridges of Königsberg (1736). Can you traverse all seven bridges in a single trip without doubling back, and return to your starting point? Image credit: Wikipedia – seven bridges of Königsberg.
+](/figures/ch11/sevenbridges.png){#fig-sevenbridges}
+
+In GIS, there are two types of network, including geometric network and transportation network. Geometric network, such as utility and river networks, allow travel on edges in only one direction at a time. In contrast, transportation network allow agents to decide the direction of traversal as well as the destination.
+
+Network analysis can be used to address solutions relate to calculate the shortest distance (navigation), find the nearest facility, identify service area of a facility based on travel time and distance etc. When combined with some other spatial analysis methods we discussed (such as the density analysis), network analysis can also be applied to more complex problems like the location-allocation, where the goal is to determine optimal locations for facilities in order to best serve a population @fig-crimedensity.
+
+![Crime density and police service coverage analysis in Lincoln Nebraska. Police service coverage is estimated using a 5-minute drive time from any of the stations. ](/figures/ch11/crimedensity.png){#fig-crimedensity}
+
+In this chapter, let’s use a simple example to illustrate the network analysis. We want to start a new pizza restaurant in Lincoln, providing dine-in and fast delivery (within 5-minute drive distance) services. We want to find the best location in the city to avoid competing with current restaurants and have a big enough population to service.
+
+We used the census block data to get the population distribution from the city. The locations of current pizza restaurants were found on Google Map @fig-pizzaloc.
+
+Now, using network analysis, we are able to find the best locations for our new pizza restaurants (shown as red points on the map) and our potential service areas.
+
+![Find the best location for our pizza restaurant. Left: distributions of current pizza restaurants (orange points) and census blocks (blue dots). The grey area indicates the 5-minute service zone covered by the current pizza restaurants. Right: “best” locations for our new pizza restaurants (red) and potential service areas.](/figures/ch11/pizzaloc.png){#fig-pizzaloc}

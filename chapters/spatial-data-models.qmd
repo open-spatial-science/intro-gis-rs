@@ -1,0 +1,41 @@
+# Geospatial data models
+
+> *Raster thinks in pixels, vector thinks in points. -* Anonymous
+
+::: callout-note
+## Learning Objectives
+
+Understand how geospatial data is stored in digital format
+
+Describe the pros and cons of different data models (vector vs. raster)
+
+Select the proper data model for specific applications
+:::
+
+## *Geospatial data and spatial data model*
+
+In modern society, data has become the driving force behind decision-making and innovation across nearly every sector. To effectively organize and interpret data, we employ a data model that is a conceptual framework that defines how data is represented, organized, and manipulated within a system. It dictates how information is stored, accessed, and related to other data. Essentially, data models are used to represent the reality, capturing key information about the real world, in a digital computer system.
+
+In the context of spatial science, geospatial data (aka spatial data) describe entities along with their locations on the Earth’s surface. By including the location information, spatial data not only tells *what* happens but also *where* it happens. In another word, spatial data allows us to describe and analyze patterns, relationships, and trends across space. Geospatial data model is the abstraction of real world regarding geospatial data. They define how to use geospatial data to represent the real world in a digital computer system. There are two types of geospatial data models: ***raster*** and ***vector***. These two data models represent different views of the natural world: the discrete object view (vector) and the continuous field view (raster). Note that although raster and vector data models are used to represent geospatial data, they are not limited to storing spatial data. For example, graphic formats are either raster (jpeg, bitmap) or vector (pdf, eps).
+
+::: callout-tip
+## Tips for working with spatial data
+
+*Tip 1 Organize spatial data* (e.g., in ArcGIS)
+
+Use organized folder
+
+Be aware of where you are saving your files – the default location is NOT a good place.
+
+Always mange geospatial datasets like geodatabase and shapefiles in GIS software, e.g., ArcCatalog or ArcGIS pro Catalog tool. Do not use Windows explorer to manipulate the files.
+
+Name files with descriptive names.
+
+*Tip 2 Name your file*
+
+Although Windows permits spaces in file and folder names, in GIS they are a BAD IDEA. They often work, but sometimes a certain program or function will fail if it encounters a space in a folder name. – Avoid spaces anywhere in folder/file names even when they’re allowed!
+
+Use letters, numbers, or underscore only (no dash)
+
+Always start the name with letters
+:::

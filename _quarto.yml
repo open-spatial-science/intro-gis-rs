@@ -8,7 +8,14 @@ book:
   chapters:
     - index.qmd
     - chapters/intro.qmd
+    - chapters/spatial-data-models.qmd
+    - chapters/table-operations.qmd
+    - chapters/network-analysis.qmd
+    - chapters/remote-sensing-history.qmd
     - chapters/remote-sensing-basics.qmd
+    - chapters/remote-sensing-platforms.qmd
+    - chapters/image-classificatiom.qmd
+    - chapters/remote-sensing-applications.qmd
     - summary.qmd
     - references.qmd
 
