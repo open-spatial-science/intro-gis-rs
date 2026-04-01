@@ -36,7 +36,7 @@ Attribute table can take data in various types, including object identifier (obj
 
 ![Date types of attribute table of tree locations on the University of Nebraska-Lincoln East Campus.](/figures/ch5/treetable.png){#fig-treetable}
 
-Once imported into GIS platform (such as ArcGIS, @attributetable), you can apply basic table edits to the attribute table, including add or delete field, calculate values for a field, delete a row (which will delete the associated feature in vector data), and edit a cell value.
+Once imported into GIS platform (such as ArcGIS, @fig-attributetable), you can apply basic table edits to the attribute table, including add or delete field, calculate values for a field, delete a row (which will delete the associated feature in vector data), and edit a cell value.
 
 ![Basic table operations applied to attribute table within ArcGIS](/figures/ch5/attributetable.png){#fig-attributetable}
 

@@ -16,7 +16,7 @@ book:
         - chapters/gnss.qmd
     - part: "II GIS and Spatial Analysis"
       chapters:
-      #  - chapters/table-operations.qmd
+        - chapters/table-operations.qmd
         - chapters/vector-analysis.qmd
         - chapters/raster-analysis.qmd
         - chapters/terrain-analysis.qmd

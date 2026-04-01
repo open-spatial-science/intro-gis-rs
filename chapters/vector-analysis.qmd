@@ -18,7 +18,7 @@ Spatial analysis combines information from many independent sources (layers) and
 
 ![Spatial analysis combines information from multiple layers to generate new information. Image credit: University of Washington Libraries.](/figures/ch6/multilayer.png){#fig-multilayer}
 
-## *Spatial relationship* 
+## *Spatial relationship*
 
 Spatial relationship describes how geographic features related to each other in space. There are several common spatial relationships, including the topological relationship (describes how features are connected regardless of their exact coordinates; see Chapter Vector data model), directional relationships (describe the relative direction of one feature to another), and distance relationships (describe how far features are from one another). Understanding spatial relationships is fundamental for many spatial analyses, including spatial queries, overlay operations and proximity analyses (discussed below).
 
@@ -60,7 +60,7 @@ Overlay operations superimpose multiple datasets (representing different themes)
 
 Function [*Merge*]{.underline} combines multiple input layers into one new single output without changing the features from the input datasets @fig-merge. All features from the input datasets will remain intact in the output data, even the features overlap.
 
-![Spatial analysis methods (Dissolve, Merge, and Union) that combine features. ](/figures/ch6/merge.png){#fig-merge}
+![Spatial analysis methods (Dissolve, Merge, and Union) that combine features.](/figures/ch6/merge.png){#fig-merge}
 
 ## *Spatial Join*
 
