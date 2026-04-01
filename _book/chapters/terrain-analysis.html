@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Digital Terrain Analysis – Mapping the world: an open textbook on GIS and remote sensing</title>
+<title>9&nbsp; Digital Terrain Analysis – Mapping the world: an open textbook on GIS and remote sensing</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -34,7 +34,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../chapters/density-analysis.html" rel="next">
-<link href="../chapters/table-operations.html" rel="prev">
+<link href="../chapters/raster-analysis.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -85,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/terrain-analysis.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Digital Terrain Analysis</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/terrain-analysis.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Digital Terrain Analysis</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -130,74 +130,104 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../chapters/coordinate-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Locations in the geospatial world</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/gnss.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Global Navigation Satellite Systems</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../chapters/table-operations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Table and attribute operations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Table and attribute operations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/vector-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Vector</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/raster-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Raster</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/terrain-analysis.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Digital Terrain Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Digital Terrain Analysis</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/density-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Density analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Density analysis</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/spatial-interpolation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spatial Interpolation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Spatial Interpolation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/network-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Network Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Network Analysis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/historical-gis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Historical GIS</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/remote-sensing-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">A brief history of remote sensing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">A brief history of remote sensing</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/remote-sensing-basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Remote Sensing Basics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Remote Sensing Basics</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/remote-sensing-platforms.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Remote sensing sensors and platforms</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Remote sensing sensors and platforms</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/image-classificatiom.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Remote sensing image classification</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Remote sensing image classification</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/remote-sensing-applications.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Remote sensing applications</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Remote sensing applications</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">References</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">References</span></span></a>
   </div>
 </li>
     </ul>
@@ -210,9 +240,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#attributes-derived-from-dem" id="toc-attributes-derived-from-dem" class="nav-link active" data-scroll-target="#attributes-derived-from-dem"><span class="header-section-number">5.1</span> <em>Attributes derived from DEM</em></a></li>
-  <li><a href="#hydrological-analysis-surface-water" id="toc-hydrological-analysis-surface-water" class="nav-link" data-scroll-target="#hydrological-analysis-surface-water"><span class="header-section-number">5.2</span> <em>Hydrological analysis – surface water</em></a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">5.3</span> <strong>References</strong></a></li>
+  <li><a href="#attributes-derived-from-dem" id="toc-attributes-derived-from-dem" class="nav-link active" data-scroll-target="#attributes-derived-from-dem"><span class="header-section-number">9.1</span> <em>Attributes derived from DEM</em></a></li>
+  <li><a href="#hydrological-analysis-surface-water" id="toc-hydrological-analysis-surface-water" class="nav-link" data-scroll-target="#hydrological-analysis-surface-water"><span class="header-section-number">9.2</span> <em>Hydrological analysis – surface water</em></a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">9.3</span> <strong>References</strong></a></li>
   </ul>
 </nav>
     </div>
@@ -221,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Digital Terrain Analysis</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Digital Terrain Analysis</span></h1>
 </div>
 
 
@@ -253,7 +283,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Perform basic hydrological analysis</p>
 </div>
 </div>
-<p>Digital terrain analysis (DTA) refers to spatial analysis methods and techniques applied to extract information about Earth’s surface from digital elevation data. By representing the landscape in a digital format <a href="#fig-surfacemodels" class="quarto-xref">Figure&nbsp;<span>5.1</span></a>, GIS enables the quantitative analysis of topography, allowing researchers and practitioners to model surface processes and support decision-making. Typical applications of DTA span hydrological modeling, hazard (e.g., flood) assessment, ecological analysis, and urban planning. As such, terrain analysis forms a critical component of modern geospatial analysis and environmental science.</p>
+<p>Digital terrain analysis (DTA) refers to spatial analysis methods and techniques applied to extract information about Earth’s surface from digital elevation data. By representing the landscape in a digital format <a href="#fig-surfacemodels" class="quarto-xref">Figure&nbsp;<span>9.1</span></a>, GIS enables the quantitative analysis of topography, allowing researchers and practitioners to model surface processes and support decision-making. Typical applications of DTA span hydrological modeling, hazard (e.g., flood) assessment, ecological analysis, and urban planning. As such, terrain analysis forms a critical component of modern geospatial analysis and environmental science.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -277,82 +307,82 @@ ul.task-list li input[type="checkbox"] {
 <img src="../figures/ch8/surfacemodel.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-surfacemodels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.1: Different surface models (DEM, TIN, and Contours) offer complementary information about topography. Left: DEM and TIN. Right: DEM and contours. DEM of the Indican Cave State Park in Nebraska was retrieved from the USGS 3DEP program.
+Figure&nbsp;9.1: Different surface models (DEM, TIN, and Contours) offer complementary information about topography. Left: DEM and TIN. Right: DEM and contours. DEM of the Indican Cave State Park in Nebraska was retrieved from the USGS 3DEP program.
 </figcaption>
 </figure>
 </div>
-<section id="attributes-derived-from-dem" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="attributes-derived-from-dem"><span class="header-section-number">5.1</span> <em>Attributes derived from DEM</em></h2>
+<section id="attributes-derived-from-dem" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="attributes-derived-from-dem"><span class="header-section-number">9.1</span> <em>Attributes derived from DEM</em></h2>
 <p>DTA is implemented on DEM in order to derive various terrain attributes include:</p>
-<p><u><em>Slope</em></u> – describes the maximum rate of change in value from each pixel to its neighbors, measuring the steepest direction of elevation change. In this case, the maximum change in elevation over the distance between the center cell and its eight neighbors identifies the steepest downhill descent from the cell <a href="#fig-slope" class="quarto-xref">Figure&nbsp;<span>5.2</span></a>. The lower the slope value, the flatter the terrain; the higher the slope value, the steeper the terrain. Note that slope often does NOT fall parallel to the rater rows or columns.</p>
+<p><u><em>Slope</em></u> – describes the maximum rate of change in value from each pixel to its neighbors, measuring the steepest direction of elevation change. In this case, the maximum change in elevation over the distance between the center cell and its eight neighbors identifies the steepest downhill descent from the cell <a href="#fig-slope" class="quarto-xref">Figure&nbsp;<span>9.2</span></a>. The lower the slope value, the flatter the terrain; the higher the slope value, the steeper the terrain. Note that slope often does NOT fall parallel to the rater rows or columns.</p>
 <div id="fig-slope" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-slope-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch8/slope.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-slope-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.2: Slope calculation and results
+Figure&nbsp;9.2: Slope calculation and results
 </figcaption>
 </figure>
 </div>
-<p><u><em>Aspect</em></u> – calculates downslope direction of the maximum rate of change in value from each cell to its neighbors. It describes the direction of the slope, which is the direction that the slope ‘faces.’ In ArcGIS, Aspect is measured clockwise in degrees from 0 (due north) to 360 (again due north) in full circle <a href="#fig-aspect" class="quarto-xref">Figure&nbsp;<span>5.3</span></a>. Flat areas having no downslope direction are given a value of -1.</p>
+<p><u><em>Aspect</em></u> – calculates downslope direction of the maximum rate of change in value from each cell to its neighbors. It describes the direction of the slope, which is the direction that the slope ‘faces.’ In ArcGIS, Aspect is measured clockwise in degrees from 0 (due north) to 360 (again due north) in full circle <a href="#fig-aspect" class="quarto-xref">Figure&nbsp;<span>9.3</span></a>. Flat areas having no downslope direction are given a value of -1.</p>
 <div id="fig-aspect" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-aspect-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch8/aspect.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-aspect-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.3: Aspect. Atan2: The 2-argument arctangent (-𝛑 &lt; 𝛉 &lt; 𝛑) (designed to turn Cartesian coordinate (x, y) to polar coordinates (𝛉, r)).
+Figure&nbsp;9.3: Aspect. Atan2: The 2-argument arctangent (-𝛑 &lt; 𝛉 &lt; 𝛑) (designed to turn Cartesian coordinate (x, y) to polar coordinates (𝛉, r)).
 </figcaption>
 </figure>
 </div>
-<p><u><em>Hillshade</em></u> – is a visualization technique that simulates the illumination of a surface by calculating light intensity values for each cell in a raster dataset. The resulting image represents variations in light and shadow as shades of gray, typically ranging from 0 (dark) to 255 (bright). This method enhances the three-dimensional appearance of terrain, making surface features easier to interpret <a href="#fig-hillshade" class="quarto-xref">Figure&nbsp;<span>5.4</span></a>. Hillshade is particularly useful for analysis and cartographic display, especially when combined with transparency to overlay other spatial data.</p>
+<p><u><em>Hillshade</em></u> – is a visualization technique that simulates the illumination of a surface by calculating light intensity values for each cell in a raster dataset. The resulting image represents variations in light and shadow as shades of gray, typically ranging from 0 (dark) to 255 (bright). This method enhances the three-dimensional appearance of terrain, making surface features easier to interpret <a href="#fig-hillshade" class="quarto-xref">Figure&nbsp;<span>9.4</span></a>. Hillshade is particularly useful for analysis and cartographic display, especially when combined with transparency to overlay other spatial data.</p>
 <div id="fig-hillshade" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-hillshade-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch8/hillshade.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hillshade-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.4: Hillshade enhances the visualization of a surface for analysis or graphical display.
+Figure&nbsp;9.4: Hillshade enhances the visualization of a surface for analysis or graphical display.
 </figcaption>
 </figure>
 </div>
-<p><u><em>Viewshed</em></u> – determines which locations on a surface (raster layer) are visible from a set of observer points (additional layer). Using elevation data, the analysis evaluates line-of-sight between each observer and surrounding cells to identify visible areas. The output is a raster in which each cell is assigned a value indicating the number of observer locations from which that cell can be seen <a href="#fig-viewshed" class="quarto-xref">Figure&nbsp;<span>5.5</span></a>. This allows users to assess visibility patterns across the landscape, which is useful in applications such as site planning, telecommunications, and landscape assessment.</p>
+<p><u><em>Viewshed</em></u> – determines which locations on a surface (raster layer) are visible from a set of observer points (additional layer). Using elevation data, the analysis evaluates line-of-sight between each observer and surrounding cells to identify visible areas. The output is a raster in which each cell is assigned a value indicating the number of observer locations from which that cell can be seen <a href="historical-gis.html#fig-viewshed" class="quarto-xref">Figure&nbsp;<span>13.1</span></a>. This allows users to assess visibility patterns across the landscape, which is useful in applications such as site planning, telecommunications, and landscape assessment.</p>
 <div id="fig-viewshed" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-viewshed-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch8/viewshed.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-viewshed-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.5: Viewshed indicates how many observation points can see the location.
+Figure&nbsp;9.5: Viewshed indicates how many observation points can see the location.
 </figcaption>
 </figure>
 </div>
-<p><u><em>Area solar radiation</em></u> – calculates incoming solar radiation from a raster surface <a href="#fig-areasolarradiation" class="quarto-xref">Figure&nbsp;<span>5.6</span></a>. The method considers factors such as slope, aspect, surface orientation, and the position of the sun to estimate spatial variations in insolation. Because the calculation accounts for changes in solar angle over time and the effects of terrain shading, it can be computationally intensive, especially for large datasets or fine-resolution surfaces (can take hours to days!). This type of analysis is commonly used in studies of energy balance, vegetation patterns, and solar energy potential.</p>
+<p><u><em>Area solar radiation</em></u> – calculates incoming solar radiation from a raster surface <a href="#fig-areasolarradiation" class="quarto-xref">Figure&nbsp;<span>9.6</span></a>. The method considers factors such as slope, aspect, surface orientation, and the position of the sun to estimate spatial variations in insolation. Because the calculation accounts for changes in solar angle over time and the effects of terrain shading, it can be computationally intensive, especially for large datasets or fine-resolution surfaces (can take hours to days!). This type of analysis is commonly used in studies of energy balance, vegetation patterns, and solar energy potential.</p>
 <div id="fig-areasolarradiation" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-areasolarradiation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch8/areasolarradiation.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-areasolarradiation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.6: Elevation (left) and area solar radiation (right)
+Figure&nbsp;9.6: Elevation (left) and area solar radiation (right)
 </figcaption>
 </figure>
 </div>
-<p><u><em>Curvature</em></u> – describes the shape of the land surface and characterizes whether a slope is concave or convex <a href="#fig-curvature" class="quarto-xref">Figure&nbsp;<span>5.7</span></a>. Mathematically, curvature is derived by calculating the&nbsp;second derivative&nbsp;of the surface, often described as the “slope of the slope.” In hydrological analysis focusing on surface water, curvature determines acceleration/deceleration and convergence/divergence of flow across a surface. This measure helps identify areas where the terrain is bending upward (convex) or downward (concave), offering additional insight beyond slope and aspect in terrain analysis.</p>
+<p><u><em>Curvature</em></u> – describes the shape of the land surface and characterizes whether a slope is concave or convex <a href="#fig-curvature" class="quarto-xref">Figure&nbsp;<span>9.7</span></a>. Mathematically, curvature is derived by calculating the&nbsp;second derivative&nbsp;of the surface, often described as the “slope of the slope.” In hydrological analysis focusing on surface water, curvature determines acceleration/deceleration and convergence/divergence of flow across a surface. This measure helps identify areas where the terrain is bending upward (convex) or downward (concave), offering additional insight beyond slope and aspect in terrain analysis.</p>
 <div id="fig-curvature" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-curvature-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch8/curvature.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-curvature-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.7: Curvature describes whether a slope is concave or convex. Figure adapted from Szypuła, B. (2017).
+Figure&nbsp;9.7: Curvature describes whether a slope is concave or convex. Figure adapted from Szypuła, B. (2017).
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="hydrological-analysis-surface-water" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="hydrological-analysis-surface-water"><span class="header-section-number">5.2</span> <em>Hydrological analysis – surface water</em></h2>
+<section id="hydrological-analysis-surface-water" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="hydrological-analysis-surface-water"><span class="header-section-number">9.2</span> <em>Hydrological analysis – surface water</em></h2>
 <p>Hydrological analysis in GIS can be divided into two broad categories, including surface water and ground water processes. While surface water analysis focuses on modeling the amount of water that travels downstream, ground water analysis deals with subsurface processes such as infiltration, drainage and recharge. Surface flow is directly affected by landscape topography, When gravity was the only force that drives flow of surface water. In this section, we will focus on surface water processes, whereas ground water dynamics require different data and modeling approaches.&nbsp;</p>
 <p>Hydrological analysis focusing on surface flow aims to model the flow of water across a surface to understand where the (surface) water comes from and where it is flowing to. The primary objective is to extract hydrologic information and drainage system characteristics from a DEM.</p>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -374,64 +404,64 @@ Figure&nbsp;5.7: Curvature describes whether a slope is concave or convex. Figur
 </div>
 </div>
 <p>A typical hydrological analysis focusing on surface flow include condition DEM, flow direction, flow accumulation, stream threshold, place outlets, watershed.</p>
-<p><u><em>Condition DEM</em></u> – the first step in applying hydrological analysis using DEM data is condition DEM or <u><em>pit filling</em></u>. This process is used to remove anomalies and erroneous values within a DEM to fill up water over depressions to force flow, because a derived drainage network may be discontinuous if sinks are not filled <a href="#fig-pitfilling" class="quarto-xref">Figure&nbsp;<span>5.8</span></a>. However, once applied, data and drainage are being altered. However, since pit filling changes the landscape artificially, special attention needs to be paid toward the characteristics of the terrain <a href="#fig-pitfilling" class="quarto-xref">Figure&nbsp;<span>5.8</span></a>.</p>
+<p><u><em>Condition DEM</em></u> – the first step in applying hydrological analysis using DEM data is condition DEM or <u><em>pit filling</em></u>. This process is used to remove anomalies and erroneous values within a DEM to fill up water over depressions to force flow, because a derived drainage network may be discontinuous if sinks are not filled <a href="#fig-pitfilling" class="quarto-xref">Figure&nbsp;<span>9.8</span></a>. However, once applied, data and drainage are being altered. However, since pit filling changes the landscape artificially, special attention needs to be paid toward the characteristics of the terrain <a href="#fig-pitfilling" class="quarto-xref">Figure&nbsp;<span>9.8</span></a>.</p>
 <div id="fig-pitfilling" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pitfilling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch8/pitfilling.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pitfilling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.8: Pit filling in GIS (left) and beware of characteristics of the uneven terrain (right). Top Left: A DEM without sinks filled. Water enters the sink, but does not leave. Bottom Left A DEM with the sinks filled. Water runs over the sink and continues downstream. Panels on the left adapted from Jacoby et al., 2011. Right figure shows the landscape of the Nebraska Sandhills.
+Figure&nbsp;9.8: Pit filling in GIS (left) and beware of characteristics of the uneven terrain (right). Top Left: A DEM without sinks filled. Water enters the sink, but does not leave. Bottom Left A DEM with the sinks filled. Water runs over the sink and continues downstream. Panels on the left adapted from Jacoby et al., 2011. Right figure shows the landscape of the Nebraska Sandhills.
 </figcaption>
 </figure>
 </div>
-<p><u><em>Flow direction</em></u> – determines the direction of flow from every cell in the DEM. An eight-direction (D8) flow model (Jenson and Domingue 1988) is often used <a href="#fig-flowdirection" class="quarto-xref">Figure&nbsp;<span>5.9</span></a>. Again, we only model surface flow here, and the ground flow is different from the surface flow. Flow directions are hard to specify on flat land surface. To solve this, you need to either manually specify a flow direction applied to flat area, or use a larger cell size or neighborhood to calculate the flow.</p>
+<p><u><em>Flow direction</em></u> – determines the direction of flow from every cell in the DEM. An eight-direction (D8) flow model (Jenson and Domingue 1988) is often used <a href="#fig-flowdirection" class="quarto-xref">Figure&nbsp;<span>9.9</span></a>. Again, we only model surface flow here, and the ground flow is different from the surface flow. Flow directions are hard to specify on flat land surface. To solve this, you need to either manually specify a flow direction applied to flat area, or use a larger cell size or neighborhood to calculate the flow.</p>
 <div id="fig-flowdirection" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-flowdirection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch8/flowdirection.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-flowdirection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.9: Eight-direction flow model. Image credit: gisgeography.com
+Figure&nbsp;9.9: Eight-direction flow model. Image credit: gisgeography.com
 </figcaption>
 </figure>
 </div>
-<p>Note that built features (e.g., ditches, culverts) may alter flow directions that are not represented by terrain <a href="#fig-builtfeatures" class="quarto-xref">Figure&nbsp;<span>5.10</span></a>.</p>
+<p>Note that built features (e.g., ditches, culverts) may alter flow directions that are not represented by terrain <a href="#fig-builtfeatures" class="quarto-xref">Figure&nbsp;<span>9.10</span></a>.</p>
 <div id="fig-builtfeatures" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-builtfeatures-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch8/builtfeatures.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-builtfeatures-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.10: Built features affect flow direction. Figure is adapted from Black and Luce (2013).
+Figure&nbsp;9.10: Built features affect flow direction. Figure is adapted from Black and Luce (2013).
 </figcaption>
 </figure>
 </div>
-<p><u><em>Flow accumulation</em></u> – generates a raster of accumulated flow by counting accumulated weight of all cells flowing into each downslope cell <a href="#fig-flowaccumulation" class="quarto-xref">Figure&nbsp;<span>5.11</span></a>. Once the flow accumulation is calculated, a threshold can be applied to the flow accumulation result to identify stream networks. Note that the threshold is an arbitrary value that needs to be evaluated case-by-case.</p>
+<p><u><em>Flow accumulation</em></u> – generates a raster of accumulated flow by counting accumulated weight of all cells flowing into each downslope cell <a href="#fig-flowaccumulation" class="quarto-xref">Figure&nbsp;<span>9.11</span></a>. Once the flow accumulation is calculated, a threshold can be applied to the flow accumulation result to identify stream networks. Note that the threshold is an arbitrary value that needs to be evaluated case-by-case.</p>
 <div id="fig-flowaccumulation" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-flowaccumulation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch8/flowaccumulation.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-flowaccumulation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.11: Flow direction (left) and flow accumulation (right)
+Figure&nbsp;9.11: Flow direction (left) and flow accumulation (right)
 </figcaption>
 </figure>
 </div>
-<p><u><em>Pour point and watershed</em></u> – A watershed is the upslope area that contributes flow to a common outlet as concentrated drainage. You need to specify pour point locations (outlets on streams) for which watersheds will be delineated <a href="#fig-watershed" class="quarto-xref">Figure&nbsp;<span>5.12</span></a>.</p>
+<p><u><em>Pour point and watershed</em></u> – A watershed is the upslope area that contributes flow to a common outlet as concentrated drainage. You need to specify pour point locations (outlets on streams) for which watersheds will be delineated <a href="#fig-watershed" class="quarto-xref">Figure&nbsp;<span>9.12</span></a>.</p>
 <div id="fig-watershed" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-watershed-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch8/watershed.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-watershed-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.12: Pour points (red points) and associated watersheds
+Figure&nbsp;9.12: Pour points (red points) and associated watersheds
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="references" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="references"><span class="header-section-number">5.3</span> <strong>References</strong></h2>
+<section id="references" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="references"><span class="header-section-number">9.3</span> <strong>References</strong></h2>
 <p>Black, Thomas A. and Luce, Charles H. 2013. Measuring water and sediment discharge from a road plot with a settling basin and tipping bucket. Gen.&nbsp;Tech. Rep.&nbsp;RMRS-GTR-287. Fort Collins, CO: U.S. Department of Agriculture, Forest Service, Rocky Mountain Research Station. 38 p.</p>
 <p>Heidemann, Hans Karl, 2018, Lidar base specification (ver. 1.3, February 2018): U.S. Geological Survey Techniques and Methods, book 11, chap.&nbsp;B4, 101 p., <a href="https://doi.org/10.3133/tm11b4" class="uri">https://doi.org/10.3133/tm11b4</a>.</p>
 <p>Jacoby, B., Peterson, E. and Dogwiler, T. (2011) Identifying the Stream Erosion Potential of Cave Levels in Carter Cave State Resort Park, Kentucky, USA.&nbsp;<em>Journal of Geographic Information System</em>,&nbsp;<strong>3</strong>, 323-333. doi:&nbsp;<a href="http://dx.doi.org/10.4236/jgis.2011.34030">10.4236/jgis.2011.34030</a>.</p>
@@ -843,13 +873,13 @@ Figure&nbsp;5.12: Pour points (red points) and associated watersheds
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/table-operations.html" class="pagination-link" aria-label="Table and attribute operations">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Table and attribute operations</span></span>
+      <a href="../chapters/raster-analysis.html" class="pagination-link" aria-label="Spatial Analysis Basics: Raster">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Raster</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../chapters/density-analysis.html" class="pagination-link" aria-label="Density analysis">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Density analysis</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Density analysis</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

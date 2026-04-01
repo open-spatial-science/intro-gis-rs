@@ -10,6 +10,7 @@ book:
     - chapters/intro.qmd
     - chapters/spatial-data-models.qmd
     - chapters/coordinate-systems.qmd
+    - chapters/map-projection.qmd
     - chapters/gnss.qmd
     - chapters/table-operations.qmd
     - chapters/vector-analysis.qmd

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Spatial Analysis Basics: Raster – Mapping the world: an open textbook on GIS and remote sensing</title>
+<title>8&nbsp; Spatial Analysis Basics: Raster – Mapping the world: an open textbook on GIS and remote sensing</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -85,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/raster-analysis.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Raster</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/raster-analysis.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Raster</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -130,86 +130,104 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../chapters/coordinate-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Locations in the geospatial world</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/gnss.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Global Navigation Satellite Systems</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../chapters/table-operations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Table and attribute operations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Table and attribute operations</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/vector-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Vector</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Vector</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/raster-analysis.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Raster</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Raster</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/terrain-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Digital Terrain Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Digital Terrain Analysis</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/density-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Density analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Density analysis</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/spatial-interpolation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Spatial Interpolation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Spatial Interpolation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/network-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Network Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Network Analysis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/historical-gis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Historical GIS</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/remote-sensing-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">A brief history of remote sensing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">A brief history of remote sensing</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/remote-sensing-basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Remote Sensing Basics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Remote Sensing Basics</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/remote-sensing-platforms.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Remote sensing sensors and platforms</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Remote sensing sensors and platforms</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/image-classificatiom.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Remote sensing image classification</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Remote sensing image classification</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/remote-sensing-applications.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Remote sensing applications</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Remote sensing applications</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">References</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">References</span></span></a>
   </div>
 </li>
     </ul>
@@ -222,11 +240,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#local-analysis" id="toc-local-analysis" class="nav-link active" data-scroll-target="#local-analysis"><span class="header-section-number">6.1</span> <em>Local analysis</em></a></li>
-  <li><a href="#focal-analysis" id="toc-focal-analysis" class="nav-link" data-scroll-target="#focal-analysis"><span class="header-section-number">6.2</span> <em>Focal analysis</em></a></li>
-  <li><a href="#zonal-analysis" id="toc-zonal-analysis" class="nav-link" data-scroll-target="#zonal-analysis"><span class="header-section-number">6.3</span> <em>Zonal analysis</em></a></li>
-  <li><a href="#global-analysis" id="toc-global-analysis" class="nav-link" data-scroll-target="#global-analysis"><span class="header-section-number">6.4</span> <em>Global analysis</em></a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">6.5</span> References</a></li>
+  <li><a href="#local-analysis" id="toc-local-analysis" class="nav-link active" data-scroll-target="#local-analysis"><span class="header-section-number">8.1</span> <em>Local analysis</em></a></li>
+  <li><a href="#focal-analysis" id="toc-focal-analysis" class="nav-link" data-scroll-target="#focal-analysis"><span class="header-section-number">8.2</span> <em>Focal analysis</em></a></li>
+  <li><a href="#zonal-analysis" id="toc-zonal-analysis" class="nav-link" data-scroll-target="#zonal-analysis"><span class="header-section-number">8.3</span> <em>Zonal analysis</em></a></li>
+  <li><a href="#global-analysis" id="toc-global-analysis" class="nav-link" data-scroll-target="#global-analysis"><span class="header-section-number">8.4</span> <em>Global analysis</em></a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">8.5</span> References</a></li>
   </ul>
 </nav>
     </div>
@@ -235,7 +253,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Raster</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Raster</span></h1>
 </div>
 
 
@@ -266,82 +284,82 @@ ul.task-list li input[type="checkbox"] {
 <p>Conduct local-focal-zonal-global analysis</p>
 </div>
 </div>
-<p>Raster data utilizes the continuous field view to represent the real world by using a matrix of equally spaced cells (aka pixels), with each cell containing a value representing information. Thus, spatial analysis methods applied to raster data are essentially operations applied to a matrix or a series of matrices <a href="#fig-blackspruce" class="quarto-xref">Figure&nbsp;<span>6.1</span></a>.</p>
+<p>Raster data utilizes the continuous field view to represent the real world by using a matrix of equally spaced cells (aka pixels), with each cell containing a value representing information. Thus, spatial analysis methods applied to raster data are essentially operations applied to a matrix or a series of matrices <a href="#fig-blackspruce" class="quarto-xref">Figure&nbsp;<span>8.1</span></a>.</p>
 <div id="fig-blackspruce" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-blackspruce-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch7/blackspruce.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-blackspruce-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.1: A RGB image of black spruce (Picea mariana) and associated values.
+Figure&nbsp;8.1: A RGB image of black spruce (Picea mariana) and associated values.
 </figcaption>
 </figure>
 </div>
-<p>In this case, raster analysis is closely linked to digital image analysis, both of which rely on matrix operations applied to grid-based data. While digital image analysis focuses on extracting information from pixels (e.g., pattern recognition, edge detection), raster analysis focuses on exploring spatial patterns, relationships, and processes across landscapes. In fact, many of the raster analysis methods described below are used in digital image analysis, but a different name might be applied <a href="#fig-peytolake" class="quarto-xref">Figure&nbsp;<span>6.2</span></a>.</p>
+<p>In this case, raster analysis is closely linked to digital image analysis, both of which rely on matrix operations applied to grid-based data. While digital image analysis focuses on extracting information from pixels (e.g., pattern recognition, edge detection), raster analysis focuses on exploring spatial patterns, relationships, and processes across landscapes. In fact, many of the raster analysis methods described below are used in digital image analysis, but a different name might be applied <a href="#fig-peytolake" class="quarto-xref">Figure&nbsp;<span>8.2</span></a>.</p>
 <div id="fig-peytolake" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-peytolake-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch7/peytolake.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-peytolake-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.2: Juxtaposition illustrates the temporal changes at the Peyto Lake, Banff National Park, Alberta, Canada. This can also be achieved using raster analysis methods.
+Figure&nbsp;8.2: Juxtaposition illustrates the temporal changes at the Peyto Lake, Banff National Park, Alberta, Canada. This can also be achieved using raster analysis methods.
 </figcaption>
 </figure>
 </div>
 <p>Raster data can be analyzed using <u><em>mathematical</em></u>, <u><em>logical</em></u>, and <u><em>conditional</em></u> operations to extract the spatial information and examine spatial relationships. Depending on how these operations are applied, raster analysis can be grouped into four major types, including local, focal, zonal, and global analysis.</p>
-<section id="local-analysis" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="local-analysis"><span class="header-section-number">6.1</span> <em>Local analysis</em></h2>
-<p>Local analysis applies operations to each individual cell independently, using only the value stored in that cell. This means the calculation or transformation does not depend on neighboring cells or any other part of the raster. The operations can be applied to one raster layer such as applying simple mathematical operations to each cell (converting temperature from °C to °F) or combining information from multiple layers, such as calculating annual mean air temperature using monthly or daily temperature. In summary, local analysis is used to modify or classify data on a cell-by-cell basis <a href="#fig-rasteroverlay" class="quarto-xref">Figure&nbsp;<span>6.3</span></a>.</p>
+<section id="local-analysis" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="local-analysis"><span class="header-section-number">8.1</span> <em>Local analysis</em></h2>
+<p>Local analysis applies operations to each individual cell independently, using only the value stored in that cell. This means the calculation or transformation does not depend on neighboring cells or any other part of the raster. The operations can be applied to one raster layer such as applying simple mathematical operations to each cell (converting temperature from °C to °F) or combining information from multiple layers, such as calculating annual mean air temperature using monthly or daily temperature. In summary, local analysis is used to modify or classify data on a cell-by-cell basis <a href="#fig-rasteroverlay" class="quarto-xref">Figure&nbsp;<span>8.3</span></a>.</p>
 <div id="fig-rasteroverlay" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rasteroverlay-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch7/rasteroverlay.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rasteroverlay-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.3: Local analysis combines information from multiple layers, e.g., calculating total precipitation across a three-day span. Image source: GISGeography.com
+Figure&nbsp;8.3: Local analysis combines information from multiple layers, e.g., calculating total precipitation across a three-day span. Image source: GISGeography.com
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="focal-analysis" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="focal-analysis"><span class="header-section-number">6.2</span> <em>Focal analysis</em></h2>
-<p>Focal analysis examines each cell in relation to its immediate neighbors within a specified neighborhood or moving window, such as a 3×3 or 5×5 cell block <a href="#fig-focalanalysis" class="quarto-xref">Figure&nbsp;<span>6.4</span></a>. Unlike local analysis that can be applied to multiple layers, focal analysis works on one raster layer by calculating a new value based on a statistic of the defined surrounding area (the neighborhood). By analyzing the surrounding cells, focal operations can identify local patterns and trends <a href="#fig-focalanalysis" class="quarto-xref">Figure&nbsp;<span>6.4</span></a>.</p>
+<section id="focal-analysis" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="focal-analysis"><span class="header-section-number">8.2</span> <em>Focal analysis</em></h2>
+<p>Focal analysis examines each cell in relation to its immediate neighbors within a specified neighborhood or moving window, such as a 3×3 or 5×5 cell block <a href="#fig-focalanalysis" class="quarto-xref">Figure&nbsp;<span>8.4</span></a>. Unlike local analysis that can be applied to multiple layers, focal analysis works on one raster layer by calculating a new value based on a statistic of the defined surrounding area (the neighborhood). By analyzing the surrounding cells, focal operations can identify local patterns and trends <a href="#fig-focalanalysis" class="quarto-xref">Figure&nbsp;<span>8.4</span></a>.</p>
 <div id="fig-focalanalysis" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-focalanalysis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch7/focalanalysis.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-focalanalysis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.4: Focal analysis uses a moving window method to identify local patterns and trends. Left: different size of window. Right: different shape of neighbourhood. Image source: Zawadzka et al., 2021.
+Figure&nbsp;8.4: Focal analysis uses a moving window method to identify local patterns and trends. Left: different size of window. Right: different shape of neighbourhood. Image source: Zawadzka et al., 2021.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="zonal-analysis" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="zonal-analysis"><span class="header-section-number">6.3</span> <em>Zonal analysis</em></h2>
-<p>Zonal analysis groups cells into zones or regions that share a common characteristic, often defined by another raster or vector dataset. A zone is defined as all areas in the zone definition layer that have the same value. The areas can be either connected, disconnected, or both (do NOT have to be contiguous). Then zonal operations are applied on a per zone basis by calculating summary statistics or performs computations on all cells within each zone. A single output value is computed based the value raster for every zone in the input zone dataset <a href="#fig-zonalanalysis" class="quarto-xref">Figure&nbsp;<span>6.5</span></a>. One example of zonal analysis application is to calculate the average rainfall within different watershed boundaries or the total vegetation cover within administrative regions. Zonal analysis helps link spatial patterns to meaningful geographic units and supports decision-making at those scales.</p>
+<section id="zonal-analysis" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="zonal-analysis"><span class="header-section-number">8.3</span> <em>Zonal analysis</em></h2>
+<p>Zonal analysis groups cells into zones or regions that share a common characteristic, often defined by another raster or vector dataset. A zone is defined as all areas in the zone definition layer that have the same value. The areas can be either connected, disconnected, or both (do NOT have to be contiguous). Then zonal operations are applied on a per zone basis by calculating summary statistics or performs computations on all cells within each zone. A single output value is computed based the value raster for every zone in the input zone dataset <a href="#fig-zonalanalysis" class="quarto-xref">Figure&nbsp;<span>8.5</span></a>. One example of zonal analysis application is to calculate the average rainfall within different watershed boundaries or the total vegetation cover within administrative regions. Zonal analysis helps link spatial patterns to meaningful geographic units and supports decision-making at those scales.</p>
 <div id="fig-zonalanalysis" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-zonalanalysis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch7/zonalanalysis.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-zonalanalysis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.5: Zonal analysis is used to find the minimum value in each zone. In zonal analysis, two layers, a value layer and a zone layer, will be needed. Image source: Saylor Academy (2012).
+Figure&nbsp;8.5: Zonal analysis is used to find the minimum value in each zone. In zonal analysis, two layers, a value layer and a zone layer, will be needed. Image source: Saylor Academy (2012).
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="global-analysis" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="global-analysis"><span class="header-section-number">6.4</span> <em>Global analysis</em></h2>
+<section id="global-analysis" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="global-analysis"><span class="header-section-number">8.4</span> <em>Global analysis</em></h2>
 <p>Global analysis considers the entire raster dataset as a whole, assessing spatial relationships or patterns across all cells simultaneously. Global analysis applies a single statistic, such as mean, median, sum etc., for the entire rater layer, like the mean temperature or total population for an area. Global analysis can also be used to determine connectivity or flow path across terrain (details in Digital Terrain Analysis). Global operations are critical for understanding broad-scale patterns and making landscape-level inferences.</p>
-<p>Another analysis that is relevant to global analysis is called distance analysis, in which computes distance from each cell to a feature or a set of features (it has some characteristics with global operations). Distance analysis is used to explore spatial relationships and proximity patterns <a href="#fig-distanceanalysis" class="quarto-xref">Figure&nbsp;<span>6.6</span></a>. Unlike other analysis methods (local, focal, zonal) discussed here, distance analysis considers the spatial arrangement of other features but not the cell’s own value. Depending on the purpose, distance can be measured in either Euclidean distance and cost-weighted distance (distance adjusted for factors such as slope, land cover type, or travel speed).</p>
+<p>Another analysis that is relevant to global analysis is called distance analysis, in which computes distance from each cell to a feature or a set of features (it has some characteristics with global operations). Distance analysis is used to explore spatial relationships and proximity patterns <a href="#fig-distanceanalysis" class="quarto-xref">Figure&nbsp;<span>8.6</span></a>. Unlike other analysis methods (local, focal, zonal) discussed here, distance analysis considers the spatial arrangement of other features but not the cell’s own value. Depending on the purpose, distance can be measured in either Euclidean distance and cost-weighted distance (distance adjusted for factors such as slope, land cover type, or travel speed).</p>
 <div id="fig-distanceanalysis" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-distanceanalysis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch7/distanceanalysis.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-distanceanalysis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.6: Determine distance from any street on UNL East Campus
+Figure&nbsp;8.6: Determine distance from any street on UNL East Campus
 </figcaption>
 </figure>
 </div>
@@ -360,8 +378,8 @@ Figure&nbsp;6.6: Determine distance from any street on UNL East Campus
 </div>
 </div>
 </section>
-<section id="references" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="references"><span class="header-section-number">6.5</span> References</h2>
+<section id="references" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="references"><span class="header-section-number">8.5</span> References</h2>
 <p>Zawadzka, J.E., Harris, J.A. &amp; Corstanje, R. A simple method for determination of fine resolution urban form patterns with distinct thermal properties using class-level landscape metrics.&nbsp;Landscape Ecol&nbsp;36, 1863–1876 (2021). https://doi.org/10.1007/s10980-020-01156-9</p>
 
 
@@ -771,12 +789,12 @@ Figure&nbsp;6.6: Determine distance from any street on UNL East Campus
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../chapters/vector-analysis.html" class="pagination-link" aria-label="Spatial Analysis Basics: Vector">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Vector</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Vector</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../chapters/terrain-analysis.html" class="pagination-link" aria-label="Digital Terrain Analysis">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Digital Terrain Analysis</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Digital Terrain Analysis</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

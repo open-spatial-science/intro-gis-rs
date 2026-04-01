@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>5&nbsp; Map projection – Mapping the world: an open textbook on GIS and remote sensing</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/gnss.html" rel="next">
+<link href="../chapters/coordinate-systems.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/map-projection.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><em>Map projection</em></span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Mapping the world: an open textbook on GIS and remote sensing</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Geospatial World</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/spatial-data-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Geospatial data models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/coordinate-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Locations in the geospatial world</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/map-projection.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><em>Map projection</em></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/gnss.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Global Navigation Satellite Systems</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/table-operations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Table and attribute operations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/vector-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Vector</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/raster-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Spatial Analysis Basics: Raster</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/terrain-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Digital Terrain Analysis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/density-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Density analysis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/spatial-interpolation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Spatial Interpolation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/network-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Network Analysis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/historical-gis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Historical GIS</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/remote-sensing-history.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">A brief history of remote sensing</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/remote-sensing-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Remote Sensing Basics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/remote-sensing-platforms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Remote sensing sensors and platforms</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/image-classificatiom.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Remote sensing image classification</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/remote-sensing-applications.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Remote sensing applications</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#map-projection-types-based-on-distortion" id="toc-map-projection-types-based-on-distortion" class="nav-link active" data-scroll-target="#map-projection-types-based-on-distortion"><span class="header-section-number">5.1</span> <em>Map projection types based on distortion</em></a></li>
+  <li><a href="#projected-planar-coordinate-systems" id="toc-projected-planar-coordinate-systems" class="nav-link" data-scroll-target="#projected-planar-coordinate-systems"><span class="header-section-number">5.2</span> <em>Projected / Planar Coordinate Systems</em></a>
+  <ul class="collapse">
+  <li><a href="#projected-coordinate-system-example-1-universal-transverse-mercator-projection-utm" id="toc-projected-coordinate-system-example-1-universal-transverse-mercator-projection-utm" class="nav-link" data-scroll-target="#projected-coordinate-system-example-1-universal-transverse-mercator-projection-utm"><span class="header-section-number">5.2.1</span> <em>Projected coordinate system example 1: Universal Transverse Mercator Projection (UTM)</em></a></li>
+  <li><a href="#projected-coordinate-system-example-2-state-plane-coordinate-system-spcs" id="toc-projected-coordinate-system-example-2-state-plane-coordinate-system-spcs" class="nav-link" data-scroll-target="#projected-coordinate-system-example-2-state-plane-coordinate-system-spcs"><span class="header-section-number">5.2.2</span> <em>Projected coordinate system example 2: State Plane Coordinate System (SPCS)</em></a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">5.3</span> References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><em>Map projection</em></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>While a geographical coordinate system (GCS) provides an accurate way to locate any point on the globe, it’s not practical for many tasks. For example, it is impossible to accurately measure distances and areas directly from a sphere or ellipsoid. To perform tasks like land surveying, field work, navigation, and urban planning, we need a flat, two-dimensional map with linear units of measure (e.g., meters or feet). This is where&nbsp;map projections&nbsp;come in. A <strong>map projection</strong> is a mathematical transformation used to convert the three-dimensional, curved surface of a GCS into a two-dimensional, flat plane <a href="#fig-erdapfel" class="quarto-xref">Figure&nbsp;<span>5.1</span></a>. This process is necessary to create a usable map, but it’s also the source of all map distortion, because it is impossible to flatten a sphere without stretching or compressing some of its features. Every map projection introduces some type of distortion—whether in shape, area, distance, or direction. Different projections are designed to preserve one or more of these properties at the expense of others, which is why cartographers choose a specific projection based on the purpose of the map.</p>
+<div id="fig-erdapfel" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-erdapfel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch3/erdapfel.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-erdapfel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1: The Erdapfel: the oldest surviving terrestrial globe (1492) and the global map derived from Erdapfel.
+</figcaption>
+</figure>
+</div>
+<p>To make a map projection, cartographers need three foundational components: a developable surface, the aspect and points of tangency or secancy. These components define the geometric structure of the map projection. The&nbsp;<strong>developable surface</strong>&nbsp;is a geometric shape that can be flattened into a two-dimensional plane without any stretching or tearing. The most commonly used developable surfaces are the <em>cylinder, plane</em> (aka an azimuthal surface), and <em>cone</em> <a href="#fig-developablesurface" class="quarto-xref">Figure&nbsp;<span>5.2</span></a>. Each of these interacts with the globe in a unique way and is better suited to particular regions or mapping purposes. This initial step is what allows a curved surface to be represented on a flat map.</p>
+<div id="fig-developablesurface" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-developablesurface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch3/developablesurfaces.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-developablesurface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.2: Three common developable surfaces. f you had a clear globe the size of a beach ball and placed a light inside this globe, it would cast shadows onto a surrounding surface. This surface can be a (a) cylinder, (b) cone, or (c) plane. Source: Manson (ed) 2025.
+</figcaption>
+</figure>
+</div>
+<p>The&nbsp;<strong>aspect</strong>&nbsp;refers to the orientation of this developable surface in relation to the Earth’s axis of rotation. It determines how the surface is positioned <a href="#fig-aspectprojection" class="quarto-xref">Figure&nbsp;<span>5.3</span></a>. The three main aspects are&nbsp;<em>normal</em>&nbsp;(aligned with the axis, such as a cylinder wrapped around the equator),&nbsp;<em>transverse</em>&nbsp;(perpendicular to the axis), and&nbsp;<em>oblique</em>&nbsp;(at an angle). The choice of aspect greatly influences the pattern of distortion and determines where the areas of least distortion will be on the final map. For instance, a normal cylindrical projection is most accurate near the equator, while a transverse one is better for a north-south region.</p>
+<div id="fig-aspectprojection" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-aspectprojection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch3/aspect.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-aspectprojection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.3: Aspect describes the orientation of the developable surface to the reference globe. Source: Furuti, 2002.
+</figcaption>
+</figure>
+</div>
+<p>Finally, the&nbsp;points of tangency or secancy&nbsp;describe how the developable surface is positioned in relation to the globe <a href="#fig-tangent" class="quarto-xref">Figure&nbsp;<span>5.4</span></a>. A&nbsp;tangent&nbsp;projection touches the globe at a single point (for a plane) or a single line (for a cylinder or cone). A&nbsp;secant projection intersects the globe at two lines or circles. At these specific points or lines, the map scale is true, and there is no distortion, while distortion increases as one moves away from them. Secant projections tend to distribute distortion more evenly than tangent ones by spreading out the distortion across a larger area, as the scale is true at two separate lines. This makes them useful for regional maps where balance is important.</p>
+<div id="fig-tangent" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tangent-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch3/tangent.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tangent-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.4: Tangent and secant projections. Source: US National Atlas.
+</figcaption>
+</figure>
+</div>
+<p>Together, these three components—developable surface, aspect, and contact points—define the structure of a projection and determine how faithfully the map represents the curved surface of the Earth. Understanding how they interact allows cartographers to choose the projection that best suits the purpose and geographic focus of the map.</p>
+<section id="map-projection-types-based-on-distortion" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="map-projection-types-based-on-distortion"><span class="header-section-number">5.1</span> <em>Map projection types based on distortion</em></h2>
+<p>Map projections can be categorized based on the type of distortion they minimize or preserve. Since it is impossible to represent the curved surface of the Earth on a flat map without some distortion, cartographers choose projections depending on which geographic property—area, shape, distance, or direction—is most important to preserve for the map’s purpose. Based on the type of distortion they minimize, map projections are categorized into four main types:&nbsp;<em>conformal</em>,&nbsp;<em>equal-area</em>, <em>equidistant</em>, and <em>azimuthal</em> (aka true direction) projections <a href="#fig-distortion" class="quarto-xref">Figure&nbsp;<span>5.5</span></a>.</p>
+<div id="fig-distortion" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-distortion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch3/distortion.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-distortion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.5: Tissot’s Indicatrix illustrating different types of map projections and associated distortions. This method was developed by French cartographer Nicolas Auguste Tissot in 1859. Figure modified from Wikipedia Tissot’s indicatrix.
+</figcaption>
+</figure>
+</div>
+<p><u><em>Conformal projection</em></u> preserves angles and shapes locally. In these projections, the shape of small areas is maintained, but area and distance may be distorted. This means that at any point on the map, the angles are true, and the shapes of small features like coastlines and rivers are accurately represented. Thus, conformal projections are commonly used for navigational purposes because they represent compass directions accurately. However, this preservation of shape comes at the expense of area; landmasses may appear larger or smaller than they really are. The Mercator projection is the most famous conformal projection, widely used for marine navigation because it preserves compass directions. However, it greatly exaggerates the size of areas near the poles—for example, Greenland appears almost the same size as Africa, though it is much smaller in reality.</p>
+<p><u><em>Equal-area projection</em></u> preserves the relative sizes of landmasses and other features. These projections ensure that areas are represented in correct proportion, meaning that the proportions between countries, continents, or other regions are accurate in terms of area. This makes them useful for thematic or statistical maps where comparing sizes is important (e.g., population density or forest cover). To achieve this (preserve area), these projections must distort shapes, angles, and scale and the distortion of shape is generally more pronounced the farther a location is from the center of the projection.&nbsp;</p>
+<p><u><em>Equidistant</em></u> projectionpreserves distances from one or more specified points to all other points on the map. While they cannot preserve distances across the entire map, they are valuable when the focus is on a central location and its relationship to other places.&nbsp;As a result, equidistant projections are useful for applications like radio and seismic mapping where accurate distances from a central location are critical.</p>
+<p><u><em>Azimuthal or true-direction</em></u> projections&nbsp;preserve accurate directions from a central point to all other locations on the map. These are often used for air route maps or polar charts, where direction from the center is more important than shape or area accuracy. A common example is the azimuthal equidistant projection centered on the North Pole <a href="#fig-unlogo" class="quarto-xref">Figure&nbsp;<span>5.6</span></a>, which shows all meridians as straight lines radiating from the center, making it easier to plot great circle routes—shortest paths between two points on a sphere.</p>
+<div id="fig-unlogo" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-unlogo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch3/unlogo.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-unlogo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.6: The United Nations Logo uses the Azimuthal Equidistant projection
+</figcaption>
+</figure>
+</div>
+<p>In addition to these projection categories, compromise projection aims to balance distortion rather than preserving any single properties (area, shape, distance or direction) perfectly. Instead, compromise projection attempts to minimize overall distortion in all properties to produce a map that is visually pleasing and balanced in accuracy across the map. These projections are especially useful when the goal is to create general reference maps, such as world maps used in textbooks, atlases, or classrooms. For example, the&nbsp;Robinson projection, developed by Arthur H. Robinson in 1963, is one of the most widely used compromise projections. It was specifically designed to create a visually balanced representation of the entire world. On the Robinson map, the shapes and sizes of continents are moderately distorted, but the distortion is distributed more evenly across the map than in more specialized projections like Mercator. It avoids the extreme stretching of landmasses near the poles that occurs in conformal projections, and it presents continents like Africa and South America in proportions that are closer to reality. While the Robinson projection doesn’t preserve true scale, shape, area, or direction, its smooth, oval appearance and balanced distortions make it highly effective for thematic and general-purpose maps where no single property needs to be perfectly accurate. In fact, it was used by the&nbsp;National Geographic Society&nbsp;for nearly three decades as their standard world map projection.</p>
+<p>It is important to remember that projection <strong><em>always</em></strong> introduce distortion. Each type of projection serves a different purpose and involves trade-offs between the various geographic properties. Choosing the right one depends on which characteristics are most essential for the map’s intended use.</p>
+</section>
+<section id="projected-planar-coordinate-systems" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="projected-planar-coordinate-systems"><span class="header-section-number">5.2</span> <em>Projected / Planar Coordinate Systems</em></h2>
+<p>Based on specific geographic coordinate system and map projection, a projected or planar coordinate system identifies locations by (x, y) coordinates (often in meters or feet) on a grid with equally spaced horizontal and vertical lines (Cartesian coordinates). Because mathematical calculations relating latitude and longitude to positions of points on a given map can become quite complicated, rectangular grids have been developed for the use of surveyors. In this way, each point may be designated merely by its distance from two perpendicular axes on the flat map. The Y axis normally coincides with a chosen central meridian, with y increasing north. The X axis is perpendicular to the Y axis at a latitude of origin on the central meridian, with x increasing east. X and Y coordinates are called “eastings” and “northings,” respectively. To avoid negative coordinates, we may have “false eastings” and “false northings” by adding constant values to all X and Y coordinates.</p>
+<section id="projected-coordinate-system-example-1-universal-transverse-mercator-projection-utm" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="projected-coordinate-system-example-1-universal-transverse-mercator-projection-utm"><span class="header-section-number">5.2.1</span> <em>Projected coordinate system example 1: Universal Transverse Mercator Projection (UTM)</em></h3>
+<p>The&nbsp;<strong>Universal Transverse Mercator (UTM)</strong> projection&nbsp;is a widely used map projection system that applies a specific version of the&nbsp;Transverse Mercator projection&nbsp;on a global scale <a href="#fig-utm" class="quarto-xref">Figure&nbsp;<span>5.7</span></a>. It is designed to provide a consistent and accurate way of mapping locations anywhere on Earth by dividing the planet into a series of zones, each with its own projection. The UTM system divides the Earth between&nbsp;84°N and 80°S latitude&nbsp;into&nbsp;60 vertical zones, each&nbsp;6 degrees of longitude wide.</p>
+<div id="fig-utm" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-utm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch3/utm.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-utm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.7: Universal Transverse Mercator Projection zones. Source: PROJ contributors (2026).
+</figcaption>
+</figure>
+</div>
+<p>Each zone is projected individually using a&nbsp;<em>Transverse Mercator projection</em>, which means that the cylinder used for the projection is oriented&nbsp;longitudinally (north-south), rather than wrapping around the equator like in the regular Mercator projection. This “transverse” orientation minimizes distortion along a central meridian within each zone, making it suitable for mapping narrow north–south regions. To further reduce distortion, the UTM system uses a&nbsp;<em>secant</em> version&nbsp;of the Transverse Mercator projection, meaning the projection surface intersects the globe along two standard lines. This helps keep the scale distortion to a minimum within each zone—usually less than 1 part in 1,000. Each zone in the UTM system is assigned a unique number from 1 to 60, starting at 180° longitude and moving eastward. Additionally, the system uses&nbsp;Northing and Easting&nbsp;coordinates (measured in meters) rather than latitude and longitude. To avoid negative numbers, the equator is assigned a&nbsp;false northing of 10,000,000 meters in the southern hemisphere, and the central meridian in each zone is assigned a&nbsp;false easting of 500,000 meters. The UTM system is particularly useful for&nbsp;large-scale mapping because of its high positional accuracy over relatively small areas — typically within one UTM zone. However, because each zone is designed independently, maps that span multiple zones may require conversion or special handling to align correctly <span class="quarto-unresolved-ref">?fig-utmus</span>.<img src="../figures/ch3/utm_us.png" id="fig-utmus" class="img-fluid" alt="Simplified view of contiguous US UTM zones, projected with Lambert conformal conic. Source: By Chrismurf at English Wikipedia."></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>How to calculate the UTM coordinates
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>1)Determine the UTM zone</p>
+<ul>
+<li><p>Zone = floor((Longitude + 180)/6) + 1</p></li>
+<li><p>Central Median = Zone × 6 - 183;</p></li>
+</ul>
+<p>2) Determine the (x, y) within the zone – Easting and Northing</p>
+<ul>
+<li><p>Northing – number of meters north of Equator</p></li>
+<li><p>Easting – number of meters east of central median of each zone</p></li>
+</ul>
+<p>To avoid negative numbers:</p>
+<ul>
+<li><p>False Easting: 500,000 m + Easting</p></li>
+<li><p>False Northing (for southern hemisphere): 10,000,000 m + Northing</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="projected-coordinate-system-example-2-state-plane-coordinate-system-spcs" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="projected-coordinate-system-example-2-state-plane-coordinate-system-spcs"><span class="header-section-number">5.2.2</span> <em>Projected coordinate system example 2: State Plane Coordinate System (SPCS)</em></h3>
+<p>State Plane Coordinate System (SPCS) is a grid-based system for determining coordinates of locations within the United States, designed in 1930s for large scale mapping of the US. It divides the US into over 120 zones, generally follow county boundaries, except in Alaska. Most states are divided into&nbsp;multiple zones—for example,&nbsp;Alaska has 10,&nbsp;Texas has 5, while&nbsp;Nebraska has only 1—to maintain high positional accuracy by limiting each zone’s geographic extent.</p>
+<p>A baseline is set south of the zone and an origin meridian to the west of the zone and coordinates are eastings and northings in feet. Each zone has its own&nbsp;<strong>projection parameters</strong>, and the choice of projection depends on the general orientation of the zone. They can use different projections depending on the orientation of the state being projected and where it is located within the US. The Lambert Conformal Conic projection is usually used for east-west oriented zones (e.g., Tennessee) while Mercator projection is generally used for north-south oriented zones (e.g., Illinois). In some cases, the&nbsp;Oblique Mercator&nbsp;projection is used, particularly for certain zones in&nbsp;Alaska&nbsp;that do not align well with standard orientations.</p>
+<p>Note that a new generation of the SPCS (SPCS2022 <a href="#fig-spcs22" class="quarto-xref">Figure&nbsp;<span>5.8</span></a>) will be released as part of Natioal Geodetic Survey (NGS) National Spatial Reference System (NSRS) Modernization. In SPCS2022, every U.S. state and territory will have a statewide zone. Most states include a statewide layer composed of multiple zones that collectively cover the entire state. In some cases, additional multi-zone layers are defined for only specific regions within a state. Beyond state-level zones, there are also “special use” zones that extend across the boundaries of multiple states. The variation in the number and configuration of zones reflects the active involvement of stakeholders during the SPCS2022 design process. Many states contributed input by submitting formal requests or proposals for zone definitions.</p>
+<div id="fig-spcs22" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-spcs22-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch3/SPCS22.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spcs22-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.8: State Plane Coordinate System of 2022 (SPCS2022). Source: National Geodetic Survey, NOAA.
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>The “Projection for a Purpose” Challenge
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Maps are tools, and like any tool, the best one for the job depends on the task. This is NOT just a theoretical problem. Every map, from a web map to a printed atlas, is a conscious choice to use a particular projection to serve a specific purpose. &nbsp;For the scenarios below: which properties of a map projection would be most critical for you to preserve, and why?</p>
+<p>Scenario 1 The Global Shipping Company.&nbsp;“You need to plan the most efficient routes for cargo ships traveling from Asia to the Americas.”</p>
+<p>Scenario 2 The UN Climate Change Committee.&nbsp;“You are creating a map to show the global impact of rising sea levels.”</p>
+<p>Scenario 3 The National Geographic Magazine Cartographers.&nbsp;“You are creating a detailed map of the continent of Africa for an educational atlas.”</p>
+</div>
+</div>
+</section>
+</section>
+<section id="references" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="references"><span class="header-section-number">5.3</span> References</h2>
+<p>Manson, S. M. (ed) (2025). Mapping, Society, and Technology. Second Edition. Minneapolis, Minnesota: University of Minnesota Libraries Publishing. URL: https://open.lib.umn.edu/mapping</p>
+<p>PROJ contributors (2026). PROJ coordinate transformation software library. Open Source Geospatial Foundation. URL&nbsp;<a href="https://proj.org/" class="uri">https://proj.org/</a>. DOI: 10.5281/zenodo.5884394</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/coordinate-systems.html" class="pagination-link" aria-label="Locations in the geospatial world">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Locations in the geospatial world</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/gnss.html" class="pagination-link" aria-label="Global Navigation Satellite Systems">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Global Navigation Satellite Systems</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
