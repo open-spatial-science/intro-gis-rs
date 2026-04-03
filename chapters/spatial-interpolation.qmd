@@ -1,4 +1,6 @@
-# Spatial Interpolation
+---
+title: "Spatial Interpolation"
+---
 
 ::: callout-note
 ## Learning Objectives

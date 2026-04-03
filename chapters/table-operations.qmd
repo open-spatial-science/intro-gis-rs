@@ -1,4 +1,6 @@
-# Table and attribute operations
+---
+title: "Table and Attribute Operations"
+---
 
 ::: callout-note
 ## Learning Objectives

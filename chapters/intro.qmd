@@ -1,6 +1,8 @@
-> *GIS addresses the **where**, not just the **what**.*
+---
+title: "The Geospatial World"
+---
 
-# The Geospatial World
+> *GIS addresses the **where**, not just the **what**.*
 
 The world we live in is fundamentally a geospatial world, meaning that space, location, and the spatial relationships between places shape much of how we experience, understand, and interact with our environment. From the earliest days of human history, our ancestors relied on an intuitive sense of geography: not just to navigate but to find food, communicate, form communities, and adapt to their ever-changing surroundings. In fact, the ability to understand and use spatial information has been critical to human survival and advancement for millennia. Today, this same understanding of space is embedded in nearly every aspect of our lives, from the digital maps that guide us on daily commutes to the complex systems that help us manage natural resources, plan cities, track diseases, and predict environmental changes. Centered around geospatial data, data tied to geographical locations, geographical information system (GIS) is a computer-based system for gathering, managing, analyzing, and visualizing spatial data.
 

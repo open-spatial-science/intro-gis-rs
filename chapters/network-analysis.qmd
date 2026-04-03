@@ -1,4 +1,6 @@
-# Network Analysis
+---
+title: "Network Analysis"
+---
 
 ::: callout-note
 ## Learning Objectives

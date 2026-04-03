@@ -1,4 +1,6 @@
-# Density analysis
+---
+title: "Density Analysis"
+---
 
 ::: callout-note
 ## Learning Objectives

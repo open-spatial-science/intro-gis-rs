@@ -1,4 +1,6 @@
-# Locations in the geospatial world
+---
+title: "Locations in the Geospatial World"
+---
 
 ::: callout-note
 ## Learning Objectives

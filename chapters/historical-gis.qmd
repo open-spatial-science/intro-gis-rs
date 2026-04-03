@@ -1,4 +1,6 @@
-# Historical GIS
+---
+title: "Historical GIS"
+---
 
 > *GIS can completely reframe your questions. -* Ian Gregory
 

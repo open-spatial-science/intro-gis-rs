@@ -1,4 +1,6 @@
-# Geospatial data models
+---
+title: "Geospatial Data Models"
+---
 
 > *Raster thinks in pixels, vector thinks in points. -* Anonymous
 

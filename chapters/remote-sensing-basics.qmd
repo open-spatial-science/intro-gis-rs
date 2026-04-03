@@ -1,6 +1,8 @@
-> *If the Sun’s Light consisted of but one sort of Rays, there would be but one Colour in the whole World. – Isaac Newton, Opticks (1704)*
+---
+title: "Remote Sensing Basics"
+---
 
-# Remote Sensing Basics
+> *If the Sun’s Light consisted of but one sort of Rays, there would be but one Colour in the whole World. – Isaac Newton, Opticks (1704)*
 
 ::: callout-note
 ## Learning Objectives

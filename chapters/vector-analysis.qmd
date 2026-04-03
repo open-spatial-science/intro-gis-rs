@@ -1,4 +1,6 @@
-# Spatial Analysis Basics: Vector
+---
+title: "Spatial Analysis Basics: Vector"
+---
 
 > The strength of vector data lies in its ability to maintain precise boundaries and its capacity to handle topological relationships between spatial features. - Anonymous
 

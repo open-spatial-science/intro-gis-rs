@@ -1,4 +1,6 @@
-# Digital Terrain Analysis
+---
+title: "Digital Terrain Analysis"
+---
 
 ::: callout-note
 ## Learning Objectives

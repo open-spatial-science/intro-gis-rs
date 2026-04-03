@@ -1,4 +1,6 @@
-# Global Navigation Satellite Systems
+---
+title: "Global Navigation Satellite Systems"
+---
 
 > *GPS is not just a system of satellites and signals. It’s a new form of timekeeping, a new kind of map, and a new kind of power. - Anonymous*
 

@@ -1,4 +1,6 @@
-# Spatial Analysis Basics: Raster
+---
+title: "Spatial Analysis Basics: Raster"
+---
 
 ::: callout-note
 ## Learning Objectives

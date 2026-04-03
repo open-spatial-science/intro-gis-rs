@@ -1,4 +1,6 @@
-# Remote sensing sensors and platforms
+---
+title: "Remote Sensing Sensors and Platforms"
+---
 
 ::: callout-note
 ## Learning Objectives

@@ -1,4 +1,6 @@
-# Remote sensing applications
+---
+title: "Remote Sensing Applications"
+---
 
 ::: callout-note
 ## Learning Objectives

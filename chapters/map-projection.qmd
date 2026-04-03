@@ -1,4 +1,6 @@
-# Map projection
+---
+title: "Map Projection"
+---
 
 ::: callout-note
 ## Learning Objectives

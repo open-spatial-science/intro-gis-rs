@@ -1,4 +1,6 @@
-# Remote sensing image classification
+---
+title: "Remote Sensing Image Classification"
+---
 
 > One of the most interesting aspects of the world is that it can be considered to be made up of patterns.  … A pattern is essentially an arrangement. It is characterized by the order of the elements of which it is made, rather than by the intrinsic nature of these elements.  - *Norbert Wiener*
 

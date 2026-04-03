@@ -1,4 +1,9 @@
-# Introduction
+---
+title: "Introduction"
+numbered: false
+number-sections: false
+---
+
 
 The global geospatial solutions market was valued at USD 626 billion in 2024; with a 13% projected annual growth rate, it is expected to reach \$2155 billion by 2034 (Prescient and Strategic Intelligence, 2024). Globally, many governments are funding the development of geospatial infrastructure and promoting the geospatial solutions. A large number of students trained in geospatial sciences will be needed to support the steady demand for the workforce.
 
