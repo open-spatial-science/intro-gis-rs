@@ -10,11 +10,11 @@ Conduct local-focal-zonal-global analysis
 
 Raster data utilizes the continuous field view to represent the real world by using a matrix of equally spaced cells (aka pixels), with each cell containing a value representing information. Thus, spatial analysis methods applied to raster data are essentially operations applied to a matrix or a series of matrices @fig-blackspruce.
 
-![A RGB image of black spruce (Picea mariana) and associated values.](/figures/ch7/blackspruce.png){#fig-blackspruce}
+![A RGB image of black spruce (Picea mariana) and associated values. Image adapted from Wang et al. 2023. ](/figures/ch7/blackspruce.png){#fig-blackspruce}
 
 In this case, raster analysis is closely linked to digital image analysis, both of which rely on matrix operations applied to grid-based data. While digital image analysis focuses on extracting information from pixels (e.g., pattern recognition, edge detection), raster analysis focuses on exploring spatial patterns, relationships, and processes across landscapes. In fact, many of the raster analysis methods described below are used in digital image analysis, but a different name might be applied @fig-peytolake.
 
-![Juxtaposition illustrates the temporal changes at the Peyto Lake, Banff National Park, Alberta, Canada. This can also be achieved using raster analysis methods.](/figures/ch7/peytolake.png){#fig-peytolake}
+![Juxtaposition illustrates the temporal changes at the Peyto Lake, Banff National Park, Alberta, Canada. This can also be achieved using raster analysis methods. Photos were taken by Ran Wang between 2017 and 2019. ](/figures/ch7/peytolake.png){#fig-peytolake}
 
 Raster data can be analyzed using [*mathematical*]{.underline}, [*logical*]{.underline}, and [*conditional*]{.underline} operations to extract the spatial information and examine spatial relationships. Depending on how these operations are applied, raster analysis can be grouped into four major types, including local, focal, zonal, and global analysis.
 
@@ -34,7 +34,7 @@ Focal analysis examines each cell in relation to its immediate neighbors within 
 
 Zonal analysis groups cells into zones or regions that share a common characteristic, often defined by another raster or vector dataset. A zone is defined as all areas in the zone definition layer that have the same value. The areas can be either connected, disconnected, or both (do NOT have to be contiguous). Then zonal operations are applied on a per zone basis by calculating summary statistics or performs computations on all cells within each zone. A single output value is computed based the value raster for every zone in the input zone dataset @fig-zonalanalysis. One example of zonal analysis application is to calculate the average rainfall within different watershed boundaries or the total vegetation cover within administrative regions. Zonal analysis helps link spatial patterns to meaningful geographic units and supports decision-making at those scales.
 
-![Zonal analysis is used to find the minimum value in each zone. In zonal analysis, two layers, a value layer and a zone layer, will be needed. Image source: Saylor Academy (2012). ](/figures/ch7/zonalanalysis.png){#fig-zonalanalysis}
+![Zonal analysis is used to find the minimum value in each zone. In zonal analysis, two layers, a value layer and a zone layer, will be needed. Image source: Saylor Academy (2012).](/figures/ch7/zonalanalysis.png){#fig-zonalanalysis}
 
 ## *Global analysis*
 
@@ -49,9 +49,11 @@ In summary, local analysis is operated at per cell basis, focal analysis works t
 ::: callout-tip
 ## Raster analysis and digital image analysis
 
-Try to think raster analysis a “GIS-twin” of digital image analysis. Then, how to use raster analysis to achieve juxtaposition shown in Figure 2?
+Try to think raster analysis a “GIS-twin” of digital image analysis. Then, how to use raster analysis to achieve juxtaposition shown in @fig-peytolake?
 :::
 
 ## References
 
-Zawadzka, J.E., Harris, J.A. & Corstanje, R. A simple method for determination of fine resolution urban form patterns with distinct thermal properties using class-level landscape metrics. Landscape Ecol 36, 1863–1876 (2021). https://doi.org/10.1007/s10980-020-01156-9
+Wang R, Springer KR, Gamon JA. Confounding effects of snow cover on remotely sensed vegetation indices of evergreen and deciduous trees: An experimental study. Global Change Biology. 2023:6120-38.
+
+Zawadzka, J.E., Harris, J.A. & Corstanje, R. A simple method for determination of fine resolution urban form patterns with distinct thermal properties using class-level landscape metrics. Landscape Ecol 36, 1863–1876 2021. https://doi.org/10.1007/s10980-020-01156-9

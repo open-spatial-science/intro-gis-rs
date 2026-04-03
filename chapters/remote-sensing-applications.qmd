@@ -28,7 +28,7 @@ Thermal remote sensing measures energy in the thermal infrared region (approxima
 
 ![Blackbody radiation. The wavelength of visible light (0.4-0.7 μm) is also shown. Figure adapted from Wikipedia.](/figures/ch17/blackbody.png){#fig-blackbody}
 
-::: callout-important
+::: callout-tip
 ## Blackbody concept and thermal radiation laws
 
 A ***blackbody*** is a hypothetical, ideal radiator that completely absorbs and re-emits all incident energy. The total amount of energy emitted by an object, as well as the spectral distribution of that energy (its radiation curve), depends on its temperature.

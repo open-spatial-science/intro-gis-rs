@@ -18,19 +18,19 @@ In modern society, data has become the driving force behind decision-making and 
 
 In the context of spatial science, geospatial data (aka spatial data) describe entities along with their locations on the Earth’s surface. By including the location information, spatial data not only tells *what* happens but also *where* it happens. In another word, spatial data allows us to describe and analyze patterns, relationships, and trends across space. Geospatial data model is the abstraction of real world regarding geospatial data. They define how to use geospatial data to represent the real world in a digital computer system. There are two types of geospatial data models: ***raster*** and ***vector*** @fig-datamodel. These two data models represent different views of the natural world: the discrete object view (vector) and the continuous field view (raster). Note that although raster and vector data models are used to represent geospatial data, they are not limited to storing spatial data. For example, graphic formats are either raster (jpeg, bitmap) or vector (pdf, eps).
 
-![The two geospatial data models represent two views of the real world: the discrete object (vector) view and the continuous field (raster) view ](/figures/ch2/datamodel.png){#fig-datamodel}
+![The two geospatial data models represent two views of the real world: the discrete object (vector) view and the continuous field (raster) view. Raster data (image of University of Nebraska-Lincoln East Campus) is from the USDA National Agriculture Imagery Program (NAIP).](/figures/ch2/datamodel.png){#fig-datamodel}
 
 ## *Raster data model – the continuous field view*
 
 Raster data model adopts the continuous field view. It uses a matrix of equally spaced (often square) cells (aka pixels) organized into rows and columns @fig-rastermodel. In a raster, the spatial information is stored as the location of each cell in the grid, while the phenomena or entities of interest are represented by values associated with each cell location.
 
-![Raster data model organizes data in a grid or matrix format. ](/figures/ch2/raster.png){#fig-rastermodel}
+![Raster data model organizes data in a grid or matrix format.](/figures/ch2/raster.png){#fig-rastermodel}
 
 In raster data model, cell or pixel values represent the phenomenon portrayed by the dataset. The value for each cell can be a single number, or a list of numbers to represent different dimensions for the phenomenon at the particular location @fig-rastertype. Cell values can be both ***discrete*** data (aka thematic or categorical data) representing discrete phenomenon, such as landcover land use types, or ***continuous*** data representing phenomenon that progressively vary as they move across a surface, such as temperature, elevation, pollutant concentration, and population density. It is worth noting that for each cell, the associated value is considered to apply to the entire cell, ignoring within-cell variation. This may also create abrupt changes from pixel to pixel.
 
-![Raster data can be used to represent discrete (a) and continuous (b & c) phenomenon. a: land cover type in Nebraska. b: Digital elevation model (DEM) for Indian Cave State Park. c: map of air temperature. DEM data was obtained from the USGS 3D Elevation Program. ](/figures/ch2/rastertype.png){#fig-rastertype}
+![Raster data can be used to represent discrete (a) and continuous (b & c) phenomenon. a: land cover type in Nebraska created by the Center for Advanced Land Management Information Technologies (CALMIT) at the School of Natural Resources, UNL. b: Digital elevation model (DEM) of Indian Cave State Park in Nebraska. c: day time air temperature of Nebraska from NOAA National Weather Service. DEM data was obtained from the USGS 3D Elevation Program.](/figures/ch2/rastertype.png){#fig-rastertype}
 
-### *Spatial resolution* 
+### *Spatial resolution*
 
 In raster data, cell dimension defines the edge length for each square cell. The size of the cell is also called the spatial resolution of the rater data. When the cells are square and aligned with the coordinate axes, the calculation of a cell location is a simple process of counting and multiplication @fig-cellloc. A cell location may be calculated from the cell size, known corner coordinates, and cell row and column number.
 
@@ -66,7 +66,7 @@ One important property of vector data model is the ability to describe topology.
 
 In summary, vector data model is a compact data structure using points, lines and polygons to represent the real world. It can encode topology in an efficient manner and represent shape in a relatively precise way, so data can be represented at original resolution and form (no blurring with zooming in). However, compared to raster data model, vector data model utilizes a more complex data structure that location of each vertex and attributes of each feature need to be stored explicitly, and certain spatial analysis operations (e.g., overlay) are more difficult to conduct on vector data. Also, it may be less efficient to represent continuous phenomenon on a surface, such as elevation variation or temperature or pollution distribution. Note that people can and do use vector to represent continuous data, such as contour lines (it may just be less convenient and efficient than raster data model in many cases). 
 
-## *Combining and complementing Raster and Vector* 
+## *Combining and complementing Raster and Vector*
 
 Raster and vector are two data models that can be used to abstract the real world in geospatial sciences. They utilize different perspectives (continuous field view vs. discrete object view) for abstraction. The same phenomenon can be represented and stored using either raster or vector, depending on the purpose of the project or specific application. In practice, it is common that both raster and vector data models are used in one project representing different types of data. For instance, in a smart city application, information such as land use/land cover type and elevation can be stored using raster data model while data such as road network, ownership and tax parcel framework can be managed using vector data model. Meanwhile, data can be converted between raster and vector when needed.   
 

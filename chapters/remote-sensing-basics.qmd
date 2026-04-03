@@ -32,11 +32,11 @@ One phenomenon is the scattering caused by particles such as gases, dust and wat
 
 Once the solar energy reaches the Earth surface, it interacts with all physical objects on Earth (reflected, absorbed or transmitted). The proportion of energy in each of these interactions depends on the wavelength and the properties of the material. As a result, different types of surfaces, such as water, soil, and vegetation, interact with electromagnetic energy in distinct ways. A key concept in remote sensing is called ***reflectance*** that refers to the proportion (or percentage) of incoming energy that a surface reflects (sensors primarily measure the energy reflected from the Earth’s surface). Because materials reflect and absorb energy differently across wavelengths, each type of surface has a characteristic pattern of reflectance @fig-spectralsignature. This pattern is known as a ***spectral signature***, and it acts like a “fingerprint” that can be used to identify and distinguish between different features on the Earth’s surface.
 
-![Spectral signature of selected targets. Data was collected on University of Nebraska-Lincoln East Campus using a portable spectrometer (Spectral Evolution).](/figures/ch14/spectralsignature.png){#fig-spectralsignature}
+![Spectral signature of selected targets. Data was collected on University of Nebraska-Lincoln East Campus using a portable spectrometer (PSR+ 3500; Spectral Evolution Inc., Lawrence, MA, USA). ](/figures/ch14/spectralsignature.png){#fig-spectralsignature}
 
-In fact, Spectral data not only distinguishes different surfaces but can also reveal subtle variations, such as differences between plant species or changes in leaf color @fig-leafspectra. This makes remote sensing a powerful tool for quantitative environmental studies, including monitoring vegetation health, estimating productivity, and assessing biodiversity.
+Spectral data not only distinguishes different materials or land cover types, but can also reveal subtle variations, such as differences between plant species or changes in leaf color @fig-leafspectra. This makes remote sensing a powerful tool for quantitative environmental studies, including monitoring vegetation health, estimating productivity, and assessing biodiversity.
 
-![Spectra detect differences changes in leaf color.](/figures/ch14/leafspectra.png){#fig-leafspectra}
+![Spectra detect differences changes in leaf color. Data was collected using a field spectrometer (Unispec, PP Systems, Amesbury, MA, USA) coupled with a needle leaf clip (UNI501, PP Systems, Amesbury, MA, USA) on University of Alberta campus. ](/figures/ch14/leafspectra.png){#fig-leafspectra}
 
 **References**
 
