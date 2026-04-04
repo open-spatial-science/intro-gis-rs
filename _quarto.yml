@@ -7,14 +7,14 @@ book:
   date: "3/31/2026"
   chapters:
     - index.qmd
-    - part: "I Foundations of Geospatial Sciences"
+    - part: "Part I Foundations of Geospatial Sciences"
       chapters:
         - chapters/intro.qmd
         - chapters/spatial-data-models.qmd
         - chapters/coordinate-systems.qmd
         - chapters/map-projection.qmd
         - chapters/gnss.qmd
-    - part: "II GIS and Spatial Analysis"
+    - part: "Part II GIS and Spatial Analysis"
       chapters:
         - chapters/table-operations.qmd
         - chapters/vector-analysis.qmd
@@ -24,7 +24,7 @@ book:
         - chapters/spatial-interpolation.qmd
         - chapters/network-analysis.qmd
         - chapters/historical-gis.qmd
-    - part: "III Remote Sensing"
+    - part: "Part III Remote Sensing"
       chapters:
         - chapters/remote-sensing-history.qmd
         - chapters/remote-sensing-basics.qmd
