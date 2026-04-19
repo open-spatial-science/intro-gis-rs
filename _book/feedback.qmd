@@ -1,0 +1,64 @@
+---
+title: "Feedback, Contributions, and Adoption"
+chapter: false
+---
+
+## Help Improve This Book
+
+This textbook is an open educational resource and is intended to evolve over time. We welcome feedback from instructors, students, and readers.
+
+If you notice an error, have a suggestion, or would like to propose new content, the best way to contribute is through our GitHub repository:
+
+- Report issues (typos, errors, unclear explanations)
+
+- Suggest enhancements or additional examples
+
+- Request new topics or features
+
+Please visit the \[repository\](<https://github.com/open-spatial-science/intro-gis-rs>) and open an issue to get started.
+
+------------------------------------------------------------------------
+
+## Adopting This Textbook
+
+Instructors are welcome and encouraged to adopt this book in their courses.
+
+You are free to:
+
+- Use the book as-is
+
+- Adapt or remix the content to suit your course
+
+- Share your adapted versions with your students
+
+If you adopt this textbook, we would appreciate hearing from you. This helps us understand how the book is being used and prioritize improvements. If you adopt this textbook or want to provide feedback, please fill out this form:
+
+\[Share your adoption and feedback\](<https://docs.google.com/forms/d/e/1FAIpQLSd-ySUsZqbJNrq4Y17G3bKhsHGILpX224AEoX5cWV14m2eGCw/formResponse>)
+
+------------------------------------------------------------------------
+
+## Contributing Content
+
+We welcome contributions from the community. If you are interested in contributing:
+
+- You can suggest changes via GitHub issues
+
+- More substantial contributions can be made through pull requests
+
+If you are new to GitHub, feel free to reach out and we can help guide you through the process.
+
+------------------------------------------------------------------------
+
+## Contact
+
+If you prefer to reach out directly, you may \[contact the authors\](mailto:ranwangrs\@gmail.com)
+
+------------------------------------------------------------------------
+
+## License Reminder
+
+This work is licensed under a Creative Commons license. You are free to use and adapt the material in accordance with the license terms, with appropriate attribution.
+
+------------------------------------------------------------------------
+
+Thank you for helping improve this open resource.

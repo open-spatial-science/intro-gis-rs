@@ -1,9 +1,9 @@
 ---
 title: "Introduction"
+home: true
 numbered: false
 number-sections: false
 ---
-
 
 The global geospatial solutions market was valued at USD 626 billion in 2024; with a 13% projected annual growth rate, it is expected to reach \$2155 billion by 2034 (Prescient and Strategic Intelligence, 2024). Globally, many governments are funding the development of geospatial infrastructure and promoting the geospatial solutions. A large number of students trained in geospatial sciences will be needed to support the steady demand for the workforce.
 
@@ -11,6 +11,24 @@ Geospatial science is a true interdisciplinary subject that covers a broad range
 
 To address this challenge, we plan to develop this Open Educational Resource (OER) by forming a team with distinct backgrounds spanning remote sensing, urban geography, historical geography, and sustainability in urban and rural areas. Our goal is to develop OER that can be used in introductory and intermediate levels geospatial science courses, covering concepts of GIS and remote sensing and their applications in a wide range of disciplines.
 
+## Copyright, License & Third-Party Materials
+
+This work was developed by Ran Wang, Xiaomeng Li, and Andrew Husa, with support from University of Nebraska-Lincoln Libraries.
+
+*Suggested citation:* Wang, R., Li, X., Husa, A. (2026) Mapping the world: An open textbook on GIS and remote sensing. Available at: https://open-spatial-science.github.io/intro-gis-rs/
+
+**License**
+
+Except where otherwise noted, this work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0; [Full license text](https://creativecommons.org/licenses/by-sa/4.0/)). You are free to share and adapt the material, provided you give appropriate credit and distribute any derivative works under the same license.
+
+**Third-party materials**
+
+ArcGIS® software screenshots are the intellectual property of Esri and are used herein with permission. Copyright © Esri. All rights reserved.
+
+Unless otherwise indicated, third-party texts, images, and other materials quoted in these materials are included on the basis of fair use as described in the Code of Best Practices for Fair Use in Open Education.
+
 ## Acknowledgement
 
-This Open Educational Resource (OER) was made possible in part through funding from the University of Nebraska-Lincoln Libraries OER Seed Grant. We also sincerely appreciate the support from the School of Natural Reources and School of Global Integrative Studies at UNL, and the US Department of Agriculture's Agricultural Research Service (USDA-ARS) Partnerships for Data Innovations (PDI) initiative.
+This Open Educational Resource (OER) was made possible in part through funding from the University of Nebraska-Lincoln Libraries [OER STAR Seed Grant](https://teaching.unl.edu/star-oer/seed-grants/). We also sincerely appreciate the support from the School of Natural Reources and School of Global Integrative Studies at UNL, and the US Department of Agriculture's Agricultural Research Service (USDA-ARS) Partnerships for Data Innovations (PDI) initiative.
+
+To provide feedback or adopt this book, see our [Feedback & Adoption page](feedback.qmd) for details.
