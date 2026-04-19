@@ -15,7 +15,7 @@ To address this challenge, we plan to develop this Open Educational Resource (OE
 
 This work was developed by Ran Wang, Xiaomeng Li, and Andrew Husa, with support from University of Nebraska-Lincoln Libraries.
 
-*Suggested citation:* Wang, R., Li, X., Husa, A. (2026) Mapping the world: An open textbook on GIS and remote sensing. Available at: https://open-spatial-science.github.io/intro-gis-rs/
+*Suggested citation:* *Wang, R., Li, X., Husa, A. (2026) Mapping the world: An open textbook on GIS and remote sensing. Available at: https://open-spatial-science.github.io/intro-gis-rs/*
 
 **License**
 
@@ -31,4 +31,38 @@ Unless otherwise indicated, third-party texts, images, and other materials quote
 
 This Open Educational Resource (OER) was made possible in part through funding from the University of Nebraska-Lincoln Libraries [OER STAR Seed Grant](https://teaching.unl.edu/star-oer/seed-grants/). We also sincerely appreciate the support from the School of Natural Reources and School of Global Integrative Studies at UNL, and the US Department of Agriculture's Agricultural Research Service (USDA-ARS) Partnerships for Data Innovations (PDI) initiative.
 
-To provide feedback or adopt this book, see our [Feedback & Adoption page](feedback.qmd) for details.
+## Feedback & Contributions
+
+**Help Improve This Book**
+
+This textbook is an open educational resource and is intended to evolve over time. We welcome feedback from instructors, students, and readers.
+
+If you notice an error, have a suggestion, or would like to propose new content, the best way to contribute is through our GitHub repository:
+
+- Report issues (typos, errors, unclear explanations)
+
+- Suggest enhancements or additional examples
+
+- Request new topics or features
+
+Please visit the [repository](https://github.com/open-spatial-science/intro-gis-rs) and open an issue to get started.
+
+**Adopting This Textbook**
+
+Instructors are welcome and encouraged to adopt this book in their courses.
+
+You are free to:
+
+- Use the book as-is
+
+- Adapt or remix the content to suit your course
+
+- Share your adapted versions with your students
+
+If you adopt this textbook, we would appreciate hearing from you. This helps us understand how the book is being used and prioritize improvements. If you adopt this textbook or want to provide feedback, please fill out this form:
+
+[Share your adoption and feedback](https://docs.google.com/forms/d/e/1FAIpQLSd-ySUsZqbJNrq4Y17G3bKhsHGILpX224AEoX5cWV14m2eGCw/formResponse)
+
+**Contact**
+
+If you prefer to reach out directly, you may [contact the authors](mailto:ranwangrs@gmail.com)
