@@ -15,7 +15,7 @@ If you notice an error, have a suggestion, or would like to propose new content,
 
 - Request new topics or features
 
-Please visit the [repository](https://github.com/open-spatial-science/intro-gis-rs) and open an issue to get started.
+Please visit the \[repository\](<https://github.com/open-spatial-science/intro-gis-rs>) and open an issue to get started.
 
 ------------------------------------------------------------------------
 
@@ -33,7 +33,7 @@ You are free to:
 
 If you adopt this textbook, we would appreciate hearing from you. This helps us understand how the book is being used and prioritize improvements. If you adopt this textbook or want to provide feedback, please fill out this form:
 
-[Share your adoption and feedback](https://docs.google.com/forms/d/e/1FAIpQLSd-ySUsZqbJNrq4Y17G3bKhsHGILpX224AEoX5cWV14m2eGCw/formResponse)
+\[Share your adoption and feedback\](<https://docs.google.com/forms/d/e/1FAIpQLSd-ySUsZqbJNrq4Y17G3bKhsHGILpX224AEoX5cWV14m2eGCw/formResponse>)
 
 ------------------------------------------------------------------------
 
@@ -51,7 +51,7 @@ If you are new to GitHub, feel free to reach out and we can help guide you throu
 
 ## Contact
 
-If you prefer to reach out directly, you may [contact the authors](mailto:ranwangrs@gmail.com)
+If you prefer to reach out directly, you may \[contact the authors\](mailto:ranwangrs\@gmail.com)
 
 ------------------------------------------------------------------------
 
@@ -61,4 +61,4 @@ This work is licensed under a Creative Commons license. You are free to use and 
 
 ------------------------------------------------------------------------
 
-Thank you for helping improve this open textbook.
+Thank you for helping improve this open resource.

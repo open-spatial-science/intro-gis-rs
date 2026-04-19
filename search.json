@@ -14,7 +14,17 @@
     "href": "index.html#acknowledgement",
     "title": "Mapping the world: an open textbook on GIS and remote sensing",
     "section": "Acknowledgement",
-    "text": "Acknowledgement\nThis Open Educational Resource (OER) was made possible in part through funding from the University of Nebraska-Lincoln Libraries OER STAR Seed Grant. We also sincerely appreciate the support from the School of Natural Reources and School of Global Integrative Studies at UNL, and the US Department of Agriculture’s Agricultural Research Service (USDA-ARS) Partnerships for Data Innovations (PDI) initiative.\nTo provide feedback or adopt this book, see our Feedback & Adoption page for details.",
+    "text": "Acknowledgement\nThis Open Educational Resource (OER) was made possible in part through funding from the University of Nebraska-Lincoln Libraries OER STAR Seed Grant. We also sincerely appreciate the support from the School of Natural Reources and School of Global Integrative Studies at UNL, and the US Department of Agriculture’s Agricultural Research Service (USDA-ARS) Partnerships for Data Innovations (PDI) initiative.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#feedback-contributions",
+    "href": "index.html#feedback-contributions",
+    "title": "Mapping the world: an open textbook on GIS and remote sensing",
+    "section": "Feedback & Contributions",
+    "text": "Feedback & Contributions\nHelp Improve This Book\nThis textbook is an open educational resource and is intended to evolve over time. We welcome feedback from instructors, students, and readers.\nIf you notice an error, have a suggestion, or would like to propose new content, the best way to contribute is through our GitHub repository:\n\nReport issues (typos, errors, unclear explanations)\nSuggest enhancements or additional examples\nRequest new topics or features\n\nPlease visit the repository and open an issue to get started.\nAdopting This Textbook\nInstructors are welcome and encouraged to adopt this book in their courses.\nYou are free to:\n\nUse the book as-is\nAdapt or remix the content to suit your course\nShare your adapted versions with your students\n\nIf you adopt this textbook, we would appreciate hearing from you. This helps us understand how the book is being used and prioritize improvements. If you adopt this textbook or want to provide feedback, please fill out this form:\nShare your adoption and feedback\nContact\nIf you prefer to reach out directly, you may contact the authors",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
