@@ -64,6 +64,8 @@ Essentially, datum is a mathematical model to reference a coordinate system agai
 
 ![Datum is the ellipsoid to reference a coordinate system against. Relationship between Clarke 1866, WGS 84, GRS 80 and Geoid. Source: vertical datum transformation, National Oceanic and Atmospheric Administration.](/figures/ch3/datum.gif){#fig-datum}
 
+ In modern geodesy, it is also useful to distinguish between a **datum** and a **reference frame**. Here, a datum is the conceptual definition of the coordinate system (it specifies how a reference ellipsoid is positioned and oriented relative to the Earth), whereas a reference frame is its practical ***realization*** through coordinates assigned to measured control points, such as GNSS stations. In everyday GIS usage, however, the terms are often used somewhat loosely.
+
 The common ***horizontal*** **datums** used in North America including the ***North American Datum of 1927 (NAD27)***, ***the North American Datum of 1983 (NAD83)*** and the ***World Geodetic System of 1984 (WGS84)***.
 
 The ***NAD27*** datum was developed for measurements of the United States and North America. It has its center positioned at Meades Ranch in Kansas. The ***NAD83*** datum was developed by the National Geodetic Survey and Canadian agencies in 1986. It is used as the datum for much data for the United States and the North American continent as a whole. In the 1990s, the National Geodetic Survey (NGS), in collaboration with individual states, undertook a major project to update the NAD83 datum by establishing a new, more precise network of reference points across the United States (High Accuracy Regional Network of fitted points; HARN).
