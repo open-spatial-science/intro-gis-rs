@@ -32,7 +32,9 @@ Based on a few empirical observations, the ancient Greeks were able to establish
 
 The ancient Greeks not only established the spherical earth but also calculated the earth’s circumference. In 200 BC, the Greek mathematician and geographer Eratosthenes noticed that objects in Syene (the city now known as Aswan located in Egypt) casted no shadows at noon in midsummer, indicating that the sun was directly overhead. Meanwhile, a pillar casted a shadow at the same time in Alexandria, which is located 489 miles north of Syene. The angle between the shadow and the pillar was 7.2 degrees. Based on the idea that the earth was a sphere, Eratosthenes reasoned the angle between Alexandria and Syene at the center of the Earth had to be 7.2 degrees, which is 1/50th of 360 degrees @fig-eratosthenes. Based on this assumption, Eratosthenes calculated the circumference of the entire planet as
 
-\$\$\\text{Circumference} = 50 \\times 489 \\text{ miles} = 24{,}450 \\text{ miles}\$\$
+$$
+\text{Circumference} = 50 \times 489 \text{ miles} = 24{,}450 \text{ miles}
+$$
 
 This was very close to being right (the equatorial circumference is \~24,901 miles and the polar circumference is \~24,860 miles).
 
