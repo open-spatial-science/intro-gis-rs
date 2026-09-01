@@ -44,7 +44,9 @@ The spatial resolution of raster data (pixel size) reflects the level of detail 
 
 ![Airborne and satellite imagery covering the same area illustrating the difference between two spatial resolutions. Airborne data (0.6 m resolution) was obtained from the USDA NAIP program, and the satellite imagery (30 m resolution) was obtained from the Italian Space Agency PRISMA mission.](/figures/ch15/niobraraimg.png){#fig-niobrara}
 
-Displaying large raster datasets can be slow, especially when zooming out, because the software must load the entire high-resolution dataset from disk. To improve performance, ***raster pyramids*** are used. These are precomputed, downsampled versions of the original raster at multiple levels of resolution, allowing GIS software to dynamically load only the appropriate level of detail based on the current map scale. This significantly reduces load times and enhances user interaction in map navigation. Note that building pyramids results in a small increase in the data size, because it adds the precomputed resampled versions of the raster to the data.
+Displaying large raster datasets can be slow, especially when zooming out, because the software must load the entire high-resolution dataset from disk. To improve performance, ***raster pyramids*** are used. These are precomputed, downsampled versions of the original raster at multiple levels of resolution @fig-rasterpyramids, allowing GIS software to dynamically load only the appropriate level of detail based on the current map scale. This significantly reduces load times and enhances user interaction in map navigation. Note that building pyramids results in a small increase in the data size, because it adds the precomputed resampled versions of the raster to the data.
+
+![Raster pyramids contain a series of downsampled versions of the original raster data. Pyramids can speed up the display of raster data by retrieving only the data at a specified resolution that is required for the display. Image credit: Yang et al. 2024](/figures/ch2/rasterpyramid.png){#fig-rasterpyramids}
 
 In summary, raster data model uses continuous cells arranged into a matrix to represent the world. Using the matrix allows raster to uniformly store points, lines, polygons, and surfaces and to efficiently perform specific spatial analysis methods, such as overlay, surface analysis and statistical analysis. However, there can be spatial inaccuracies due to the limits imposed by the cell dimension and the nature of regularly spaced cell. Meanwhile, the volume of raster dataset can potentially be very large, especially when the data covers a large area or has high spatial resolution (small pixels). Overall, the world is not made of pixels, but sometimes pixels are the best way to understand and represent it.
 
@@ -93,3 +95,6 @@ Use letters, numbers, or underscore only (no dash)
 
 Always start the name with letters
 :::
+
+## References
+Yang A, Zhang F, Feng J, Wang L, Yue E, Fan X, Zhang J, Hu L, Wu S. DCPMS: A Large-Scale Raster Layer Serving Method for Custom Online Calculation and Rendering. ISPRS International Journal of Geo-Information. 2024; 13(8):276. https://doi.org/10.3390/ijgi13080276

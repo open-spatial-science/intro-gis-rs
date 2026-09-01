@@ -73,6 +73,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -272,10 +301,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#the-oblate-or-prolate-spheroid" id="toc-the-oblate-or-prolate-spheroid" class="nav-link" data-scroll-target="#the-oblate-or-prolate-spheroid"><span class="header-section-number">4.3</span> <em>The oblate or prolate spheroid?</em></a></li>
   <li><a href="#geoid" id="toc-geoid" class="nav-link" data-scroll-target="#geoid"><span class="header-section-number">4.4</span> <em>Geoid</em></a></li>
   <li><a href="#datum" id="toc-datum" class="nav-link" data-scroll-target="#datum"><span class="header-section-number">4.5</span> <em>Datum</em></a></li>
-  <li><a href="#national-spatial-reference-system-nsrs-modernization-in-the-u.s." id="toc-national-spatial-reference-system-nsrs-modernization-in-the-u.s." class="nav-link" data-scroll-target="#national-spatial-reference-system-nsrs-modernization-in-the-u.s."><span class="header-section-number">4.6</span> National Spatial Reference System (NSRS) Modernization in the U.S.</a>
+  <li><a href="#national-spatial-reference-system-nsrs-modernization-in-the-united-states" id="toc-national-spatial-reference-system-nsrs-modernization-in-the-united-states" class="nav-link" data-scroll-target="#national-spatial-reference-system-nsrs-modernization-in-the-united-states"><span class="header-section-number">4.6</span> National Spatial Reference System (NSRS) Modernization in the United States</a>
   <ul class="collapse">
-  <li><a href="#terrestrial-reference-frames" id="toc-terrestrial-reference-frames" class="nav-link" data-scroll-target="#terrestrial-reference-frames"><span class="header-section-number">4.6.1</span> <em>Terrestrial reference frames</em></a></li>
-  <li><a href="#napgd2022" id="toc-napgd2022" class="nav-link" data-scroll-target="#napgd2022"><span class="header-section-number">4.6.2</span> <em>NAPGD2022</em></a></li>
+  <li><a href="#natrf2022-patrf2022-catrf2022-matrf2022" id="toc-natrf2022-patrf2022-catrf2022-matrf2022" class="nav-link" data-scroll-target="#natrf2022-patrf2022-catrf2022-matrf2022"><span class="header-section-number">4.6.1</span> <em>NATRF2022, PATRF2022, CATRF2022, MATRF2022</em></a></li>
+  <li><a href="#north-americanpacific-geopotential-datum-of-2022-napgd2022" id="toc-north-americanpacific-geopotential-datum-of-2022-napgd2022" class="nav-link" data-scroll-target="#north-americanpacific-geopotential-datum-of-2022-napgd2022"><span class="header-section-number">4.6.2</span> <em>North American–Pacific Geopotential Datum of 2022 (NAPGD2022)</em></a></li>
   </ul></li>
   <li><a href="#geographic-coordinate-system-gcs" id="toc-geographic-coordinate-system-gcs" class="nav-link" data-scroll-target="#geographic-coordinate-system-gcs"><span class="header-section-number">4.7</span> <em>Geographic Coordinate System (GCS)</em></a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">4.8</span> References</a></li>
@@ -341,7 +370,9 @@ Figure&nbsp;4.1: Earthrise. Image is obtained from Apollo Image Atlas: AS08-14-2
 <h2 data-number="4.2" class="anchored" data-anchor-id="the-rise-of-the-spherical-earth"><span class="header-section-number">4.2</span> <em>The rise of the spherical earth</em></h2>
 <p>Based on a few empirical observations, the ancient Greeks were able to establish a spherical earth. Aristotle (384 – 322 B.C.) provided some of the earliest empirical evidence for spherical earth, including 1) Ships disappear hull-first when they sail over the horizon; 2) Earth casts a round shadow on the moon during a lunar eclipse; 3) Different constellations are visible at different latitudes. Based on these observations, Aristotle concluded that “<em>Again, our observations of the stars make it evident,&nbsp;not only that the Earth is circular, but also that it is a circle of no&nbsp;great size. For quite a small change of position to south or north causes&nbsp;a manifest alteration of the horizon</em>” &nbsp;(Aristotle).</p>
 <p>The ancient Greeks not only established the spherical earth but also calculated the earth’s circumference. In 200 BC,&nbsp;the Greek mathematician and geographer Eratosthenes noticed that objects in Syene (the city now known as Aswan located in Egypt) casted no shadows at noon in midsummer, indicating that the sun&nbsp;was directly overhead. Meanwhile, a pillar casted a shadow at the same time in Alexandria, which is located 489 miles north of Syene. The angle between the shadow and the pillar was 7.2 degrees. Based on the idea that the earth was a sphere, Eratosthenes reasoned the angle between Alexandria and Syene at the center of the Earth had to be 7.2 degrees, which is 1/50th of 360 degrees <a href="#fig-eratosthenes" class="quarto-xref">Figure&nbsp;<span>4.2</span></a>. Based on this assumption, Eratosthenes calculated&nbsp;the circumference of the entire planet as</p>
-<p>$$\text{Circumference} = 50 \times 489 \text{ miles} = 24{,}450 \text{ miles}$$</p>
+<p><span class="math display">\[
+\text{Circumference} = 50 \times 489 \text{ miles} = 24{,}450 \text{ miles}
+\]</span></p>
 <p>This was very close to being right (the equatorial circumference is ~24,901 miles and the polar circumference is ~24,860 miles).</p>
 <div id="fig-eratosthenes" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -390,6 +421,7 @@ Figure&nbsp;4.4: Datum is the ellipsoid to reference a coordinate system against
 </figcaption>
 </figure>
 </div>
+<p>In modern geodesy, it is also useful to distinguish between a <strong>datum</strong> and a <strong>reference frame</strong>. Here, a datum is the conceptual definition of the coordinate system (it specifies how a reference ellipsoid is positioned and oriented relative to the Earth), whereas a reference frame is its practical <strong><em>realization</em></strong> through coordinates assigned to measured control points, such as GNSS stations. In everyday GIS usage, however, the terms are often used somewhat loosely.</p>
 <p>The common <strong><em>horizontal</em></strong> <strong>datums</strong> used in North America including the <strong><em>North American Datum of 1927 (NAD27)</em></strong>, <strong><em>the North American Datum of 1983 (NAD83)</em></strong> and the <strong><em>World Geodetic System of 1984 (WGS84)</em></strong>.</p>
 <p>The <strong><em>NAD27</em></strong> datum was developed for measurements of the United States and North America. It has its center positioned at Meades Ranch in Kansas. The <strong><em>NAD83</em></strong> datum was developed by the National Geodetic Survey and Canadian agencies in 1986. It is used as the datum for much data for the United States and the North American continent as a whole. In the 1990s, the&nbsp;National Geodetic Survey (NGS), in collaboration with individual states, undertook a major project to update the NAD83 datum by establishing a new, more precise network of reference points across the United States (High Accuracy Regional Network of fitted points; HARN).</p>
 <p>The <strong><em>WGS84</em></strong> datum was developed by the U.S. Department of Defense and is used by the Global Positioning System (GPS) for locating points worldwide on Earth’s surface (a global datum). WGS84 has been revised six times since its original realization in 1987. The most recent version is&nbsp;WGS84 (G2139) implemented on 3 January 2021. Originally, the difference between WGS84 (as rolled out in 1987) and NAD83 (as first introduced in 1986) coordinates was so small that transformation was unnecessary. That is no longer the case when it comes to NAD83 2011 (2010.0) and WGS84 (G1762).</p>
@@ -407,17 +439,17 @@ Figure&nbsp;4.5: Definitions of elevation
 </div>
 <p>The <strong><em>North American Vertical Datum of 1988 (NAVD 88)</em></strong> is the primary vertical datum that has been used for elevations in the United States for several decades. It provides a common reference surface so that elevations measured in different locations can be compared consistently. NAVD 88 was established mainly through a large network of spirit-leveling measurements connecting thousands of permanent bencchmarks across the country.</p>
 </section>
-<section id="national-spatial-reference-system-nsrs-modernization-in-the-u.s." class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="national-spatial-reference-system-nsrs-modernization-in-the-u.s."><span class="header-section-number">4.6</span> National Spatial Reference System (NSRS) Modernization in the U.S.</h2>
-<p>While datums such as the NAD83 and NAVD88 provide the reference frameworks for horizontal and vertical positions, they both have limitations. A major limitation of NAD83 is that its origin is not located exactly at Earth’s center of mass. It differs from a truly geocentric coordinate system by about 2.2 meters. This is important because modern Global Navigation Satellite Systems, including GPS, use reference frames that are centered at Earth’s center of mass. Consequently, NAD 83 does not algin perfectly with global reference frames such as the International Terrestrial Reference System (ITRF). Regarding NAVD88, one important limitation is that it depends heavily on physical benchmarks (a.k.a. passive control points) that can be disturbed by construction, land subsidence, uplift, frost, or other processes, meaning that the published elevation of a benchmark may no longer represent its actual current position. NVAD 88 also contains systematic errors from how the network was established. Because elevations were propagated across very long distance using leveling from a limited set of reference points, small measurement errors accumulated over space. Compared with a mordern gravity-based geoid, NAVD 88 has a known bias of roughly 50 cm and a broad tilt that can approach 1 m across the conterminous United States.</p>
-<p>To overcome these limitations, in 2007, the <strong>National Geodetic Survey (NCS)</strong> announed plans to modernize the <strong>National Spatial Reference System (NSRS)</strong>, which provides the coordinate framework used for surveying, mapping, and navigation in the United States. The NSRS modernization was designed to move away from a system that depends primarily on physical benchmarks and towards based on continuously operating GNSS stations, Earth-centered reference frames, precise gravity measurements, and modern geoid models. In this effort, the existing NAD83 and NAVD88 will be replaced using the modernized system.</p>
-<section id="terrestrial-reference-frames" class="level3" data-number="4.6.1">
-<h3 data-number="4.6.1" class="anchored" data-anchor-id="terrestrial-reference-frames"><span class="header-section-number">4.6.1</span> <em>Terrestrial reference frames</em></h3>
-<p>NAD 83 will be replaced by four new terrestrial reference frames including <strong>NATRF2022</strong> for the North American Plate, <strong>PATRF2022</strong> for the Pacific Plate, <strong>CATRF2022</strong> for the Caribbean Plate, and <strong>MATRF2022</strong> for the Mariana Plate. These reference frames are defined relative to ITRF2020, making them geocentric and more directly comparable with GNSS measurements. Each frame rotates with its corresponding tectonic plate, which minimizes changes in coordinates caused by the large-scale motion of that plate.</p>
+<section id="national-spatial-reference-system-nsrs-modernization-in-the-united-states" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="national-spatial-reference-system-nsrs-modernization-in-the-united-states"><span class="header-section-number">4.6</span> National Spatial Reference System (NSRS) Modernization in the United States</h2>
+<p>While datums such as the NAD83 and NAVD88 provide the reference frameworks for horizontal and vertical positions, they both have limitations. For example, a major limitation of NAD83 is that its origin is not located exactly at Earth’s center of mass. It differs from a truly geocentric coordinate system by about 2.2 meters. This is important because modern Global Navigation Satellite Systems (GNSS), including GPS, use reference frames that are centered at Earth’s center of mass. Consequently, NAD 83 does not algin perfectly with global reference frames such as the International Terrestrial Reference System (ITRF). Regarding NAVD88, one important limitation is that it depends heavily on physical benchmarks (a.k.a. passive control points) that can be disturbed by construction, land subsidence, uplift, frost, or other processes, meaning that the published elevation of a benchmark may no longer represent its actual current position. In addition, NVAD 88 contains systematic errors from how the network was established. Because elevations were propagated across very long distance using leveling from a limited set of reference points, small measurement errors accumulated over space. Compared with a mordern gravity-based geoid, NAVD 88 has a known bias of roughly 50 cm and a broad tilt that can approach 1 m across the conterminous United States.</p>
+<p>To overcome these limitations, in 2007, the <strong>National Geodetic Survey (NCS)</strong> announed plans to modernize the <strong>National Spatial Reference System (NSRS)</strong>, which provides the coordinate framework used for surveying, mapping, and navigation in the United States. The NSRS modernization was designed to move away from a system that depends primarily on physical benchmarks and towards based on continuously operating GNSS stations, Earth-centered reference frames, precise gravity measurements, and modern geoid models. In this effort, the existing NAD83 and NAVD88 will be replaced using the modernized systems.</p>
+<section id="natrf2022-patrf2022-catrf2022-matrf2022" class="level3" data-number="4.6.1">
+<h3 data-number="4.6.1" class="anchored" data-anchor-id="natrf2022-patrf2022-catrf2022-matrf2022"><span class="header-section-number">4.6.1</span> <em>NATRF2022, PATRF2022, CATRF2022, MATRF2022</em></h3>
+<p>The NAD 83 datum will be replaced by four new terrestrial reference frames including <strong>NATRF2022</strong> for the North American Plate, <strong>PATRF2022</strong> for the Pacific Plate, <strong>CATRF2022</strong> for the Caribbean Plate, and <strong>MATRF2022</strong> for the Mariana Plate. These reference frames are defined relative to ITRF2020, making them geocentric and more directly comparable with GNSS measurements. Each frame rotates with its corresponding tectonic plate, which minimizes changes in coordinates caused by the large-scale motion of that plate.</p>
 </section>
-<section id="napgd2022" class="level3" data-number="4.6.2">
-<h3 data-number="4.6.2" class="anchored" data-anchor-id="napgd2022"><span class="header-section-number">4.6.2</span> <em>NAPGD2022</em></h3>
-<p>The NAVD 88 vertical datum will be replaced by the North American–Pacific Geopotential Datum of 2022 (NAPGD2022 <a href="#fig-napgd22" class="quarto-xref">Figure&nbsp;<span>4.6</span></a>) that will serve as the future geopotential datum of the National Spatial Reference System (NSRS). NAPGD2022 is based on measurements of the Earth’s gravity field and its primary reference surface is provided by GEOID2022, a high-resolution gravimetric model of the geoid. It encompasses three regions: the North American–Pacific region, Guam and the Commonwealth of the Northern Mariana Islands, and American Samoa. This datum provides the information needed to generate consistent orthometric heights, geoid undulations, gravity anomalies, deflections of the vertical, and other gravity-related geodetic quantities.</p>
+<section id="north-americanpacific-geopotential-datum-of-2022-napgd2022" class="level3" data-number="4.6.2">
+<h3 data-number="4.6.2" class="anchored" data-anchor-id="north-americanpacific-geopotential-datum-of-2022-napgd2022"><span class="header-section-number">4.6.2</span> <em>North American–Pacific Geopotential Datum of 2022 (NAPGD2022)</em></h3>
+<p>The NAVD 88 vertical datum will be replaced by the North American–Pacific Geopotential Datum of 2022 (NAPGD2022 <a href="#fig-napgd22" class="quarto-xref">Figure&nbsp;<span>4.6</span></a>) that will serve as the future geopotential datum of the NSRS. NAPGD2022 is based on measurements of the Earth’s gravity field and its primary reference surface is provided by GEOID2022, a high-resolution gravimetric model of the geoid. It encompasses three regions: the North American–Pacific region, Guam and the Commonwealth of the Northern Mariana Islands, and American Samoa. This datum provides the information needed to generate consistent orthometric heights, geoid undulations, gravity anomalies, deflections of the vertical, and other gravity-related geodetic quantities.</p>
 <div id="fig-napgd22" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-napgd22-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -452,6 +484,29 @@ Figure&nbsp;4.7: Geographical coordinate system. Graticule: the spherical coordi
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-datumshift-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.8: Datum shift between NAD27 and NAD83. Source: Wikipedia
+</figcaption>
+</figure>
+</div>
+<p>Upon now, we have a system (GCS) that we can use to assign a unique set of coordinates for every location on Earth’s surface. This GCS can also be used for some other purposes. Longitude is closely related to time because the Earth rotates approximately <span class="math inline">\(360^{\circ}\)</span> in 24 hours, or roughly <span class="math inline">\(15^{\circ}\)</span> per hour and as the Earth rotates, different places face the Sun at different times. Here, we define <strong>solar noon</strong> as the time that the Sun reaches its highest point in the sky at a particular location. Because different longitudes face the Sun at different times, solar noon occurs at different clock times from place to place. Modern time zones are broadly organized around differences in longitude, with each time zone spanning 15 degree longitude. In practice, political boundaries and daylight-saving rules mean that time-zone boundaries do not follow longitude exactly <a href="#fig-worldtimezone" class="quarto-xref">Figure&nbsp;<span>4.9</span></a>.</p>
+<div id="fig-worldtimezone" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-worldtimezone-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch3/WorldTimeZones.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-worldtimezone-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.9: World time zones map. Source: Wikimedia Commons
+</figcaption>
+</figure>
+</div>
+<p>Because geographic coordinates describe locations on a curved Earth, the shortest distance between two points on the Earth surface is generally not a straight line as they do on a flat map. On a sphere, the shortest path follows a <strong>great circle</strong>, a circle whose center coincides with the center of the Earth (If you cut a sphere at one of its great circles, you would cut it exactly in half). The distance along this path is called the <strong>great-circle distance</strong>, which is the shortest distance between two points on the surface of a sphere. A great circle is also the largest possible circle that can be drawn around a sphere. Examples of great circles include the equator (the only parallel that is a great circle) and any circle formed by a meridian and its opposite meridian.</p>
+<p>Great-circle distance is particularly important for long-distance navigation and global analysis. A route that follows a great circle may appear curved when displayed on some map projections even though it represents the shortest path over the Earth’s surface <a href="#fig-greatcircle" class="quarto-xref">Figure&nbsp;<span>4.10</span></a>. For more accurate GIS calculations, the Earth is usually treated as an ellipsoid rather than a perfect sphere. In this case, distances calculated on the ellipsoid are often referred to as <strong>geodesic distances</strong>.</p>
+<div id="fig-greatcircle" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-greatcircle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch3/GreatCircleMap.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-greatcircle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.10: Great circles may appear curved when displayed on map projections. Great circles were shown connecting Lincoln, Nebraska to cities including New York City, London (England), Sydney (Australia), and Beijing (China).
 </figcaption>
 </figure>
 </div>
