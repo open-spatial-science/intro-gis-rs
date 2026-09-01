@@ -280,6 +280,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#limitations-of-vector-data-as-a-representation-of-real-world" id="toc-limitations-of-vector-data-as-a-representation-of-real-world" class="nav-link" data-scroll-target="#limitations-of-vector-data-as-a-representation-of-real-world"><span class="header-section-number">3.3.1</span> <em>Limitations of vector data as a representation of real world</em></a></li>
   </ul></li>
   <li><a href="#combining-and-complementing-raster-and-vector" id="toc-combining-and-complementing-raster-and-vector" class="nav-link" data-scroll-target="#combining-and-complementing-raster-and-vector"><span class="header-section-number">3.4</span> <em>Combining and complementing Raster and Vector</em></a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">3.5</span> References</a></li>
   </ul>
 </nav>
     </div>
@@ -396,20 +397,30 @@ Figure&nbsp;3.6: Airborne and satellite imagery covering the same area illustrat
 </figcaption>
 </figure>
 </div>
-<p>Displaying large raster datasets can be slow, especially when zooming out, because the software must load the entire high-resolution dataset from disk. To improve performance,&nbsp;<strong><em>raster pyramids</em></strong>&nbsp;are used. These are precomputed, downsampled versions of the original raster at multiple levels of resolution, allowing GIS software to dynamically load only the appropriate level of detail based on the current map scale. This significantly reduces load times and enhances user interaction in map navigation. Note that building pyramids results in a small increase in the data size, because it adds the precomputed resampled versions of the raster to the data.</p>
+<p>Displaying large raster datasets can be slow, especially when zooming out, because the software must load the entire high-resolution dataset from disk. To improve performance,&nbsp;<strong><em>raster pyramids</em></strong>&nbsp;are used. These are precomputed, downsampled versions of the original raster at multiple levels of resolution <a href="#fig-rasterpyramids" class="quarto-xref">Figure&nbsp;<span>3.7</span></a>, allowing GIS software to dynamically load only the appropriate level of detail based on the current map scale. This significantly reduces load times and enhances user interaction in map navigation. Note that building pyramids results in a small increase in the data size, because it adds the precomputed resampled versions of the raster to the data.</p>
+<div id="fig-rasterpyramids" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rasterpyramids-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch2/rasterpyramid.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rasterpyramids-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.7: Raster pyramids contain a series of downsampled versions of the original raster data. Pyramids can speed up the display of raster data by retrieving only the data at a specified resolution that is required for the display. Image credit: Yang et al.&nbsp;2024
+</figcaption>
+</figure>
+</div>
 <p>In summary, raster data model uses continuous cells arranged into a matrix to represent the world. Using the matrix allows raster to uniformly store points, lines, polygons, and surfaces and to efficiently perform specific spatial analysis methods, such as overlay, surface analysis and statistical analysis. However, there can be spatial inaccuracies due to the limits imposed by the cell dimension and the nature of regularly spaced cell. Meanwhile, the volume of raster dataset can potentially be very large, especially when the data covers a large area or has high spatial resolution (small pixels). Overall, the world is not made of pixels, but sometimes pixels are the best way to understand and represent it.</p>
 </section>
 </section>
 <section id="vector-data-model-the-discrete-object-view" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="vector-data-model-the-discrete-object-view"><span class="header-section-number">3.3</span> <em>Vector data model – the discrete object view</em></h2>
-<p>Unlike the raster data model, vector data model utilizes the discrete object view to represent the world by treating each item as an individual object <a href="#fig-vectormodel" class="quarto-xref">Figure&nbsp;<span>3.7</span></a>. To do this, it uses three types of objects, including <em>points</em>, <em>lines</em> and <em>polygons</em>. Specifically, points are zero-dimensional geographical objects, meaning that points only represent locations in space without any length, width or area. Lines are one-dimensional geographical objects formed by connecting points, representing features with length but no width. Polygons are two-dimensional geographical objects that represent areas enclosed by a set of connected lines. Polygons can also be treated as a closed chain of points where the starting and ending points coincide, defining a boundary that encloses space.</p>
+<p>Unlike the raster data model, vector data model utilizes the discrete object view to represent the world by treating each item as an individual object <a href="#fig-vectormodel" class="quarto-xref">Figure&nbsp;<span>3.8</span></a>. To do this, it uses three types of objects, including <em>points</em>, <em>lines</em> and <em>polygons</em>. Specifically, points are zero-dimensional geographical objects, meaning that points only represent locations in space without any length, width or area. Lines are one-dimensional geographical objects formed by connecting points, representing features with length but no width. Polygons are two-dimensional geographical objects that represent areas enclosed by a set of connected lines. Polygons can also be treated as a closed chain of points where the starting and ending points coincide, defining a boundary that encloses space.</p>
 <div id="fig-vectormodel" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-vectormodel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch2/vectormodel.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vectormodel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.7: Vector data model represents the world using points, lines and polygons. Source: GISGeography.com
+Figure&nbsp;3.8: Vector data model represents the world using points, lines and polygons. Source: GISGeography.com
 </figcaption>
 </figure>
 </div>
@@ -418,14 +429,14 @@ Figure&nbsp;3.7: Vector data model represents the world using points, lines and 
 <section id="limitations-of-vector-data-as-a-representation-of-real-world" class="level3" data-number="3.3.1">
 <h3 data-number="3.3.1" class="anchored" data-anchor-id="limitations-of-vector-data-as-a-representation-of-real-world"><span class="header-section-number">3.3.1</span> <em>Limitations of vector data as a representation of real world</em></h3>
 <p>While vector is widely used in GIS for representing discrete features using points, lines, and polygons, vector remains an imperfect abstraction of the complex and continuous nature of the real world. One major limitation is the&nbsp;simplification of reality: real-world features often have irregular, nuanced shapes and behaviors that are reduced to mathematically idealized geometries. For instance,&nbsp;boundary generalization&nbsp;occurs when complex natural boundaries—like winding coastlines or forest edges—are simplified into straight or smoothed lines to reduce data complexity. Additionally, vector data assumes&nbsp;clearly defined boundaries, which do not always exist in nature. Transitional zones, such as the gradual shift from wetland to upland, cannot be easily captured using discrete polygon boundaries. Another issue is&nbsp;polygon inclusions, where smaller areas of different land cover types (e.g., a pond within a forest) may be omitted or improperly represented if not explicitly digitized as separate features. These limitations underscore the need to interpret vector data critically and, where appropriate, complement it with other data models for more accurate spatial analysis.</p>
-<p>One important property of vector data model is the ability to describe topology. Topology is a mathematics field that studies properties of spaces that are invariant under any continuous deformation. In geospatial science, topology studies the spatial relationship between adjacent or neighboring features, describing how features share geometry. In GIS, topology is used to (1) constrain how features share geometry. For example, adjacent polygons such as parcels have shared edges, street centerlines and census blocks share geometry, and adjacent soil polygons share edges. (2) Define and enforce data integrity rules: no gaps should exist between polygons, or there should be no overlapping features, and so on <a href="#fig-topologyerror" class="quarto-xref">Figure&nbsp;<span>3.8</span></a>. (3) Support topological relationship queries and navigation, such as to identify feature adjacency and connectivity.</p>
+<p>One important property of vector data model is the ability to describe topology. Topology is a mathematics field that studies properties of spaces that are invariant under any continuous deformation. In geospatial science, topology studies the spatial relationship between adjacent or neighboring features, describing how features share geometry. In GIS, topology is used to (1) constrain how features share geometry. For example, adjacent polygons such as parcels have shared edges, street centerlines and census blocks share geometry, and adjacent soil polygons share edges. (2) Define and enforce data integrity rules: no gaps should exist between polygons, or there should be no overlapping features, and so on <a href="#fig-topologyerror" class="quarto-xref">Figure&nbsp;<span>3.9</span></a>. (3) Support topological relationship queries and navigation, such as to identify feature adjacency and connectivity.</p>
 <div id="fig-topologyerror" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-topologyerror-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../figures/ch2/topologyerror.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-topologyerror-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.8: Topology: A key requirement for data management and integrity.
+Figure&nbsp;3.9: Topology: A key requirement for data management and integrity.
 </figcaption>
 </figure>
 </div>
@@ -456,6 +467,10 @@ Figure&nbsp;3.8: Topology: A key requirement for data management and integrity.
 <p>Always start the name with letters</p>
 </div>
 </div>
+</section>
+<section id="references" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="references"><span class="header-section-number">3.5</span> References</h2>
+<p>Yang A, Zhang F, Feng J, Wang L, Yue E, Fan X, Zhang J, Hu L, Wu S. DCPMS: A Large-Scale Raster Layer Serving Method for Custom Online Calculation and Rendering. ISPRS International Journal of Geo-Information. 2024; 13(8):276. https://doi.org/10.3390/ijgi13080276</p>
 
 
 </section>

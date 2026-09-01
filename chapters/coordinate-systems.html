@@ -490,6 +490,29 @@ Figure&nbsp;4.8: Datum shift between NAD27 and NAD83. Source: Wikipedia
 </figcaption>
 </figure>
 </div>
+<p>Upon now, we have a system (GCS) that we can use to assign a unique set of coordinates for every location on Earth’s surface. This GCS can also be used for some other purposes. Longitude is closely related to time because the Earth rotates approximately <span class="math inline">\(360^{\circ}\)</span> in 24 hours, or roughly <span class="math inline">\(15^{\circ}\)</span> per hour and as the Earth rotates, different places face the Sun at different times. Here, we define <strong>solar noon</strong> as the time that the Sun reaches its highest point in the sky at a particular location. Because different longitudes face the Sun at different times, solar noon occurs at different clock times from place to place. Modern time zones are broadly organized around differences in longitude, with each time zone spanning 15 degree longitude. In practice, political boundaries and daylight-saving rules mean that time-zone boundaries do not follow longitude exactly <a href="#fig-worldtimezone" class="quarto-xref">Figure&nbsp;<span>4.9</span></a>.</p>
+<div id="fig-worldtimezone" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-worldtimezone-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch3/WorldTimeZones.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-worldtimezone-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.9: World time zones map. Source: Wikimedia Commons
+</figcaption>
+</figure>
+</div>
+<p>Because geographic coordinates describe locations on a curved Earth, the shortest distance between two points on the Earth surface is generally not a straight line as they do on a flat map. On a sphere, the shortest path follows a <strong>great circle</strong>, a circle whose center coincides with the center of the Earth (If you cut a sphere at one of its great circles, you would cut it exactly in half). The distance along this path is called the <strong>great-circle distance</strong>, which is the shortest distance between two points on the surface of a sphere. A great circle is also the largest possible circle that can be drawn around a sphere. Examples of great circles include the equator (the only parallel that is a great circle) and any circle formed by a meridian and its opposite meridian.</p>
+<p>Great-circle distance is particularly important for long-distance navigation and global analysis. A route that follows a great circle may appear curved when displayed on some map projections even though it represents the shortest path over the Earth’s surface <a href="#fig-greatcircle" class="quarto-xref">Figure&nbsp;<span>4.10</span></a>. For more accurate GIS calculations, the Earth is usually treated as an ellipsoid rather than a perfect sphere. In this case, distances calculated on the ellipsoid are often referred to as <strong>geodesic distances</strong>.</p>
+<div id="fig-greatcircle" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-greatcircle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/ch3/GreatCircleMap.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-greatcircle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.10: Great circles may appear curved when displayed on map projections. Great circles were shown connecting Lincoln, Nebraska to cities including New York City, London (England), Sydney (Australia), and Beijing (China).
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="references" class="level2" data-number="4.8">
 <h2 data-number="4.8" class="anchored" data-anchor-id="references"><span class="header-section-number">4.8</span> References</h2>
