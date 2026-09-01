@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -41,10 +44,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3d497cff885f6278d37568d0ef0763f8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -272,7 +275,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#the-oblate-or-prolate-spheroid" id="toc-the-oblate-or-prolate-spheroid" class="nav-link" data-scroll-target="#the-oblate-or-prolate-spheroid"><span class="header-section-number">4.3</span> <em>The oblate or prolate spheroid?</em></a></li>
   <li><a href="#geoid" id="toc-geoid" class="nav-link" data-scroll-target="#geoid"><span class="header-section-number">4.4</span> <em>Geoid</em></a></li>
   <li><a href="#datum" id="toc-datum" class="nav-link" data-scroll-target="#datum"><span class="header-section-number">4.5</span> <em>Datum</em></a></li>
-  <li><a href="#napgd2022" id="toc-napgd2022" class="nav-link" data-scroll-target="#napgd2022"><span class="header-section-number">4.6</span> NAPGD2022</a></li>
+  <li><a href="#national-spatial-reference-system-nsrs-modernization-in-the-united-states" id="toc-national-spatial-reference-system-nsrs-modernization-in-the-united-states" class="nav-link" data-scroll-target="#national-spatial-reference-system-nsrs-modernization-in-the-united-states"><span class="header-section-number">4.6</span> National Spatial Reference System (NSRS) Modernization in the United States</a>
+  <ul class="collapse">
+  <li><a href="#natrf2022-patrf2022-catrf2022-matrf2022" id="toc-natrf2022-patrf2022-catrf2022-matrf2022" class="nav-link" data-scroll-target="#natrf2022-patrf2022-catrf2022-matrf2022"><span class="header-section-number">4.6.1</span> <em>NATRF2022, PATRF2022, CATRF2022, MATRF2022</em></a></li>
+  <li><a href="#north-americanpacific-geopotential-datum-of-2022-napgd2022" id="toc-north-americanpacific-geopotential-datum-of-2022-napgd2022" class="nav-link" data-scroll-target="#north-americanpacific-geopotential-datum-of-2022-napgd2022"><span class="header-section-number">4.6.2</span> <em>North American–Pacific Geopotential Datum of 2022 (NAPGD2022)</em></a></li>
+  </ul></li>
   <li><a href="#geographic-coordinate-system-gcs" id="toc-geographic-coordinate-system-gcs" class="nav-link" data-scroll-target="#geographic-coordinate-system-gcs"><span class="header-section-number">4.7</span> <em>Geographic Coordinate System (GCS)</em></a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">4.8</span> References</a></li>
   </ul>
@@ -373,7 +380,7 @@ Figure&nbsp;4.3: Earth’s gravity field anomalies illustrate Earth’s actual g
 </section>
 <section id="datum" class="level2" data-number="4.5">
 <h2 data-number="4.5" class="anchored" data-anchor-id="datum"><span class="header-section-number">4.5</span> <em>Datum</em></h2>
-<p>While the geoid is able to capture the Earth’s shape in detail, it is too complex and irregular to model or use as the reference surface for locations on the Earth surface. Thus, an ellipsoid (aka <em>spheroid</em>)–a simplified smooth surface–is used instead . However, the discrepancy between the geoid and ellipsoid produces a source of error to locations .</p>
+<p>While the geoid is able to capture the Earth’s shape in detail, it is too complex and irregular to model or use as the reference surface for locations on the Earth surface. Thus, an ellipsoid (aka <em>spheroid</em>)–a simplified smooth surface–is used instead . However, the discrepancy between the geoid and ellipsoid produces a source of error to locations.</p>
 <p>Here, we define the term <strong><em>datum</em></strong> as a reference surface of the earth that is used for plotting locations across the globe. In this case, an <strong><em>ellipsoid</em></strong> with the <em>origin</em> in latitude and longitude and <em>orientation</em> is used to represent datum. The&nbsp;origin&nbsp;illustrates at which the ellipsoid is tied to a known (often monumented) location on or inside Earth (not necessarily at 0 latitude 0 longitude), indicating how to fit the ellipsoid to geoid. Orientation is how we position the ellipsoid, after we tied it to a known location – we still have some limited capacity to move it around relative to geoid.</p>
 <p>Essentially, datum is a mathematical model to reference a coordinate system against <a href="#fig-datum" class="quarto-xref">Figure&nbsp;<span>4.4</span></a>. In reality, people use different datums for different geographical areas, because the Earth has an imperfect, lumpy shape, and no single simple mathematical model can perfectly represent it everywhere. Thus, datums are designed to be the best possible fit for a specific region or for the entire globe. For instance, surveyors and cartographers would create a datum that provided the best fit for their particular country or continent to allow them to choose a reference ellipsoid&nbsp;that most closely matched the curvature of the Earth in that specific region. This approach made mapping and surveying highly accurate within that region, but it created significant problems when trying to connect different regional systems. For example, the&nbsp;North American Datum of 1927 (NAD 27)&nbsp;was a local datum that was extremely accurate for North America but would be offset by hundreds of meters or more if used in Europe or Asia.</p>
 <div id="fig-datum" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -386,10 +393,10 @@ Figure&nbsp;4.4: Datum is the ellipsoid to reference a coordinate system against
 </figcaption>
 </figure>
 </div>
-<p>The common <strong><em>horizontal</em></strong> <strong>datums</strong> used in North America including the North American Datum of 1927 (NAD27), the North American Datum of 1983 (NAD83) and the World Geodetic System of 1984 (WGS84).</p>
-<p>The NAD27 datum was developed for measurements of the United States and North America. It has its center positioned at Meades Ranch in Kansas. The NAD83 datum was developed by the National Geodetic Survey and Canadian agencies in 1986. It is used as the datum for much data for the United States and the North American continent as a whole. In the 1990s, the&nbsp;National Geodetic Survey (NGS), in collaboration with individual states, undertook a major project to update the NAD83 datum by establishing a new, more precise network of reference points across the United States (High Accuracy Regional Network of fitted points; HARN).</p>
-<p>The WGS84 datum was developed by the U.S. Department of Defense and is used by the Global Positioning System (GPS) for locating points worldwide on Earth’s surface (a global datum). WGS84 has been revised six times since its original realization in 1987. The most recent version is&nbsp;WGS84 (G2139) implemented on 3 January 2021. Originally, the difference between WGS84 (as rolled out in 1987) and NAD83 (as first introduced in 1986) coordinates was so small that transformation was unnecessary. That is no longer the case when it comes to NAD83 2011 (2010.0) and WGS84 (G1762).</p>
-<p>In order to minimize coordinate changes over time, NAD 1983 is tied to the North American, Pacific (for Hawaii, Guam, etc.), and Marianas tectonic plates, while WGS 1984 is tied to the International Terrestrial Reference System (ITRF) which is independent of the tectonic plates. Over time, the two coordinate systems have become increasingly different and the difference can be ~1 to 2 meters within the continental United States.</p>
+<p>The common <strong><em>horizontal</em></strong> <strong>datums</strong> used in North America including the <strong><em>North American Datum of 1927 (NAD27)</em></strong>, <strong><em>the North American Datum of 1983 (NAD83)</em></strong> and the <strong><em>World Geodetic System of 1984 (WGS84)</em></strong>.</p>
+<p>The <strong><em>NAD27</em></strong> datum was developed for measurements of the United States and North America. It has its center positioned at Meades Ranch in Kansas. The <strong><em>NAD83</em></strong> datum was developed by the National Geodetic Survey and Canadian agencies in 1986. It is used as the datum for much data for the United States and the North American continent as a whole. In the 1990s, the&nbsp;National Geodetic Survey (NGS), in collaboration with individual states, undertook a major project to update the NAD83 datum by establishing a new, more precise network of reference points across the United States (High Accuracy Regional Network of fitted points; HARN).</p>
+<p>The <strong><em>WGS84</em></strong> datum was developed by the U.S. Department of Defense and is used by the Global Positioning System (GPS) for locating points worldwide on Earth’s surface (a global datum). WGS84 has been revised six times since its original realization in 1987. The most recent version is&nbsp;WGS84 (G2139) implemented on 3 January 2021. Originally, the difference between WGS84 (as rolled out in 1987) and NAD83 (as first introduced in 1986) coordinates was so small that transformation was unnecessary. That is no longer the case when it comes to NAD83 2011 (2010.0) and WGS84 (G1762).</p>
+<p>In order to minimize coordinate changes over time, NAD 1983 is tied to the North American, Pacific (for Hawaii, Guam, etc.), and Marianas tectonic plates, while WGS 1984 is tied to the <strong>International Terrestrial Reference System (ITRF)</strong>, which is independent of the tectonic plates. Over time, the two coordinate systems have become increasingly different and the difference can be ~1 to 2 meters within the continental United States.</p>
 <p>Similar to the horizontal datum, a <strong><em>vertical</em></strong> <strong>datum</strong> refers to a surface of zero elevation to which heights (elevations) of various points are referenced using either an ellipsoid (<strong>ellipsoidal datum</strong>) or a specific geoid (<strong>orthometric datum</strong>) as a reference surface for height. Unlike a horizontal datum, a three-dimensional ellipsoidal datum provides the foundation for accurate determination of <strong>ellipsoidal height</strong>, which is the height&nbsp;of that same point of the Earth surface is the vertical distance from that point to the&nbsp;ellipsoid. On the contrary, <strong>orthometric height</strong> in North America is defined as the vertical distance measured from adopted geoid to the ground surface height, along a line that is always a right angle to all intervening equipotential surfaces. Considering the fact that the <strong>geoid</strong> is a surface of constant gravitational potential that closely approximates the mean sea level, whenever you see elevation data described as “X” feet/m above or below sea level, it is referring to the orthometric height. A related definition is the geoid height, which is defined as the difference between the geoid and ellipsoid, describing the height of the Earth’s geoid surface above or below an idealized reference ellipsoid <a href="#fig-height" class="quarto-xref">Figure&nbsp;<span>4.5</span></a>.</p>
 <div id="fig-height" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -401,10 +408,19 @@ Figure&nbsp;4.5: Definitions of elevation
 </figcaption>
 </figure>
 </div>
+<p>The <strong><em>North American Vertical Datum of 1988 (NAVD 88)</em></strong> is the primary vertical datum that has been used for elevations in the United States for several decades. It provides a common reference surface so that elevations measured in different locations can be compared consistently. NAVD 88 was established mainly through a large network of spirit-leveling measurements connecting thousands of permanent bencchmarks across the country.</p>
 </section>
-<section id="napgd2022" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="napgd2022"><span class="header-section-number">4.6</span> NAPGD2022</h2>
-<p>Note that the North American–Pacific Geopotential Datum of 2022 (NAPGD2022 <a href="#fig-napgd22" class="quarto-xref">Figure&nbsp;<span>4.6</span></a>) will serve as the future geopotential datum of the National Spatial Reference System (NSRS). It encompasses three regions: the North American–Pacific region, Guam and the Commonwealth of the Northern Mariana Islands, and American Samoa. This datum provides the information needed to generate consistent orthometric heights, geoid undulations, gravity anomalies, deflections of the vertical, and other gravity-related geodetic quantities.</p>
+<section id="national-spatial-reference-system-nsrs-modernization-in-the-united-states" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="national-spatial-reference-system-nsrs-modernization-in-the-united-states"><span class="header-section-number">4.6</span> National Spatial Reference System (NSRS) Modernization in the United States</h2>
+<p>While datums such as the NAD83 and NAVD88 provide the reference frameworks for horizontal and vertical positions, they both have limitations. For example, a major limitation of NAD83 is that its origin is not located exactly at Earth’s center of mass. It differs from a truly geocentric coordinate system by about 2.2 meters. This is important because modern Global Navigation Satellite Systems (GNSS), including GPS, use reference frames that are centered at Earth’s center of mass. Consequently, NAD 83 does not algin perfectly with global reference frames such as the International Terrestrial Reference System (ITRF). Regarding NAVD88, one important limitation is that it depends heavily on physical benchmarks (a.k.a. passive control points) that can be disturbed by construction, land subsidence, uplift, frost, or other processes, meaning that the published elevation of a benchmark may no longer represent its actual current position. In addition, NVAD 88 contains systematic errors from how the network was established. Because elevations were propagated across very long distance using leveling from a limited set of reference points, small measurement errors accumulated over space. Compared with a mordern gravity-based geoid, NAVD 88 has a known bias of roughly 50 cm and a broad tilt that can approach 1 m across the conterminous United States.</p>
+<p>To overcome these limitations, in 2007, the <strong>National Geodetic Survey (NCS)</strong> announed plans to modernize the <strong>National Spatial Reference System (NSRS)</strong>, which provides the coordinate framework used for surveying, mapping, and navigation in the United States. The NSRS modernization was designed to move away from a system that depends primarily on physical benchmarks and towards based on continuously operating GNSS stations, Earth-centered reference frames, precise gravity measurements, and modern geoid models. In this effort, the existing NAD83 and NAVD88 will be replaced using the modernized systems.</p>
+<section id="natrf2022-patrf2022-catrf2022-matrf2022" class="level3" data-number="4.6.1">
+<h3 data-number="4.6.1" class="anchored" data-anchor-id="natrf2022-patrf2022-catrf2022-matrf2022"><span class="header-section-number">4.6.1</span> <em>NATRF2022, PATRF2022, CATRF2022, MATRF2022</em></h3>
+<p>The NAD 83 datum will be replaced by four new terrestrial reference frames including <strong>NATRF2022</strong> for the North American Plate, <strong>PATRF2022</strong> for the Pacific Plate, <strong>CATRF2022</strong> for the Caribbean Plate, and <strong>MATRF2022</strong> for the Mariana Plate. These reference frames are defined relative to ITRF2020, making them geocentric and more directly comparable with GNSS measurements. Each frame rotates with its corresponding tectonic plate, which minimizes changes in coordinates caused by the large-scale motion of that plate.</p>
+</section>
+<section id="north-americanpacific-geopotential-datum-of-2022-napgd2022" class="level3" data-number="4.6.2">
+<h3 data-number="4.6.2" class="anchored" data-anchor-id="north-americanpacific-geopotential-datum-of-2022-napgd2022"><span class="header-section-number">4.6.2</span> <em>North American–Pacific Geopotential Datum of 2022 (NAPGD2022)</em></h3>
+<p>The NAVD 88 vertical datum will be replaced by the North American–Pacific Geopotential Datum of 2022 (NAPGD2022 <a href="#fig-napgd22" class="quarto-xref">Figure&nbsp;<span>4.6</span></a>) that will serve as the future geopotential datum of the NSRS. NAPGD2022 is based on measurements of the Earth’s gravity field and its primary reference surface is provided by GEOID2022, a high-resolution gravimetric model of the geoid. It encompasses three regions: the North American–Pacific region, Guam and the Commonwealth of the Northern Mariana Islands, and American Samoa. This datum provides the information needed to generate consistent orthometric heights, geoid undulations, gravity anomalies, deflections of the vertical, and other gravity-related geodetic quantities.</p>
 <div id="fig-napgd22" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-napgd22-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -415,6 +431,8 @@ Figure&nbsp;4.6: GEOID2022 is one of the products in the North American-Pacific 
 </figcaption>
 </figure>
 </div>
+<p>Together, these changes represent a fundamental modernization of the NSRS. The modernized system is designed to work more naturally with GNSS and to better represent the fact that the Earth’s surface is continually moving. Note that while the modernized NSRS is being rolled out and tested (2024-2026), the current NSRS, including NAD 83 and NAVD 88 etc, will remain the official NSRS of the United States.</p>
+</section>
 </section>
 <section id="geographic-coordinate-system-gcs" class="level2" data-number="4.7">
 <h2 data-number="4.7" class="anchored" data-anchor-id="geographic-coordinate-system-gcs"><span class="header-section-number">4.7</span> <em>Geographic Coordinate System (GCS)</em></h2>
