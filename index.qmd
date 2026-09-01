@@ -1,15 +1,24 @@
 ---
 title: "Introduction"
-home: true
 numbered: false
 number-sections: false
 ---
+
+## Overview
 
 The global geospatial solutions market was valued at USD 626 billion in 2024; with a 13% projected annual growth rate, it is expected to reach \$2155 billion by 2034 (Prescient and Strategic Intelligence, 2024). Globally, many governments are funding the development of geospatial infrastructure and promoting the geospatial solutions. A large number of students trained in geospatial sciences will be needed to support the steady demand for the workforce.
 
 Geospatial science is a true interdisciplinary subject that covers a broad range of topics in both natural and social sciences and technologies. Usually, it is difficult to find one suitable textbook to cover all the materials in Geographical information system (GIS), global navigation satellite system (GNSS), remote sensing, and their broad applications. Requiring multiple textbooks will further increase the cost of taking these classes on students.
 
 To address this challenge, we plan to develop this Open Educational Resource (OER) by forming a team with distinct backgrounds spanning remote sensing, urban geography, historical geography, and sustainability in urban and rural areas. Our goal is to develop OER that can be used in introductory and intermediate levels geospatial science courses, covering concepts of GIS and remote sensing and their applications in a wide range of disciplines.
+
+## Authors
+
+Ran Wang [ORCID](https://orcid.org/0000-0002-3810-9103)
+
+Xiaomeng Li
+
+Andrew Husa
 
 ## Copyright, License & Third-Party Materials
 
