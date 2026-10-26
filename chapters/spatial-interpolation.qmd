@@ -63,7 +63,7 @@ Imagine bending and stretching a rubber sheet so that it passes through all the 
 
 Spline interpolation is useful in that it preserves the exact original input values all the known locations. However, since the surface passes exactly through input points, spline interpolation can be sensitive to **noise or outliers** in the input data. Additionally, the interpolated values may go beyond the range of input values.
 
-![Comparison of IDW and Spline Interpolation Methods: An Example on Soil Organic Carbon. SOC data are obtained from the soil organic carbon measurements near Mead, Nebraska (Potash 2023))](/figures/ch12/SOCinterpolation.png){#fig-SOCinterpolation}  
+![Comparison of IDW and Spline Interpolation Methods: An Example on Soil Organic Carbon. SOC data are obtained from the soil organic carbon measurements near Mead, Nebraska (Potash 2023)](/figures/ch12/SOCinterpolation.png){#fig-SOCinterpolation}  
 
 ## *Note on output raster resolution*
 
