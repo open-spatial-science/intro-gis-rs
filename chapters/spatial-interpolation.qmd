@@ -57,7 +57,7 @@ IDW is a widely used spatial interpolation method due to its simplicity and the 
 
 ## *Spline*
 
-**Spline** interpolation method estimates values by fitting a mathematical function that minimizes overall surface curvature, resulting in a smooth surface that passes exactly through all known sample points. As a result, the cell values at the sampled locations in the output raster are identical to the original measured values (@fig-fig-SOCinterpolation). 
+**Spline** interpolation method estimates values by fitting a mathematical function that minimizes overall surface curvature, resulting in a smooth surface that passes exactly through all known sample points. As a result, the cell values at the sampled locations in the output raster are identical to the original measured values (@fig-SOCinterpolation). 
 
 Imagine bending and stretching a rubber sheet so that it passes through all the known points, which adds a z dimension representing the variable over a flat surface defined by x and y coordinates. This is how spline interpolation generates a continuous surface from discrete observations. Different spline interpolation variants (e.g., regularized vs. tension) control how tightly the surface conforms to the input data points versus how smooth it appears.
 
